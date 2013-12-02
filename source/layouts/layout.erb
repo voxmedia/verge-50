@@ -9,11 +9,16 @@
     <!-- Use title if it's in the page YAML frontmatter -->
     <title><%= current_page.data.title || "The Middleman" %></title>
     
-    <%= stylesheet_link_tag "normalize", "all" %>
-    <%= javascript_include_tag  "all" %>
+    <%= stylesheet_link_tag "styles" %>
+
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript">window.jQuery || document.write('<script src="http://cdn3.sbnation.com/javascripts/vendor/jquery-1.10.2.min.vda41706.js"><\/script>');</script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+    <script type="text/javascript">window._ || document.write('<script src="http://cdn1.sbnation.com/javascripts/vendor/underscore-1.5.2.min.vd22f881.js"><\/script>');</script>
   </head>
   
   <body class="<%= page_classes %>">
     <%= yield %>
   </body>
+  <%= javascript_include_tag  "application" %>
 </html>

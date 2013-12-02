@@ -1,0 +1,94 @@
+$m : '.m-pages';
+
+#{$m} {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#{$m}__page {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  overflow: hidden;
+
+  &.current, .no-js & {
+    visibility: visible;
+    z-index: 1;
+  }
+}
+
+#{$m}__page.to-left {
+  -webkit-animation: k-move-to-left $page_speed ease both;
+  -moz-animation: k-move-to-left $page_speed ease both;
+  animation: k-move-to-left $page_speed ease both;
+}
+
+#{$m}__page.from-left {
+  -webkit-animation: k-move-from-left $page_speed ease both;
+  -moz-animation: k-move-from-left $page_speed ease both;
+  animation: k-move-from-left $page_speed ease both;
+}
+
+#{$m}__page.to-right {
+  -webkit-animation: k-move-to-right $page_speed ease both;
+  -moz-animation: k-move-to-right $page_speed ease both;
+  animation: k-move-to-right $page_speed ease both;
+}
+
+#{$m}__page.from-right {
+  -webkit-animation: k-move-from-right $page_speed ease both;
+  -moz-animation: k-move-from-right $page_speed ease both;
+  animation: k-move-from-right $page_speed ease both;
+}
+
+// Animations for page transitions
+
+@-webkit-keyframes k-move-to-left {
+  to { -webkit-transform: translateX(-100%); }
+}
+@-moz-keyframes k-move-to-left {
+  to { -moz-transform: translateX(-100%); }
+}
+@keyframes k-move-to-left {
+  to { transform: translateX(-100%); }
+}
+
+@-webkit-keyframes k-move-from-left {
+  from { -webkit-transform: translateX(-100%); }
+}
+@-moz-keyframes k-move-from-left {
+  from { -moz-transform: translateX(-100%); }
+}
+@keyframes k-move-from-left {
+  from { transform: translateX(-100%); }
+}
+
+@-webkit-keyframes k-move-to-right { 
+  to { -webkit-transform: translateX(100%); }
+}
+@-moz-keyframes k-move-to-right { 
+  to { -moz-transform: translateX(100%); }
+}
+@keyframes k-move-to-right { 
+  to { transform: translateX(100%); }
+}
+
+@-webkit-keyframes k-move-from-right {
+  from { -webkit-transform: translateX(100%); }
+}
+@-moz-keyframes k-move-from-right {
+  from { -moz-transform: translateX(100%); }
+}
+@keyframes k-move-from-right {
+  from { transform: translateX(100%); }
+}
