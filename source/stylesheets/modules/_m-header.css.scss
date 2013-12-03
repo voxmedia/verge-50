@@ -2,7 +2,7 @@ $m : '.m-header';
 
 #{$m} {
   background: #000;
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: $header_height;
   top: 0;
@@ -12,8 +12,44 @@ $m : '.m-header';
 
 #{$m}__nav-toggle {
   @extend %hide-text;
-  display: block;
+  display: inline-block;
   background: $red;
   width: 35px;
   height: 30px;
+  float: left;
+  margin-right: 10px;
+}
+
+#{$m}__logo {
+  @extend %hide-text;
+  display: inline-block;
+  background: $red;
+  width: 215px;
+  height: 30px;
+  float: left;
+  margin: 0;
+}
+
+#{$m}__buttons {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+%header-nav-buttons {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  background: $red;
+  margin-right: 10px;
+}
+
+#{$m}__previous {
+  @extend %hide-text;
+  @extend %header-nav-buttons;
+}
+
+#{$m}__next {
+  @extend %hide-text;
+  @extend %header-nav-buttons;
 }

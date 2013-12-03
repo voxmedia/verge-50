@@ -6,6 +6,8 @@ Verge.PageTransitions = (function ($) {
 
   var $main = $('.m-pages'),
       $pages = $main.children('li'),
+      $next = $('.m-header__next'),
+      $previous = $('.m-header__previous'),
       pages_count = $pages.length,
       page_class = 'm-pages__page',
       current = 0,
@@ -23,10 +25,12 @@ Verge.PageTransitions = (function ($) {
 
   var nextPage = function () {
     goToPage(current + 1);
+    return false;
   };
 
   var previousPage = function () {
     goToPage(current - 1);
+    return false;
   };
 
   var goToPage = function (index) {
@@ -80,6 +84,13 @@ Verge.PageTransitions = (function ($) {
     $out_page.attr({ class : page_class });
     $in_page.attr({ class : page_class + ' current' });
   };
+
+  var init = function () {
+    $next.on('click', nextPage);
+    $previous.on('click', previousPage);
+  }
+
+  init();
 
   return {
     nextPage : nextPage,
