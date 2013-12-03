@@ -36,6 +36,10 @@ $m : '.m-pages';
     max-width: 500px;
     margin: 0 auto;
   }
+
+  &.ad h1 {
+    -webkit-transform: none;
+  }
 }
 
 #{$m}__page.to-left {
