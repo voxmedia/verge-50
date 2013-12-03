@@ -1,0 +1,66 @@
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<%# Begin comScore Tag %>
+<script type="text/javascript">
+  var _comscore = _comscore || [];
+  _comscore.push({ c1: "2", c2: "7976662" });
+  (function() {
+    var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+    s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+    el.parentNode.insertBefore(s, el);
+  })();
+</script>
+<noscript>
+  <img src="http://b.scorecardresearch.com/p?c1=2&amp;c2=7976662&amp;cv=2.0&amp;cj=1" alt=''/>
+</noscript>
+<%# end comScore Tag %>
+
+<!-- Start Quantcast tag -->
+<script type="text/javascript"
+src="http://edge.quantserve.com/quant.js"></script>
+<script type="text/javascript">_qacct="p-d9vfr8QTWnv1E"; if (typeof(quantserve) != "undefined") { quantserve(); }</script>
+<noscript>
+<a href="http://www.quantcast.com/p-d9vfr8QTWnv1E"
+target="_blank"><img
+src="http://pixel.quantserve.com/pixel/p-d9vfr8QTWnv1E.gif"
+style="display: none;" border="0" height="1" width="1"
+alt="Quantcast"/></a>
+</noscript>
+<!-- End Quantcast tag -->
+
+<%# Chartbeat %>
+
+<script type="text/javascript">
+var _sf_async_config={uid:2724,domain:"theverge.com"};
+(function(){
+  function loadChartbeat() {
+    window._sf_endpt=(new Date()).getTime();
+    var e = document.createElement('script');
+    e.setAttribute('language', 'javascript');
+    e.setAttribute('type', 'text/javascript');
+    e.setAttribute('src',
+       (("https:" == document.location.protocol) ? "https://a248.e.akamai.net/chartbeat.download.akamai.com/102508/" : "http://static.chartbeat.com/") +
+       "js/chartbeat_pub.js");
+    document.body.appendChild(e);
+  }
+  var oldonload = window.onload;
+  window.onload = (typeof window.onload != 'function') ?
+     loadChartbeat : function() { oldonload(); loadChartbeat(); };
+})();
+</script>
+<%# NETWORK-WIDE APERTURE TRACKING PIXEL %>
+<img src="http://aperture.displaymarketplace.com/audmeasure.gif?liveconclientID=5497559777280&PageID=650423876&EventType=view" style="width:1px; height: 1px; visibility:hidden" /> 
+
+<%# Providence Include %>
+<script type="text/javascript">
+//<![CDATA[
+Providence=(function(){var c={};var b=function(e){var g=document.cookie,d=0,f={};if(document.cookie.match(/^\s*\$Version=(?:"1"|1);\s*(.*)/)){g=RegExp.$1;d=1}if(d===0){g.split(/[,;]/).map(function(i){var k=i.split(/=/,2),h=decodeURIComponent(k[0].replace(/^\s+|\s+$/g,"")),j=k.length>1?decodeURIComponent(k[1].replace(/^\s+|\s+$/g,"")):null;f[h]=j})}else{g.match(/(?:^|\s+)([!#$%&'*+\-.0-9A-Z^`a-z|~]+)=([!#$%&'*+\-.0-9A-Z^`a-z|~]*|"(?:[\x20-\x7E\x80\xFF]|\\[\x00-\x7F])*")(?=\s*[,;]|$)/g).map(function(i,h){var j=i,k=h.charAt(0)==='"'?h.substr(1,-1).replace(/\\(.)/g,"$1"):h;f[j]=k})}return f[e]};var a=function(d,e,f){jQuery.get(d,e,f)};c.init=function(d){d=typeof d!=="undefined"?d:[];a("http://69.25.121.67/page_load",{gac:b("__utma"),title:document.title,host:window.location.host,contexts:d,path:window.location.pathname})};return c})();if(typeof jQuery!=="undefined"){jQuery(document).ready(function(a){Providence.init()})};
+//]]>
+</script>
+<%# End Providence Include %>
