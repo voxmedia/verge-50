@@ -1,0 +1,29 @@
+// Needed to contain the mobile side menus
+.l-outer-wrap {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+// Contains the main site content
+.l-inner-wrap {
+  @include transition(transform 100ms, left 100ms, right 100ms);
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+// Moves the main content off the screen depending on which side menu is open.
+// Uses translate3d for hardware acceleration;
+// falls back on changing the left property for browsers that don't support
+// 3D transforms.
+.open-nav .l-inner-wrap {
+  .csstransforms3d & {
+    @include transform(translate3d($nav_width, 0, 0));
+  }
+
+  .no-csstransforms3d & {
+    left: $nav_width;
+  }
+}

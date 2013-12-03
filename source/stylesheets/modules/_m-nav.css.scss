@@ -1,0 +1,14 @@
+$m : '.m-nav';
+
+#{$m} {
+  background: #000;
+  display: block;
+  position: absolute;
+  margin: 0;
+  top: 0;
+  left: $nav_width * -1;
+  width: $nav_width;
+  height: 100%;
+  overflow-y: scroll;
+  display: block;
+}

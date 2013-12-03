@@ -1,0 +1,19 @@
+$m : '.m-header';
+
+#{$m} {
+  background: #000;
+  position: absolute;
+  width: 100%;
+  height: $header_height;
+  top: 0;
+  left: 0;
+  padding: 10px;
+}
+
+#{$m}__nav-toggle {
+  @extend %hide-text;
+  display: block;
+  background: $red;
+  width: 35px;
+  height: 30px;
+}
