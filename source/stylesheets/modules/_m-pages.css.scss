@@ -27,6 +27,13 @@ $m : '.m-pages';
     visibility: visible;
     z-index: 1;
   }
+
+  h1 {
+    font-size: 128px;
+    font-family: "comic sans ms";
+    text-align: center;
+    -webkit-transform: rotate(30deg);
+  }
 }
 
 #{$m}__page.to-left {
