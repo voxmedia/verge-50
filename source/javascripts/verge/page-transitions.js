@@ -81,13 +81,20 @@ Verge.PageTransitions = (function ($) {
     end_current_page = false;
     end_next_page = false;
     is_animating = false;
-    $out_page.attr({ class : page_class });
-    $in_page.attr({ class : page_class + ' current' });
+    $out_page.attr({ class : $out_page.data().original_class });
+    $in_page.attr({ class : $in_page.data().original_class + ' current' });
   };
 
   var init = function () {
     $next.on('click', nextPage);
     $previous.on('click', previousPage);
+
+    $pages.each(function() {
+      var $page = $(this);
+      $page.data().original_class = $page.attr('class');
+    });
+
+    $pages.eq(current).addClass('current');
   }
 
   init();
