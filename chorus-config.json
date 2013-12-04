@@ -1,0 +1,1 @@
+{ "community": "theverge.com", "build_type": "middleman", "s3_bucket": "chorus-editorial-apps", "namespace": "verge-fifty", "url_prefix": "/a/the-verge-fifty", "slug": "the-verge-fifty", "id": 41, "cdn_host": "http://ea-cdn.voxmedia.com" }

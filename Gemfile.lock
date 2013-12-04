@@ -1,3 +1,10 @@
+GIT
+  remote: git@github.com:voxmedia/middleman-chorus.git
+  revision: c73dab1ab401c9ad4350a474104446927205954d
+  specs:
+    middleman-chorus (0.0.1)
+      middleman-core (>= 3.0.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -93,5 +100,6 @@ PLATFORMS
 
 DEPENDENCIES
   middleman (~> 3.2.0)
+  middleman-chorus!
   middleman-livereload (~> 3.1.0)
   wdm (~> 0.1.0)
