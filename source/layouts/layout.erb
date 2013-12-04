@@ -9,6 +9,11 @@
     <script type="text/javascript">window._ || document.write('<script src="http://cdn1.sbnation.com/javascripts/vendor/underscore-1.5.2.min.vd22f881.js"><\/script>');</script>
     <script type="text/javascript" src="http://ox-d.sbnation.com/w/1.0/jstag"></script>
     <%= javascript_include_tag  "top" %>
+    <script type="text/javascript">
+     Verge.context = {
+       url_prefix: "<%= url_prefix %>",
+     };
+    </script>
   </head>
   
   <body>
