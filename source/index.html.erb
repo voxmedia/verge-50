@@ -1,7 +1,7 @@
 <ol class="m-pages">
   <% data.people.each_with_index do |p, i| %>
-    <li class="m-pages__page" id="<%= p['slug'] %>" data-position="<%= p['position'] %>" data-name="<%= p['name'] %>">
-      <h1><%= p['position'] %><br/><%= p['name'] %></h1>
+    <li class="m-pages__page" id="<%= p['slug'] %>" data-position="<%= p['position'] %>" data-name="<%= "#{p['first_name']} #{p['last_name']}" %>">
+      <h1><%= p['position'] %><br/><%= "#{p['first_name']} #{p['last_name']}" %></h1>
       <p><%= p['content'] %></p>
     </li>
   <% end %>
