@@ -3,7 +3,6 @@
   position: 1
   category: The World Changers
   age: 50
-  nationality: American
   bio: Inventor
   content: Lorem <b>ipsum</b>
   achievements:
@@ -15,7 +14,6 @@
   position: 2
   category: The World Changers
   age: 50
-  nationality: American
   bio: Inventor
   content: Lorem <b>ipsum</b>
   achievements:
@@ -26,7 +24,6 @@
   position: 3
   category: The Old Guard
   age: 50
-  nationality: American
   bio: CEO
   content: Lorem <b>ipsum</b>
   achievements:
