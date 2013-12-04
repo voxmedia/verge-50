@@ -34,7 +34,7 @@ Verge.Pages = (function ($) {
   };
 
   var goToId = function (id) {
-    var index = $pages.index('#' + id);
+    var index = $('#' + id).index();
     goToPage(index);
     return false;
   };
@@ -148,7 +148,11 @@ Verge.Pages = (function ($) {
       document.title = "The Verge Fifty";
     }
   };
+
   var init = function () {
+    var pathname_array = window.location.pathname.split('/'),
+        pathname = pathname_array[pathname_array.length - 1];
+
     $next.on('click', nextPage);
     $previous.on('click', previousPage);
     $(document).on('keydown', keyboardNav);
@@ -158,7 +162,12 @@ Verge.Pages = (function ($) {
       $page.data().original_class = $page.attr('class');
     });
 
-    $pages.eq(current).addClass('current');
+    if (pathname && $('#' + pathname).length > 0) {
+      $('#' + pathname).addClass('current');
+      current = $('#' + pathname).index();
+    } else {
+      $pages.eq(current).addClass('current');
+    }
   }
 
   init();
