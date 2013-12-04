@@ -10,9 +10,9 @@ module CustomHelpers
 
   def page_url(person)
     if person.nil?
-      url_for("/")
+      "http://www.theverge.com#{url_for("/")}"
     else
-      url_for("#{person['slug']}")
+      "http://www.theverge.com/#{url_for(person['slug'], :relative => true)}"
     end
   end
 end

@@ -11,13 +11,13 @@
 <meta property="og:title" content="<%= page_title(person) %>" />
 <meta property="og:image" content="" />
 <meta property="og:description" content="" />
-<meta property="og:url" content="<%= current_page.url %>" />
+<meta property="og:url" content="<%= page_url(person) %>" />
 
 <%# Twitter Card Meta Tags %>
 <meta name="twitter:site" content="verge" />
 <meta property="twitter:account_id" content="1465737598" />
 <meta name="twitter:card" content="photo" />
-<meta name="twitter:url" content="<%= current_page.url %>" />
+<meta name="twitter:url" content="<%= page_url(person) %>" />
 <meta name="twitter:title" content="<%= page_title(person) %>" />
 <meta name="twitter:image" content="" />
 <meta name="twitter:image:width" content="" />
@@ -31,4 +31,4 @@
 <meta name="google-site-verification" content="tDoQLOfV4VmPZrTuSNDQnSyTfhgDRlOMaXgYQ0Bb9Bc" />
 <meta name="msvalidate.01" content="D385D0326A3AE144205C298DB34B4E94" />
 <meta name="y_key" content="0184e2558f89b639" />
-<link rel="canonical" href="<%= url_for('/') %>" />
+<link rel="canonical" href="<%= "http://www.theverge.com#{url_for("/")}" %>" />
