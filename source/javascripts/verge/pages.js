@@ -33,6 +33,12 @@ Verge.Pages = (function ($) {
     return false;
   };
 
+  var goToId = function (id) {
+    var index = $pages.index('#' + id);
+    goToPage(index);
+    return false;
+  };
+
   var goToPage = function (index) {
     var $current_page, $next_page, out_class, in_class;
 
