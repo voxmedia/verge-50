@@ -2,7 +2,7 @@
 
 var Verge = Verge || {};
 
-Verge.PageTransitions = (function ($) {
+Verge.Pages = (function ($) {
 
   var $main = $('.m-pages'),
       $pages = $main.children('li'),
