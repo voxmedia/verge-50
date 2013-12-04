@@ -66,6 +66,18 @@ $m : '.m-pages';
   animation: k-move-from-right $page_speed ease both;
 }
 
+#{$m}__page.bounce-left {
+  -webkit-animation: k-bounce-left $page_speed/2 2 alternate ease both;
+  -moz-animation: k-bounce-left $page_speed/2 2 alternate ease both;
+  animation: k-bounce-left $page_speed/2 2 alternate ease both;
+}
+
+#{$m}__page.bounce-right {
+  -webkit-animation: k-bounce-right $page_speed/2 2 alternate ease both;
+  -moz-animation: k-bounce-right $page_speed/2 2 alternate ease both;
+  animation: k-bounce-right $page_speed/2 2 alternate ease both;
+}
+
 // Animations for page transitions
 
 @-webkit-keyframes k-move-to-left {
@@ -106,4 +118,25 @@ $m : '.m-pages';
 }
 @keyframes k-move-from-right {
   from { transform: translateX(100%); }
+}
+
+
+@-webkit-keyframes k-bounce-left {
+  to { -webkit-transform: translateX(-2%); }
+}
+@-moz-keyframes k-bounce-left {
+  to { -moz-transform: translateX(-2%); }
+}
+@keyframes k-bounce-left {
+  to { transform: translateX(-2%); }
+}
+
+@-webkit-keyframes k-bounce-right {
+  to { -webkit-transform: translateX(2%); }
+}
+@-moz-keyframes k-bounce-right {
+  to { -moz-transform: translateX(2%); }
+}
+@keyframes k-bounce-right {
+  to { transform: translateX(2%); }
 }

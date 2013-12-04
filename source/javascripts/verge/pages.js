@@ -42,7 +42,12 @@ Verge.Pages = (function ($) {
   var goToPage = function (index) {
     var $current_page, $next_page, out_class, in_class;
 
-    if (is_animating || index >= pages_count || index < 0 || index === current) {
+    if (is_animating) {
+      return false;
+    }
+
+    if (index >= pages_count || index < 0 || index === current) {
+      goToSamePage(index);
       return false;
     }
 
@@ -82,6 +87,26 @@ Verge.Pages = (function ($) {
       onEndAnimation($current_page, $next_page);
     }
   };
+
+  var goToSamePage = function (index) {
+    var $current_page = $pages.eq(current),
+        animation_class;
+
+    is_animating = true;
+
+    if (index < 0) {
+      animation_class = 'bounce-right';
+    } else {
+      animation_class = 'bounce-left';
+    }
+
+    if(support) {
+      $current_page.addClass(animation_class).on(animation_end_event, function() {
+        $current_page.off(animation_end_event);
+        onEndAnimation($current_page, $current_page);
+      });
+    }
+  }
 
   var onEndAnimation = function($out_page, $in_page) {
     end_current_page = false;
