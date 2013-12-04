@@ -16,6 +16,11 @@ set :images_dir, 'images'
 activate :chorus
 activate :directory_indexes
 
+people = YAML::load_file(File.open('source/data/people.yml'))
+people['people'].each do |person|
+  proxy "/#{person['slug']}.html", "/index.html", :locals => { :person => person }
+end
+
 # Build-specific configuration
 configure :build do
   activate :minify_css
