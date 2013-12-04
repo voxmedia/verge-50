@@ -2,7 +2,6 @@
   slug: elon-musk
   position: 1
   category: The World Changers
-  age: 50
   bio: Inventor
   content: Lorem <b>ipsum</b>
   achievements:
@@ -13,7 +12,6 @@
   slug: jeff-bezos
   position: 2
   category: The World Changers
-  age: 50
   bio: Inventor
   content: Lorem <b>ipsum</b>
   achievements:
@@ -23,7 +21,6 @@
   slug: marissa-mayer
   position: 3
   category: The Old Guard
-  age: 50
   bio: CEO
   content: Lorem <b>ipsum</b>
   achievements:
