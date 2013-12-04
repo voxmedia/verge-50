@@ -158,8 +158,6 @@ Verge.Pages = (function ($) {
         url: new_url
       };
 
-      console.log(state, prefix, new_url);
-
       window.history.replaceState(state, '', new_url);
     }
   };
