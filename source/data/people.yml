@@ -1,0 +1,13 @@
+people:
+  - name: Elon Musk
+    slug: elon-musk
+    position: 1
+    category: The World Changers
+    age: 50
+    nationality: American
+    title: Inventor
+    bio: Lorem <b>ipsum</b>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
