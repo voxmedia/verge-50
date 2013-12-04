@@ -27,7 +27,7 @@ end
 
 # Build-specific configuration
 configure :build do
-  set :url_prefix, "/a/the-verge-fifty"
+  set :url_prefix, "/a/the-verge-50"
   set :absolute_prefix, "http://www.theverge.com"
   activate :minify_css
   activate :minify_javascript
