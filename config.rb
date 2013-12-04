@@ -16,7 +16,7 @@ set :images_dir, 'images'
 activate :chorus
 activate :directory_indexes
 
-people = YAML::load_file(File.open('data/people.yml'))
+people = YAML::load_file('data/people.yml')
 people.each do |person|
   proxy "/#{person['slug']}.html", "/index.html", :locals => { :person => person }
 end
