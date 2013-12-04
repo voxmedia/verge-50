@@ -106,7 +106,27 @@ Verge.Pages = (function ($) {
         onEndAnimation($current_page, $current_page);
       });
     }
-  }
+  };
+
+  var keyboardNav = function (e) {
+    var key = e.keyCode || e.which,
+        keys = {
+            left: 37,
+            right: 39,
+            j: 74,
+            k: 75
+        };
+    switch (key) {
+    case keys.j:
+    case keys.left:
+      previousPage();  
+      break;
+    case keys.k:
+    case keys.right:
+      nextPage()
+      break;
+    }
+  };
 
   var onEndAnimation = function($out_page, $in_page) {
     end_current_page = false;
@@ -119,6 +139,7 @@ Verge.Pages = (function ($) {
   var init = function () {
     $next.on('click', nextPage);
     $previous.on('click', previousPage);
+    $(document).on('keydown', keyboardNav);
 
     $pages.each(function() {
       var $page = $(this);
