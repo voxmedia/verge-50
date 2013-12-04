@@ -8,11 +8,4 @@ module CustomHelpers
     end
   end
 
-  def page_url(person)
-    if person.nil?
-      url_for("index.html")
-    else
-      url_for("#{person['slug']}.html")
-    end
-  end
-end
+end 
