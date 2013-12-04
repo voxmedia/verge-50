@@ -4,7 +4,7 @@ module CustomHelpers
     if person.nil?
       "The Verge Fifty"
     else
-      "#{person['name']} &ndash; The Verge Fifty"
+      "The Verge Fifty &ndash; #{person['name']}"
     end
   end
 

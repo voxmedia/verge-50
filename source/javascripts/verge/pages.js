@@ -72,6 +72,7 @@ Verge.Pages = (function ($) {
       end_current_page = true;
       if(end_next_page) {
         onEndAnimation($current_page, $next_page);
+        updatePageTitle($next_page);
       }
     });
 
@@ -80,11 +81,13 @@ Verge.Pages = (function ($) {
       end_next_page = true;
       if(end_current_page) {
         onEndAnimation($current_page, $next_page);
+        updatePageTitle($next_page);
       }
     });
 
     if(!support) {
       onEndAnimation($current_page, $next_page);
+      updatePageTitle($next_page);
     }
   };
 
@@ -136,6 +139,15 @@ Verge.Pages = (function ($) {
     $in_page.attr({ class : $in_page.data().original_class + ' current' });
   };
 
+  var updatePageTitle = function ($page) {
+    var id = $page.attr('id'),
+        name = $page.data('name');
+    if (id) {
+      document.title = "The Verge Fifty" + " – " + name;
+    } else {
+      document.title = "The Verge Fifty";
+    }
+  };
   var init = function () {
     $next.on('click', nextPage);
     $previous.on('click', previousPage);
