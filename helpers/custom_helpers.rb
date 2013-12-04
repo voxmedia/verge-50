@@ -8,4 +8,11 @@ module CustomHelpers
     end
   end
 
-end 
+  def page_url(person)
+    if person.nil?
+      url_for("/")
+    else
+      url_for("#{person['slug']}")
+    end
+  end
+end
