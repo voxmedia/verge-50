@@ -1,1 +1,1 @@
-{ "community": "theverge.com", "build_type": "middleman", "s3_bucket": "chorus-editorial-apps", "namespace": "verge-fifty", "url_prefix": "/a/the-verge-fifty", "slug": "the-verge-fifty", "id": 41, "cdn_host": "http://ea-cdn.voxmedia.com" }
+{ "community": "theverge.com", "s3_bucket": "chorus-editorial-apps", "namespace": "verge-fifty", "build_type": "middleman", "url_prefix": "/a/the-verge-50", "slug": "the-verge-50", "id": 41, "cdn_host": "http://ea-cdn.voxmedia.com" }
