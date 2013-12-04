@@ -1,4 +1,5 @@
-- name: Elon Musk
+- first_name: Elon
+  last_name: Musk
   slug: elon-musk
   position: 1
   category: The World Changers
@@ -8,7 +9,8 @@
     - Founded PayPal
     - Founded SpaceX
     - Founded Tesla
-- name: Jeff Bezos
+- first_name: Jeff
+  last_name: Bezos
   slug: jeff-bezos
   position: 2
   category: The World Changers
@@ -17,7 +19,8 @@
   achievements:
     - Founded Amazon
     - Laughs really loudly
-- name: Marissa Mayer
+- first_name: Marissa
+  last_name: Mayer
   slug: marissa-mayer
   position: 3
   category: The Old Guard
