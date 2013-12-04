@@ -143,20 +143,22 @@ Verge.Pages = (function ($) {
   };
 
   var updatePageUrl = function ($page) {
-    var page_url, new_url, prefix;
+    var page_url, new_url, prefix, state;
     if (Modernizr.history) {
       page_url = $page.data('page-url');
-      prefix = Verge.context.url_prefix === '' ? '/' : Verge.context.url_prefix
+      prefix = Verge.context.url_prefix === '' ? '/' : Verge.context.url_prefix;
       new_url = _.isUndefined(page_url) ? prefix : page_url;
 
       if (new_url === location.pathname) {
         return;
       }
 
-      var state = {
+      state = {
         id: _.uniqueId(),
         url: new_url
       };
+
+      console.log(state, prefix, new_url);
 
       window.history.replaceState(state, '', new_url);
     }
