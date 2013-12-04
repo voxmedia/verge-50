@@ -143,9 +143,11 @@ Verge.Pages = (function ($) {
   };
 
   var updatePageUrl = function ($page) {
-    var new_url;
+    var page_url, new_url, prefix;
     if (Modernizr.history) {
-      new_url = _.isUndefined($page.data('page-url')) ? '/' : $page.data('page-url');
+      page_url = $page.data('page-url');
+      prefix = Verge.context.url_prefix === '' ? '/' : Verge.context.url_prefix
+      new_url = _.isUndefined(page_url) ? prefix : page_url;
 
       if (new_url === location.pathname) {
         return;
