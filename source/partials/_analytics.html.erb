@@ -1,4 +1,10 @@
 <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-26533115-1']);
+  _gaq.push(['_setCustomVar', 1, 'Editorial App', 'The Verge Fifty']);
+  _gaq.push(['_setCustomVar', 2, 'Entry Type', 'Editorial App']);
+  _gaq.push(['_trackPageview']);
+
   (function() {
     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
@@ -21,7 +27,7 @@
 </noscript>
 <%# end comScore Tag %>
 
-<!-- Start Quantcast tag -->
+<%# Begin Quantcast Tag %>
 <script type="text/javascript"
 src="http://edge.quantserve.com/quant.js"></script>
 <script type="text/javascript">_qacct="p-d9vfr8QTWnv1E"; if (typeof(quantserve) != "undefined") { quantserve(); }</script>
@@ -32,10 +38,9 @@ src="http://pixel.quantserve.com/pixel/p-d9vfr8QTWnv1E.gif"
 style="display: none;" border="0" height="1" width="1"
 alt="Quantcast"/></a>
 </noscript>
-<!-- End Quantcast tag -->
+<%# End Quantcast Tag %>
 
-<%# Chartbeat %>
-
+<%# Begin Chartbeat Tag %>
 <script type="text/javascript">
 var _sf_async_config={uid:2724,domain:"theverge.com"};
 (function(){
@@ -54,6 +59,8 @@ var _sf_async_config={uid:2724,domain:"theverge.com"};
      loadChartbeat : function() { oldonload(); loadChartbeat(); };
 })();
 </script>
+<%# End Chartbeat Tag %>
+
 <%# NETWORK-WIDE APERTURE TRACKING PIXEL %>
 <img src="http://aperture.displaymarketplace.com/audmeasure.gif?liveconclientID=5497559777280&PageID=650423876&EventType=view" style="width:1px; height: 1px; visibility:hidden" /> 
 
