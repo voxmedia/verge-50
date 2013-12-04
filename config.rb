@@ -17,8 +17,9 @@ activate :chorus
 activate :directory_indexes
 
 people = YAML::load_file('data/people.yml')
+
 people.each do |person|
-  proxy "/#{person['slug']}.html", "/index.html", :locals => { :person => person }
+  proxy "/#{person['slug']}/index.html", "index.html", :locals => { :person => person }
 end
 
 # Build-specific configuration
