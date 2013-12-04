@@ -16,6 +16,16 @@ set :images_dir, 'images'
 set :url_prefix, ''
 set :absolute_prefix, 'http://localhost:4567'
 
+set :categories, [
+    "The World Changers",
+    "The Dreamers",
+    "The Noisemakers",
+    "The Informers",
+    "The Entertainers",
+    "The Old Guard",
+    "The Next Wave"
+  ]
+
 activate :chorus
 activate :directory_indexes
 
