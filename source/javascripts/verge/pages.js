@@ -73,6 +73,7 @@ Verge.Pages = (function ($) {
       if(end_next_page) {
         onEndAnimation($current_page, $next_page);
         updatePageTitle($next_page);
+        updatePageUrl($next_page);
       }
     });
 
@@ -82,12 +83,14 @@ Verge.Pages = (function ($) {
       if(end_current_page) {
         onEndAnimation($current_page, $next_page);
         updatePageTitle($next_page);
+        updatePageUrl($next_page);
       }
     });
 
     if(!support) {
       onEndAnimation($current_page, $next_page);
       updatePageTitle($next_page);
+      updatePageUrl($next_page);
     }
   };
 
@@ -137,6 +140,24 @@ Verge.Pages = (function ($) {
     is_animating = false;
     $out_page.attr({ class : $out_page.data().original_class });
     $in_page.attr({ class : $in_page.data().original_class + ' current' });
+  };
+
+  var updatePageUrl = function ($page) {
+    var new_url;
+    if (Modernizr.history) {
+      new_url = _.isUndefined($page.data('page-url')) ? '/' : $page.data('page-url');
+
+      if (new_url === location.pathname) {
+        return;
+      }
+
+      var state = {
+        id: _.uniqueId(),
+        url: new_url
+      };
+
+      window.history.replaceState(state, '', new_url);
+    }
   };
 
   var updatePageTitle = function ($page) {
