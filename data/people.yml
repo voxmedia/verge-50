@@ -1,0 +1,34 @@
+- name: Elon Musk
+  slug: elon-musk
+  position: 1
+  category: The World Changers
+  age: 50
+  nationality: American
+  bio: Inventor
+  content: Lorem <b>ipsum</b>
+  achievements:
+    - Founded PayPal
+    - Founded SpaceX
+    - Founded Tesla
+- name: Jeff Bezos
+  slug: jeff-bezos
+  position: 2
+  category: The World Changers
+  age: 50
+  nationality: American
+  bio: Inventor
+  content: Lorem <b>ipsum</b>
+  achievements:
+    - Founded Amazon
+    - Laughs really loudly
+- name: Marissa Mayer
+  slug: marissa-mayer
+  position: 3
+  category: The Old Guard
+  age: 50
+  nationality: American
+  bio: CEO
+  content: Lorem <b>ipsum</b>
+  achievements:
+    - Did stuff at Google
+    - Does stuff at Yahoo
