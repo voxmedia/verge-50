@@ -13,6 +13,9 @@ set :js_dir, 'javascripts'
 
 set :images_dir, 'images'
 
+set :url_prefix, ''
+set :absolute_prefix, 'http://localhost:4567'
+
 activate :chorus
 activate :directory_indexes
 
@@ -24,6 +27,8 @@ end
 
 # Build-specific configuration
 configure :build do
+  set :url_prefix, "/a/the-verge-fifty"
+  set :absolute_prefix, "http://www.theverge.com"
   activate :minify_css
   activate :minify_javascript
 end
