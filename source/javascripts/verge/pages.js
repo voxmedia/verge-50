@@ -8,6 +8,7 @@ Verge.Pages = (function ($) {
       $pages = $main.children('li'),
       $next = $('.m-header__next'),
       $previous = $('.m-header__previous'),
+      $page_links = $('a[data-page]'),
       pages_count = $pages.length,
       page_class = 'm-pages__page',
       current = 0,
@@ -174,12 +175,21 @@ Verge.Pages = (function ($) {
     }
   };
 
+  var clickToPage = function () {
+    var $link = $(this),
+        page_id = $link.data('page');
+
+    goToId(page_id);
+    return false;
+  };
+
   var init = function () {
     var pathname_array = window.location.pathname.split('/'),
         pathname = pathname_array[pathname_array.length - 1];
 
     $next.on('click', nextPage);
     $previous.on('click', previousPage);
+    $page_links.on('click', clickToPage);
     $(document).on('keydown', keyboardNav);
 
     $pages.each(function() {
