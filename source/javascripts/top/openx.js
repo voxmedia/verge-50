@@ -41,12 +41,12 @@ var OXH = function (config) {
     this._contentTopics[k] = v;
     this._ox.addContentTopic(k);
   };
-  
+
   this.addVariable = function(k, v) {
     this._customVariables[k] = v;
     this._ox.addVariable(k, v);
   };
-  
+
   this.removeVariable = function(k) {
     delete this._customVariables[k];
     // it appears that OpenX's public API does not allow deleting, per se
@@ -60,22 +60,22 @@ var OXH = function (config) {
   this.customVariables = function() {
     return this._customVariables;
   };
-  
+
   this.setAdUnitScopes = function(scopes) {
     this._adUnitScopes = scopes;
   };
-  
+
   this.setAdUnitGroups = function(groups) {
     this._adUnitGroups = groups;
   };
-  
+
   this.setPageScope = function(pageScope) {
     this._pageScope = pageScope;
     for (var scopeKey in pageScope) {
-      this.addVariable(scopeKey, pageScope[scopeKey]);      
+      this.addVariable(scopeKey, pageScope[scopeKey]);
     }
   };
-  
+
   this.getPageScope = function(key) {
     if (this._pageScope === null) {
       return null;
@@ -83,11 +83,11 @@ var OXH = function (config) {
       return this._pageScope[key];
     }
   };
-  
+
   this.setAdUnitsOnPage = function(adUnits) {
     this._adUnitsOnPage = adUnits;
   };
-  
+
   this.addAdUnitToPage = function(adUnit) {
     var units = this._adUnitsOnPage.concat(adUnit);
     var unique = [];
@@ -109,7 +109,7 @@ var OXH = function (config) {
 
     // browser_width, device_type, etc.
     var adUnitScopeTypes = this._adUnitScopes[unitId];
-    
+
     // this ad unit sets no scope. it should show all the time.
     if (!adUnitScopeTypes) {
       return true;
@@ -170,18 +170,18 @@ var OXH = function (config) {
     }
   };
 
-  // Add the specific groups we want to fetch to the 
+  // Add the specific groups we want to fetch to the
   // internal OpenX object. This should be one of the last steps
   // before initiating the fetch.
   this.addGroups = function(groupIds) {
     for (var i = 0; i < groupIds.length; ++i) {
-      this._ox.addPage(groupIds[i]);      
+      this._ox.addPage(groupIds[i]);
     }
   };
-  
+
   // Add the specific ad untis we want to fetch to the
   // internal OpenX object. This should be one of the last steps
-  // before initiating the fetch.  
+  // before initiating the fetch.
   this.addUnits = function(unitIds) {
     for (var i = 0; i < unitIds.length; ++i) {
       this._ox.addAdUnit(unitIds[i]);
@@ -191,15 +191,15 @@ var OXH = function (config) {
   // Figures out the specifc ad units and ad groups to fetch from
   // OpenX, given the screen size, ads on the page, etc., and
   // then initiates the fetch to OpenX.
-  this.fetchAds = function() {    
+  this.fetchAds = function() {
 
     // loop over all the ad unit groups, and look for any that we can
-    // use, given the active ad units   
+    // use, given the active ad units
 
-    var adUnitsToShow = this.getActiveAdUnits();    
+    var adUnitsToShow = this.getActiveAdUnits();
     var adUnitsToFetch = adUnitsToShow.slice(0);
     var groupsToFetch = [];
-    
+
     for (var group in this._adUnitGroups) {
       var groupAdUnits = this._adUnitGroups[group];
       var missingAdUnits = this.arraySubtract(groupAdUnits, adUnitsToFetch);
@@ -207,35 +207,19 @@ var OXH = function (config) {
         groupsToFetch.push(group);
         adUnitsToFetch = this.arraySubtract(adUnitsToFetch, groupAdUnits);
       }
-    }    
-        
-    if (this._debugging && (typeof this.log_to_console !== 'undefined')) {
-      this.log_to_console("==========");
-      this.log_to_console("OPENX INFO");
-      this.log_to_console("Custom variables:", this._customVariables);
-      this.log_to_console("Content topics:", this._contentTopics);
-      this.log_to_console("Page scope:", this._pageScope);
-      this.log_to_console("Ad unit scopes:", this._adUnitScopes);
-      this.log_to_console("All ad unit groups:", this._adUnitGroups);
-      this.log_to_console("All ad units on page:", this._adUnitsOnPage);
-      this.log_to_console("Ad units in scope:", this.getActiveAdUnits());
-      this.log_to_console("-----");
-      this.log_to_console("Fetching ad unit groups:", groupsToFetch);
-      this.log_to_console("Fetching ad units:", adUnitsToFetch);
-      this.log_to_console("==========");
     }
 
     this.addGroups(groupsToFetch);
     this.addUnits(adUnitsToFetch);
-    
+
     if (!this._fetchDisabled) {
       this._ox.fetchAds();
-      this._adUnitsToShow = adUnitsToShow;      
+      this._adUnitsToShow = adUnitsToShow;
     }
   };
 
-  
-  // array util functions 
+
+  // array util functions
 
   this.arraySubtract = function(array1, array2) {
     var newArray = [];
@@ -245,7 +229,7 @@ var OXH = function (config) {
         if (array1[i] === array2[j]) {
           found = true;
           break;
-        }        
+        }
       }
       if (!found) {
         newArray.push(array1[i]);
@@ -253,7 +237,7 @@ var OXH = function (config) {
     }
     return newArray;
   };
-  
+
   this.arrayIntersection = function(array1, array2) {
     var newArray = [];
     for (var i = 0; i < array1.length; ++i) {
@@ -266,14 +250,14 @@ var OXH = function (config) {
     }
     return newArray;
   };
-  
+
   this.arrayIndexOf = function(arr, obj) {
     for (var i = 0, j = arr.length; i < j; i++) {
       if (arr[i] === obj) { return i; }
     }
     return -1;
   };
-  
+
   this.arrayInclude = function(arr, obj) {
     return this.arrayIndexOf(arr, obj) !== -1;
   };

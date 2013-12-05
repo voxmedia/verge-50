@@ -1,6 +1,15 @@
 var Verge = Verge || {};
 
 Verge.Ads = (function() {
+  // This should match the ad unit id from Chorus's config/openx.yml
+  var network_fishtank_ad_unit_id = 463319;
+
+  // More tricky, view the source of the network to find this
+  var network_umbel_api_key = 'lrjhazrpqbgtnrij';
+
+  // Not a lot of options here (verge, polygon, sbnation)
+  var network_name = 'verge';
+
   return {
     setup: function(){
       var SBN = window.SBN || {};
@@ -16,11 +25,9 @@ Verge.Ads = (function() {
           });
         }
 
-        SBN.OpenX.addVariable('network', 'verge');
+        SBN.OpenX.addVariable('network', network_name);
 
-        // no Criteo on this network
-
-        SBN.OpenX.setAdUnitsOnPage([463319]);
+        SBN.OpenX.setAdUnitsOnPage([network_fishtank_ad_unit_id]);
         SBN.OpenX.fetchAds();
 
       } else {
@@ -34,6 +41,7 @@ Verge.Ads = (function() {
           }
         };
       }
+      window.SBN = SBN;
 
       // setup umbel
       window._umbel = window._umbel || [];
@@ -41,18 +49,28 @@ Verge.Ads = (function() {
         var u = document.createElement('script');
         u.type = 'text/javascript';
         u.async = true;
-        u.src = document.location.protocol + '//tags.api.umbel.com/lcojgvtzjxmbjdgh/w.js';
+        u.src = document.location.protocol + '//tags.api.umbel.com/'+network_umbel_api_key+'/w.js';
         var s = document.getElementsByTagName('script')[0];
         s.parentNode.insertBefore(u, s);
         var d = new Date();
         d.setDate(d.getDate() + 365);
-        document.cookie = "umbel_api_key=lcojgvtzjxmbjdgh; expires=" + d.toUTCString();
+        document.cookie = "umbel_api_key="+network_umbel_api_key+"; expires=" + d.toUTCString();
       })();
+
+      return {
+        after: function(thing_to_do_once_done){
+          if(typeof(thing_to_do_once_done) === "function"){
+            thing_to_do_once_done();
+          }
+        }
+      };
     },
 
-    showAd: function(id){
+    // Call this where the ad should show up in the page
+    showAd: function(ad_unit_id){
       // this is only valid after setup is called
-      window.SBN.OpenX.showAd(id);
+      console.log("showing ad_unit_id: " + ad_unit_id);
+      window.SBN.OpenX.showAd(ad_unit_id);
     }
 
   };
