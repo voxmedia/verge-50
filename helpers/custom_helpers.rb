@@ -2,9 +2,9 @@ module CustomHelpers
 
   def page_title(person)
     if person.nil?
-      "The Verge Fifty"
+      app_name
     else
-      "The Verge Fifty &ndash; #{person['name']}"
+      "#{app_name} &ndash; #{person['name']}"
     end
   end
 

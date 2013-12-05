@@ -15,6 +15,7 @@ set :images_dir, 'images'
 
 set :url_prefix, ''
 set :absolute_prefix, 'http://localhost:4567'
+set :app_name, 'The Verge Fifty'
 
 activate :chorus
 activate :directory_indexes
