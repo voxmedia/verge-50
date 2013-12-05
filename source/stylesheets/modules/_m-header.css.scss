@@ -25,13 +25,14 @@ $m : '.m-header';
 #{$m}__logo {
   @extend %hide-text;
   display: inline-block;
-  background: $red;
-  width: 215px;
-  height: 30px;
+  width: 143px;
+  height: 25px;
   float: left;
   margin: 0;
+  position: relative;
 
   a {
+    @include sprite('header-logo', $sprites, $sprites_2x);
     display: block;
   }
 }
