@@ -13,11 +13,11 @@ $m : '.m-header';
 }
 
 #{$m}__nav-toggle {
+  @include sprite('menu-active', $sprites, $sprites_2x);
   @extend %hide-text;
   display: inline-block;
-  background: $red;
   width: 35px;
-  height: 30px;
+  height: 25px;
   float: left;
   margin-right: 10px;
 }
@@ -44,19 +44,37 @@ $m : '.m-header';
 }
 
 %header-nav-buttons {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   display: inline-block;
-  background: $red;
   margin-right: 10px;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 16px;
+    height: 25px;
+    margin-left: -8px;
+  }
 }
 
 #{$m}__previous {
   @extend %hide-text;
   @extend %header-nav-buttons;
+
+  &:before {
+    @include sprite('left-arrow-active', $sprites, $sprites_2x);
+  }
 }
 
 #{$m}__next {
   @extend %hide-text;
   @extend %header-nav-buttons;
+
+  &:before {
+    @include sprite('right-arrow-active', $sprites, $sprites_2x);
+  }
 }
