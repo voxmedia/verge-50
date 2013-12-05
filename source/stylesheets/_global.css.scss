@@ -7,7 +7,6 @@
 html, body {
   height: 100%;
   background: #222;
-  overflow: hidden;
 }
 
 body {
@@ -28,4 +27,9 @@ body {
   overflow-y: auto;
   -ms-touch-action: pan-y;
   -webkit-overflow-scrolling: touch;
+}
+
+// Hide tracking pixels
+body > img {
+  display: none;
 }
