@@ -23,9 +23,4 @@ module CustomHelpers
       return "#{absolute_prefix}#{url_prefix}/#{person['slug']}"
     end
   end
-
-  def markdown(text)
-    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
-    markdown.render(text)
-  end
 end
