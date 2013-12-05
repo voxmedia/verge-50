@@ -1,6 +1,7 @@
-@import 'config';
 @import 'compass';
 @import 'compass/reset';
+@import 'config';
+@import 'mixins';
 
 *, *:before, *:after {
   -webkit-box-sizing: border-box;
@@ -13,6 +14,7 @@ html, body {
 }
 
 body {
+  @include sans-serif($line_height: 1.5);
   padding-top: $header_height;
 }
 
