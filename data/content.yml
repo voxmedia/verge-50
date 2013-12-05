@@ -28,9 +28,12 @@ people:
     position: 1
     category:
       <<: *world-changers
-    bio: Inventor
-    content: |-
-             Lorem <b>ipsum</b>
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           Lorem <b>ipsum</b>
     achievements:
       - Founded PayPal
       - Founded SpaceX
@@ -41,9 +44,11 @@ people:
     position: 2
     category:
       <<: *world-changers
-    bio: Inventor
-    content: |-
-             Lorem <b>ipsum</b>
+    title:
+      - Inventor
+    age: 50
+    blurb: |-
+           Lorem <b>ipsum</b>
     achievements:
       - Founded Amazon
       - Laughs really loudly
@@ -53,9 +58,11 @@ people:
     position: 3
     category:
       <<: *old-guard
-    bio: CEO
-    content: |-
-             Lorem <b>ipsum</b>
+    title:
+      - CEO
+    age: 50
+    blurb: |-
+           Lorem <b>ipsum</b>
     achievements:
       - Did stuff at Google
       - Does stuff at Yahoo
