@@ -1,0 +1,51 @@
+categories:
+  - category: &world-changers
+      name: The World Changers
+  - category: &dreamers
+      name: The Dreamers
+  - category: &noisemakers
+      name: The Noisemakers
+  - category: &informers
+      name: The Informers
+  - category: &entertainers
+      name: The Entertainers
+  - category: &old-guard
+      name: The Old Guard
+  - category: &next-wave
+      name: The Next Wave
+
+people:
+  - name: Elon Musk
+    sort_name: musk
+    slug: elon-musk
+    position: 1
+    category:
+      <<: *world-changers
+    bio: Inventor
+    content: Lorem <b>ipsum</b>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  - name: Jeff Bezos
+    sort_name: bezos
+    slug: jeff-bezos
+    position: 2
+    category:
+      <<: *world-changers
+    bio: Inventor
+    content: Lorem <b>ipsum</b>
+    achievements:
+      - Founded Amazon
+      - Laughs really loudly
+  - name: Marissa Mayer
+    sort_name: mayer
+    slug: marissa-mayer
+    position: 3
+    category:
+      <<: *old-guard
+    bio: CEO
+    content: Lorem <b>ipsum</b>
+    achievements:
+      - Did stuff at Google
+      - Does stuff at Yahoo

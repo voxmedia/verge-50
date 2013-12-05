@@ -16,22 +16,12 @@ set :images_dir, 'images'
 set :url_prefix, ''
 set :absolute_prefix, 'http://localhost:4567'
 
-set :categories, [
-    "The World Changers",
-    "The Dreamers",
-    "The Noisemakers",
-    "The Informers",
-    "The Entertainers",
-    "The Old Guard",
-    "The Next Wave"
-  ]
-
 activate :chorus
 activate :directory_indexes
 
-people = YAML::load_file('data/people.yml')
+data = YAML::load_file('data/content.yml')
 
-people.each do |person|
+data['people'].each do |person|
   proxy "/#{person['slug']}/index.html", "index.html", :locals => { :person => person }
 end
 
