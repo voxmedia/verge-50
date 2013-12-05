@@ -29,7 +29,8 @@ people:
     category:
       <<: *world-changers
     bio: Inventor
-    content: Lorem <b>ipsum</b>
+    content: |-
+             Lorem <b>ipsum</b>
     achievements:
       - Founded PayPal
       - Founded SpaceX
@@ -41,7 +42,8 @@ people:
     category:
       <<: *world-changers
     bio: Inventor
-    content: Lorem <b>ipsum</b>
+    content: |-
+             Lorem <b>ipsum</b>
     achievements:
       - Founded Amazon
       - Laughs really loudly
@@ -52,7 +54,8 @@ people:
     category:
       <<: *old-guard
     bio: CEO
-    content: Lorem <b>ipsum</b>
+    content: |-
+             Lorem <b>ipsum</b>
     achievements:
       - Did stuff at Google
       - Does stuff at Yahoo
