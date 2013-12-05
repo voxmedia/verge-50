@@ -125,11 +125,11 @@ Verge.Pages = (function ($) {
     switch (key) {
     case keys.j:
     case keys.left:
-      previousPage();  
+      previousPage();
       break;
     case keys.k:
     case keys.right:
-      nextPage()
+      nextPage();
       break;
     }
   };
