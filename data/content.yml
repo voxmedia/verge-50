@@ -33,7 +33,9 @@ people:
       - CEO of Space X
     age: 50
     blurb: |-
-           Lorem <b>ipsum</b>
+           <p>Lorem <b>ipsum</b></p>
+           <p>HTML works here.</p>
+           <p>Just keep the |- at the top, and make sure the text is aligned with the |<p>
     achievements:
       - Founded PayPal
       - Founded SpaceX
@@ -48,7 +50,7 @@ people:
       - Inventor
     age: 50
     blurb: |-
-           Lorem <b>ipsum</b>
+           <p>Lorem <b>ipsum</b></p>
     achievements:
       - Founded Amazon
       - Laughs really loudly
@@ -62,7 +64,7 @@ people:
       - CEO
     age: 50
     blurb: |-
-           Lorem <b>ipsum</b>
+           <p>Lorem <b>ipsum</b></p>
     achievements:
       - Did stuff at Google
       - Does stuff at Yahoo
@@ -72,12 +74,12 @@ pages:
     title: Intro
     slug: intro
     content: |-
-             Hello this is dog.
+             <p>Hello this is dog. I can change this later.</p>
   - name: credits
     title: Credits
     slug: credits
     content: |-
-             I made this.
+             <p>I made this. I'll change this later too.</p>
   - name: full-list
     title: The Fifty
     slug: the-list
