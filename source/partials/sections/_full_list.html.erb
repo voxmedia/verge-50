@@ -1,4 +1,11 @@
 <li class="m-pages__page" id="<%= page.slug %>" data-page-url="<%= page_url(page.name) %>" data-name="<%= page.title %>">
   <h2><%= page.title %></h2>
-  
+  <% data.content.categories.sort_by{ |c| c.category.position }.each do |c| %>
+    <h3><%= c.category.name %></h3>
+    <ol>
+      <% data.content.people.find_all{ |p| p.category.name == c.category.name }.sort_by{ |p| p.sort_name }.each do |p| %>
+        <li><a href="<%= page_url('list', p) %>" data-page="<%= p.slug %>"><%= p.name %></a></li>
+      <% end %>
+    </ol>
+  <% end %>
 </li>
