@@ -2,33 +2,8 @@
 @import 'compass/reset';
 @import 'config';
 @import 'mixins';
-
-*, *:before, *:after {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
- }
-
-html, body {
-  height: 100%;
-}
-
-body {
-  @include sans-serif($line_height: 1.5);
-  padding-top: $header_height;
-}
-
-.no-js body {
-  overflow: auto;
-}
-
-%hide-text {
-  text-indent: -9999px;
-  overflow: hidden;
-}
-
+@import 'global';
 @import 'layouts/l-wraps';
-
 @import 'modules/m-header';
 @import 'modules/m-nav';
 @import 'modules/m-pages';
