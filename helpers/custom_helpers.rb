@@ -4,7 +4,7 @@ module CustomHelpers
     if person.nil?
       app_name
     else
-      "#{app_name} &ndash; #{person['name']}"
+      "#{app_name} &ndash; #{person.name}"
     end
   end
 
@@ -12,7 +12,7 @@ module CustomHelpers
     if person.nil?
       return "#{url_prefix}"
     else
-      return "#{url_prefix}/#{person['slug']}"
+      return "#{url_prefix}/#{person.slug}"
     end
   end
 
@@ -20,7 +20,7 @@ module CustomHelpers
     if person.nil?
       return "#{absolute_prefix}#{url_prefix}"
     else
-      return "#{absolute_prefix}#{url_prefix}/#{person['slug']}"
+      return "#{absolute_prefix}#{url_prefix}/#{person.slug}"
     end
   end
 end
