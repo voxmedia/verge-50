@@ -1,0 +1,16 @@
+@mixin ff-din($font_size: inherit, $font_weight: 400, $font_style: normal, $text_transform: uppercase, $line_height: 1) {
+  font-family: ff-din-web-condensed, helvetica, sans-serif;
+  font-weight: $font_weight;
+  font-style: $font_style;
+  font-size: $font_size;
+  text-transform: $text_transform;
+  line-height: $line-height;
+}
+
+@mixin sans-serif($font_size: inherit, $font_weight: 300, $font_style: normal, $line_height: 1) {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", sans-serif;
+  font-weight: $font_weight;
+  font-style: $font_style;
+  font-size: $font_size;
+  line-height: $line-height;
+}
