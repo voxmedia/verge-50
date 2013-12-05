@@ -1,6 +1,7 @@
-var Verge = Verge || {};
+var Vox = Vox || {};
+Vox.EditorialApps = Vox.EditorialApps || {};
 
-Verge.Ads = (function() {
+Vox.EditorialApps.Ads = (function() {
   // This should match the ad unit id from Chorus's config/openx.yml
   var network_fishtank_ad_unit_id = 463319;
 
@@ -67,11 +68,15 @@ Verge.Ads = (function() {
     },
 
     // Call this where the ad should show up in the page
-    showAd: function(ad_unit_id){
+    show: function(ad_unit_id){
       // this is only valid after setup is called
       console.log("showing ad_unit_id: " + ad_unit_id);
       window.SBN.OpenX.showAd(ad_unit_id);
-    }
+    },
+
+    // just aliased
+    render: function(auid){this.show(auid);},
+
 
   };
 })();

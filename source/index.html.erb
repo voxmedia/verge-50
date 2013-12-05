@@ -1,10 +1,13 @@
 <ol class="m-pages">
-  <% data.content.people.each_with_index do |p, i| %>
-    <li class="m-pages__page" id="<%= p['slug'] %>" data-page-url="<%= feature_url(p) %>" data-position="<%= p['position'] %>" data-name="<%= "#{p['name']}" %>">
+  <% data.content.people.each_with_index do |p, i|
+    ad_next_class = '';
+    ad_next_class = 'ad_next' if (i == 2)
+    %>
+    <li class="m-pages__page <%=ad_next_class%>" id="<%= p['slug'] %>" data-page-url="<%= feature_url(p) %>" data-position="<%= p['position'] %>" data-name="<%= "#{p['name']}" %>">
       <h1><%= p['position'] %><br/><%= "#{p['name']}" %></h1>
       <h2><%= p['category']['name'] %></h2>
       <p><%= p['content'] %></p>
     </li>
   <% end %>
-  <li class="m-pages__page ad"><h1>Eat at Joe's</h1></li>
+
 </ol>
