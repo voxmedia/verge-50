@@ -71,7 +71,7 @@ Verge.Pages = (function ($) {
       $current_page.off(animation_end_event);
       end_current_page = true;
       if(end_next_page) {
-        onEndAnimation($current_page, $next_page);
+        onEndAnimation($next_page, $current_page);
         updatePageTitle($next_page);
         updatePageUrl($next_page);
       }
@@ -81,14 +81,14 @@ Verge.Pages = (function ($) {
       $next_page.off(animation_end_event);
       end_next_page = true;
       if(end_current_page) {
-        onEndAnimation($current_page, $next_page);
+        onEndAnimation($next_page, $current_page);
         updatePageTitle($next_page);
         updatePageUrl($next_page);
       }
     });
 
     if(!support) {
-      onEndAnimation($current_page, $next_page);
+      onEndAnimation($next_page, $current_page);
       updatePageTitle($next_page);
       updatePageUrl($next_page);
     }
@@ -109,7 +109,7 @@ Verge.Pages = (function ($) {
     if(support) {
       $current_page.addClass(animation_class).on(animation_end_event, function() {
         $current_page.off(animation_end_event);
-        onEndAnimation($current_page, $current_page);
+        onEndAnimation($current_page);
       });
     }
   };
@@ -134,12 +134,14 @@ Verge.Pages = (function ($) {
     }
   };
 
-  var onEndAnimation = function($out_page, $in_page) {
+  var onEndAnimation = function($in_page, $out_page) {
     end_current_page = false;
     end_next_page = false;
     is_animating = false;
-    $out_page.attr({ class : $out_page.data().original_class });
     $in_page.attr({ class : $in_page.data().original_class + ' current' });
+    if (typeof $out_page !== 'undefined') {
+      $out_page.attr({ class : $out_page.data().original_class });
+    }
   };
 
   var updatePageUrl = function ($page) {
