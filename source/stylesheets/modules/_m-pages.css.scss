@@ -32,9 +32,16 @@ $m : '.m-pages';
     font-size: 60px;
     font-family: "comic sans ms";
     text-align: center;
-    -webkit-transform: rotate(30deg);
-    max-width: 500px;
-    margin: 0 auto;
+  }
+
+  h2 {
+    margin: 50px 0 0 0;
+    text-align: center;
+  }
+
+  p {
+    text-align: center;
+    margin: 0;
   }
 
   &.ad h1 {
