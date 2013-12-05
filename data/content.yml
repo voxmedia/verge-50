@@ -59,3 +59,13 @@ people:
     achievements:
       - Did stuff at Google
       - Does stuff at Yahoo
+
+pages:
+  - title: Intro
+    slug: intro
+    content: |-
+             Hello this is dog.
+  - title: Credits
+    slug: credits
+    content: |-
+             I made this.
