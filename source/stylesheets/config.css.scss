@@ -1,5 +1,4 @@
-$header_height: 60px;
-$nav_width: 320px;
+$header_height: 55px;
 $nav_width: 200px;
 $page_speed : 300ms;
 
@@ -8,3 +7,8 @@ $red: #FA4B2A;
 $alabaster: #F0EDE3;
 $dark-grey: #7F7F7F;
 $grey: #B2B2B2;
+
+// Sprites
+
+$sprites: sprite-map('../images/sprites/global/*.png', $spacing: 20px);
+$sprites_2x: sprite-map('../images/sprites/global_2x/*.png', $spacing: 20px);
