@@ -1,6 +1,11 @@
-@mixin ff-din($font_size: inherit, $font_weight: 400, $font_style: normal, $text_transform: uppercase, $line_height: 1) {
-  font-family: ff-din-web-condensed, helvetica, sans-serif;
-  font-weight: $font_weight;
+@mixin din($font_size: inherit, $font_weight: normal, $font_style: normal, $text_transform: uppercase, $line_height: 1) {
+  @if $font_weight == bold {
+    font-family: DINNextLTPro-BoldCondensed;
+  } @else if $font_weight == heavy {
+    font-family: DINNextLTPro-HeavyCondensed;
+  } @else {
+    font-family: DINNextLTPro-Condensed;
+  }
   font-style: $font_style;
   font-size: $font_size;
   text-transform: $text_transform;
@@ -13,4 +18,18 @@
   font-style: $font_style;
   font-size: $font_size;
   line-height: $line-height;
+}
+
+@mixin sprite($name, $sprites, $sprites2x) {
+  background-image: $sprites;
+  background-position: sprite-position($sprites, $name);
+  background-repeat: no-repeat;
+  @media
+  only screen and (-webkit-min-device-pixel-ratio: '1.3'),
+  only screen and (min-resolution: '124.8dpi') {
+    $pos: sprite-position($sprites2x, $name);
+    background-image: $sprites2x;
+    background-position: nth($pos, 1) nth($pos, 2)/2;
+    @include background-size(ceil(image-width(sprite-path($sprites2x)) / 2), auto);
+  }
 }

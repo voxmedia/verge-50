@@ -15,15 +15,17 @@ $m : '.m-nav';
 }
 
 #{$m}__list {
-  margin-bottom: 20px;
+  margin: 0.5em 0;
 }
 
 #{$m}__category {
+  @include din($font_size: 18px);
   color: $red;
   border-bottom: 1px solid;
 }
 
 #{$m}__list-item {
+  @include din($font_size: 18px, $line_height: 1.25);
   
   a {
     display: block;
