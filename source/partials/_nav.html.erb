@@ -4,7 +4,7 @@
     <h3><%= c.category.name %></h3>
     <ol>
       <% data.content.people.find_all{ |p| p.category.name == c.category.name }.sort_by{ |p| p.sort_name }.each do |p| %>
-        <li><%= p.name %></li>
+        <li><a href="<%= feature_url(p) %>" data-page="<%= p.slug %>"><%= p.name %></a></li>
       <% end %>
     </ol>
   <% end %>
