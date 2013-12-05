@@ -13,5 +13,31 @@ $m : '.m-nav';
   height: 100%;
   overflow-y: scroll;
   display: block;
+  padding: 10px;
   z-index: 2;
+}
+
+#{$m}__list {
+  margin-bottom: 20px;
+}
+
+#{$m}__category {
+  color: $red;
+  border-bottom: 1px solid;
+}
+
+#{$m}__list-item {
+  
+  a {
+    display: block;
+    text-decoration: none;
+  }
+
+  a:link, a:visited {
+    color: #fff;
+  }
+
+  a:hover, a:active {
+    color: $red;
+  }
 }
