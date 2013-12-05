@@ -4,10 +4,7 @@
   position: 1
   category: The World Changers
   bio: Inventor
-  content: |-
-           This works with [Markdown](http://daringfireball.net/projects/markdown/).
-
-           (Just make sure the text is indented properly.)
+  content: Lorem <b>ipsum</b>
   achievements:
     - Founded PayPal
     - Founded SpaceX
@@ -18,10 +15,7 @@
   position: 2
   category: The World Changers
   bio: Inventor
-  content: |-
-           This is a paragraph
-  
-           This is *another* paragraph
+  content: Lorem <b>ipsum</b>
   achievements:
     - Founded Amazon
     - Laughs really loudly
@@ -31,8 +25,7 @@
   position: 3
   category: The Old Guard
   bio: CEO
-  content: |-
-           Lorem *ipsum*
+  content: Lorem <b>ipsum</b>
   achievements:
     - Did stuff at Google
     - Does stuff at Yahoo

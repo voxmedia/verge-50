@@ -2,7 +2,7 @@
   <% data.people.each_with_index do |p, i| %>
     <li class="m-pages__page" id="<%= p['slug'] %>" data-page-url="<%= feature_url(p) %>" data-position="<%= p['position'] %>" data-name="<%= "#{p['name']}" %>">
       <h1><%= p['position'] %><br/><%= "#{p['name']}" %></h1>
-      <%= markdown(p['content']) %>
+      <p><%= p['content'] %></p>
     </li>
   <% end %>
   <li class="m-pages__page ad"><h1>Eat at Joe's</h1></li>
