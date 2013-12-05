@@ -1,6 +1,6 @@
-@import 'normalize';
 @import 'config';
 @import 'compass';
+@import 'compass/reset';
 
 *, *:before, *:after {
   -webkit-box-sizing: border-box;
