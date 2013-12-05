@@ -34,5 +34,6 @@ configure :build do
   set :url_prefix, "/a/the-verge-50"
   set :absolute_prefix, "http://www.theverge.com"
   activate :minify_css
+  activate :asset_hash
   activate :minify_javascript
 end
