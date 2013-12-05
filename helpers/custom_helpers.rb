@@ -7,11 +7,11 @@ module CustomHelpers
 
     case page
     when 'list'
-      "#{app_name} &ndash; #{person['name']}"
+      "#{person['name']} | #{app_name}"
     when 'index'
       app_name
     else
-      "#{app_name} &ndash; #{data.content.pages.find{ |p| p.slug == page }.title}"
+      "#{data.content.pages.find{ |p| p.slug == page }.title} | #{app_name}"
     end
   end
 

@@ -169,9 +169,9 @@ Verge.Pages = (function ($) {
     var id = $page.attr('id'),
         name = $page.data('name');
     if (id) {
-      document.title = "The Verge Fifty" + " – " + name;
+      document.title = name + " | " + Verge.context.app_name;
     } else {
-      document.title = "The Verge Fifty";
+      document.title = Verge.context.app_name;
     }
   };
 
