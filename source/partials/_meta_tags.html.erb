@@ -1,5 +1,5 @@
 <meta charset="utf-8">
-<title><%= page_title(person) %></title>
+<title><%= page_title(page, person) %></title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes" />
 <meta name="description" content="" />
@@ -8,17 +8,17 @@
 <meta property="fb:app_id" content="179668695452017" />
 <meta property="og:site_name" content="The Verge" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="<%= page_title(person) %>" />
+<meta property="og:title" content="<%= page_title(page, person) %>" />
 <meta property="og:image" content="" />
 <meta property="og:description" content="" />
-<meta property="og:url" content="<%= absolute_feature_url(person) %>" />
+<meta property="og:url" content="<%= absolute_page_url(page, person) %>" />
 
 <%# Twitter Card Meta Tags %>
 <meta name="twitter:site" content="verge" />
 <meta property="twitter:account_id" content="1465737598" />
 <meta name="twitter:card" content="photo" />
-<meta name="twitter:url" content="<%= absolute_feature_url(person) %>" />
-<meta name="twitter:title" content="<%= page_title(person) %>" />
+<meta name="twitter:url" content="<%= absolute_page_url(page, person) %>" />
+<meta name="twitter:title" content="<%= page_title(page, person) %>" />
 <meta name="twitter:image" content="" />
 <meta name="twitter:image:width" content="" />
 <meta name="twitter:image:height" content="" />
@@ -31,4 +31,4 @@
 <meta name="google-site-verification" content="tDoQLOfV4VmPZrTuSNDQnSyTfhgDRlOMaXgYQ0Bb9Bc" />
 <meta name="msvalidate.01" content="D385D0326A3AE144205C298DB34B4E94" />
 <meta name="y_key" content="0184e2558f89b639" />
-<link rel="canonical" href="<%= absolute_feature_url %>" />
+<link rel="canonical" href="<%= absolute_page_url('index') %>" />

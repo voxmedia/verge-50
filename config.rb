@@ -21,9 +21,12 @@ activate :chorus
 activate :directory_indexes
 
 data = YAML::load_file('data/content.yml')
-
 data['people'].each do |person|
-  proxy "/#{person['slug']}/index.html", "index.html", :locals => { :person => person }
+  proxy "/#{person['slug']}/index.html", "index.html", :locals => { :person => person, :page => 'list' }
+end
+
+data['pages'].each do |page|
+  proxy "/#{page['slug']}/index.html", "index.html", :locals => { :page => page['slug'] }
 end
 
 # Build-specific configuration
