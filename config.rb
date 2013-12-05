@@ -26,7 +26,7 @@ data['people'].each do |person|
 end
 
 data['pages'].each do |page|
-  proxy "/#{page['slug']}/index.html", "index.html", :locals => { :page => page['slug'] }
+  proxy "/#{page['slug']}/index.html", "index.html", :locals => { :page => page['name'] }
 end
 
 # Build-specific configuration

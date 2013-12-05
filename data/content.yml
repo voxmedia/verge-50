@@ -61,11 +61,16 @@ people:
       - Does stuff at Yahoo
 
 pages:
-  - title: Intro
+  - name: intro
+    title: Intro
     slug: intro
     content: |-
              Hello this is dog.
-  - title: Credits
+  - name: credits
+    title: Credits
     slug: credits
     content: |-
              I made this.
+  - name: full-list
+    title: The Fifty
+    slug: the-list
