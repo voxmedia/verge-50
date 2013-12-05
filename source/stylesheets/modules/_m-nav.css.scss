@@ -1,6 +1,7 @@
 $m : '.m-nav';
 
 #{$m} {
+  @include transform(translate3d(0, 0, 0));
   background: #000;
   color: #fff;
   display: block;
@@ -12,4 +13,5 @@ $m : '.m-nav';
   height: 100%;
   overflow-y: scroll;
   display: block;
+  z-index: 2;
 }
