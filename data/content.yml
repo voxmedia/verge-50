@@ -1,18 +1,25 @@
 categories:
   - category: &world-changers
       name: The World Changers
+      position: 1
   - category: &dreamers
       name: The Dreamers
+      position: 2
   - category: &noisemakers
       name: The Noisemakers
+      position: 3
   - category: &informers
       name: The Informers
+      position: 4
   - category: &entertainers
       name: The Entertainers
+      position: 5
   - category: &old-guard
       name: The Old Guard
+      position: 6
   - category: &next-wave
       name: The Next Wave
+      position: 7
 
 people:
   - name: Elon Musk
