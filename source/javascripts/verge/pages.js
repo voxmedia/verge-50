@@ -9,12 +9,8 @@ Verge.Pages = (function ($) {
       $next = $('.m-header__next'),
       $previous = $('.m-header__previous'),
       $page_links = $('a[data-page]'),
-<<<<<<< HEAD
-      pages_count = 0,
-=======
+      pages_count = 0, // set later
       $body = $('body'),
-      pages_count = $pages.length,
->>>>>>> master
       page_class = 'm-pages__page',
       total_pages_seen = 0,
       last_seen_ad_page_index = -1,
