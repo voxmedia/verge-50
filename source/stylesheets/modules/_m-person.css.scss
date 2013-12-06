@@ -1,0 +1,74 @@
+$m : '.m-person';
+
+#{$m} {
+  padding: 40px 0;
+}
+
+#{$m}__content {
+  width: 100%;
+  max-width: 420px;
+  float: right;
+}
+
+#{$m}__header {
+  @include tilt(-30deg, 50%, 10%, 140px);
+  @extend %clearfix;
+  color: #fff;
+
+  h2 {
+    @include din($font_size: 72px);
+    background: #000;
+    margin: 5px 0;
+    float: left;
+    clear: both;
+    width: 100%;
+    text-align: center;
+
+    i {
+      @include din($font_weight: bold);
+    }
+  }
+}
+
+#{$m}__position {
+  @include din($font_size: 30px, $font_weight: bold);
+  background: $red;
+  width:40px;
+  height:40px;
+  display: block;
+  float: left;
+  clear: both;
+  text-align:center;
+  border-radius:40px;
+  padding-top: 8px;
+}
+
+#{$m}__category {
+  @include din($font-size: 30px, $font_weight: bold);
+  background: $red;
+  display: block;
+  float: right;
+  clear: both;
+  padding-left:0.3em;
+  padding-right:0.3em;
+}
+
+#{$m}__position {
+
+}
+
+#{$m}__info {
+  
+}
+
+#{$m}__titles {
+
+}
+
+#{$m}__achievements {
+
+}
+
+#{$m}__blurb {
+  
+}
