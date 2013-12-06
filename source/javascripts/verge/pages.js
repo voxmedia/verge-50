@@ -123,6 +123,8 @@ Verge.Pages = (function ($) {
         keys = {
             left: 37,
             right: 39,
+            up: 38,
+            down: 40,
             j: 74,
             k: 75
         };
@@ -135,6 +137,14 @@ Verge.Pages = (function ($) {
     case keys.k:
     case keys.right:
       nextPage();
+      return false;
+      break;
+    case keys.up:
+      goToPage(0);
+      return false;
+      break;
+    case keys.down:
+      goToPage($pages.length - 1);
       return false;
       break;
     }
