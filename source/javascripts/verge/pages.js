@@ -141,7 +141,7 @@ Verge.Pages = (function ($) {
     is_animating = false;
     $in_page.attr({ class : $in_page.data().original_class + ' current' });
     if (typeof $out_page !== 'undefined') {
-      $out_page.attr({ class : $out_page.data().original_class });
+      $out_page.attr({ class : $out_page.data().original_class }).scrollTop(0);
     }
   };
 
