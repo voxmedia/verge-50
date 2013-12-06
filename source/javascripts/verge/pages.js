@@ -46,20 +46,19 @@ Verge.Pages = (function ($) {
   /* ------- Start - Ad Handling ------------------------*/
   // Insert the ad markup and a fake menu item before the specified page
   function insertAdBeforePage(ad_html, index) {
-    console.log("insertAdBeforePage at index: " + index);
+    console.log("insertAdBeforePage | at index: " + index);
 
-    var htmls = $(ad_html).html();
-    // // figure out what kind of thing this is
-    // if(ad_html instanceof jQuery){
-    //   htmls = ad_html.html();
-    // } else {
-    //   htmls = ad_html;
-    // }
-
-    var $adUnit = $('<li class="m-pages__page ad">' + htmls + '</li>');
+    // var htmls = $(ad_html).ht;
+    console.log("insertAdBeforePage | html: ", ad_html);
+    var li = document.createElement('li');
+        li.className = 'm-pages__page m-pages__ad';
+        li.id = 'ad_'+index;
+        li.innerHTML = ad_html;
+    // var $adUnit = $('<li id="ad_'+index+'" class="m-pages__page m-pages__ad">'+ad_html+'</li>');
+    var $adUnit = $(li);
     // jam this in right before this page
-    console.log("inserting",$adUnit);
-    console.log("will be inserted before: ", $pages.eq(index));
+    console.log("insertAdBeforePage | inserting",$adUnit);
+    console.log("insertAdBeforePage | will be inserted before: ", $pages.eq(index));
     $adUnit.insertBefore($pages.eq(index));
     last_seen_ad_page_index = index;
     // Rebuild the $pages array
@@ -67,51 +66,29 @@ Verge.Pages = (function ($) {
   }
 
   function removeAdIfWasJustSeen(previous_index) {
+    console.log("removeAdIfWasJustSeen | checking if we can remove ads");
+    console.log("removeAdIfWasJustSeen | previous index: " + previous_index);
     if (previous_index === last_seen_ad_page_index) {
       var $adPage = $pages.eq(previous_index);
+      console.log("removeAdIfWasJustSeen | trying to remove!", $adPage.get(0));
       $adPage.remove();
+
       // Rebuild the $pages array
       setupPages();
       lastSeenAdPage = null;
     }
   }
-  /* ------- End - Ad Handling ------------------------*/
 
-  var goToPage = function (index) {
-    var $current_page, $next_page, out_class, in_class;
-
-    if (is_animating) {
-      return false;
-    }
-
-    if (index >= pages_count || index < 0 || index === current) {
-      goToSamePage(index);
-      return false;
-    }
-
-    total_pages_seen += 1;
-
-    if (index > current) {
-      out_class = 'to-left';
-      in_class = 'from-right';
-    } else {
-      out_class = 'to-right';
-      in_class = 'from-left';
-    }
-
-    is_animating = true;
-
-    // =========================================================================================
-    // Ad Support
-    // -----------------------------------------------------------------------------------------
+  var checkForAdContent = function(desired_page_index){
+    console.log("checkForAdContent | desired_page_index: " + desired_page_index +" current: " + current);
     var handleAdCodeInjection = function(e, ad_html) {
       // Handle the backward case
-      if (index < current) {
-        index += 1;
+      if (desired_page_index < current) {
+        desired_page_index += 1;
       }
       // this does the actual heavy lifting of inserting ad stuffs
-      console.log("handleAdCodeInjection index: " + index, " current: " + current);
-      insertAdBeforePage(ad_html, index);
+      console.log("handleAdCodeInjection | index: " + desired_page_index, " current: " + current);
+      insertAdBeforePage(ad_html, desired_page_index);
     };
 
     // check to see if we should show an ad here
@@ -125,16 +102,47 @@ Verge.Pages = (function ($) {
     $(document).off(Vox.EditorialApps.AdHelpers.Events.AdResponseWithHTML, handleAdCodeInjection);
     // ==========================================================================================
 
+  };
+
+  /* ------- End - Ad Handling ------------------------*/
+
+  var goToPage = function (index) {
+    console.log("goToPage | (going to) index: " + index);
+    var $current_page, $next_page, out_class, in_class;
+
+    if (is_animating) {
+      return false;
+    }
+
+    if (index >= pages_count || index < 0 || index === current) {
+      goToSamePage(index);
+      return false;
+    }
+
+    total_pages_seen += 1;
+
+    console.log("goToPage | current: " + current);
+
+    if (index > current) {
+      out_class = 'to-left';
+      in_class = 'from-right';
+    } else {
+      out_class = 'to-right';
+      in_class = 'from-left';
+    }
+
+    is_animating = true;
+
     $body.removeClass('open-nav');
 
     $current_page = $pages.eq(current);
 
-    // Might need to be moved a bit...
-    removeAdIfWasJustSeen(current);
+    checkForAdContent(index);
 
     current = index;
-
     $next_page = $pages.eq(current).addClass('current');
+
+    console.log("goToPage | now current: " + current);
 
     $current_page.addClass(out_class).on(animation_end_event, function() {
       $current_page.off(animation_end_event);
@@ -155,6 +163,10 @@ Verge.Pages = (function ($) {
         updatePageUrl($next_page);
       }
     });
+
+    // Might need to be moved a bit...
+    removeAdIfWasJustSeen(current);
+
 
     if(!support) {
       onEndAnimation($next_page, $current_page);
@@ -270,7 +282,7 @@ Verge.Pages = (function ($) {
   var setupPages = function(){
     $pages = $main.children('li');
     pages_count = $pages.length;
-    console.log("setupPages called: ", $pages, "length: " + pages_count);
+    console.log("setupPages length: " + pages_count);
   };
 
   var init = function () {
@@ -295,7 +307,7 @@ Verge.Pages = (function ($) {
     } else {
       $pages.eq(current).addClass('current');
     }
-  }
+  };
 
   init();
 
