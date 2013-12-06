@@ -1,10 +1,10 @@
 @mixin din($font_size: inherit, $font_weight: normal, $font_style: normal, $text_transform: uppercase, $line_height: 1) {
   @if $font_weight == bold {
-    font-family: DINNextLTPro-BoldCondensed;
+    font-family: 'DINNextLTPro-BoldCondensed', sans-serif;
   } @else if $font_weight == heavy {
-    font-family: DINNextLTPro-HeavyCondensed;
+    font-family: 'DINNextLTPro-HeavyCondensed', sans-serif;
   } @else {
-    font-family: DINNextLTPro-Condensed;
+    font-family: 'DINNextLTPro-Condensed', sans-serif;
   }
   font-style: $font_style;
   font-size: $font_size;
