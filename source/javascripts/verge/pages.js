@@ -175,12 +175,15 @@ Verge.Pages = (function ($) {
     }
   };
 
-  var clickToPage = function () {
+  var clickToPage = function (e) {
     var $link = $(this),
         page_id = $link.data('page');
 
-    goToId(page_id);
-    return false;
+    if (e.which === 1 && !e.metaKey && !e.ctrlKey) {
+      e.preventDefault();
+      goToId(page_id);
+    }
+
   };
 
   var init = function () {
