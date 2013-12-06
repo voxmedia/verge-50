@@ -1,0 +1,37 @@
+categories:
+  - category: &world-changers
+      name: The World Changers
+      position: 1
+  - category: &dreamers
+      name: The Dreamers
+      position: 2
+  - category: &noisemakers
+      name: The Noisemakers
+      position: 3
+  - category: &informers
+      name: The Informers
+      position: 4
+  - category: &entertainers
+      name: The Entertainers
+      position: 5
+  - category: &old-guard
+      name: The Old Guard
+      position: 6
+  - category: &next-wave
+      name: The Next Wave
+      position: 7
+
+pages:
+  - name: intro
+    title: Intro
+    slug: intro
+    content: |-
+             <p>Hello this is dog. I can change this later.</p>
+  - name: credits
+    title: Credits
+    slug: credits
+    content: |-
+             <p>I made this. I'll change this later too.</p>
+  - name: full-list
+    title: The Fifty
+    slug: the-list

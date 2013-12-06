@@ -28,10 +28,8 @@ require 'csv'
 fields = []
 values = []
 csv.each_with_index do | line,index |
-  puts line.to_s
   line.strip!
   row = CSV.parse(line)[0]
-  puts row.inspect
   if index == 0
     fields = row
   else
@@ -45,8 +43,11 @@ csv.each_with_index do | line,index |
     end
   end
 end
-people_data = values
 
+d = YAML::load_file("data/foo.yml")
+m  = {:people=>values}.merge(d)
+
+File.open("data/content.json","w"){|f| f << JSON.dump(m)}
 
 if File.exist?("oauth2.json")
   s = JSON.parse(File.read("oauth2.json"))
@@ -54,11 +55,12 @@ if File.exist?("oauth2.json")
   s["token_credential_uri"] = "https://accounts.google.com/o/oauth2/token"
   File.open("oauth2.json","w"){|f| f << JSON.dump(s) } 
 end
-puts people_data.inspect
 
 
+data = JSON.load(File.read('data/content.json'))
 
-people_data.each do |person|
+
+data['people'].each do |person|
   proxy "/#{person['slug']}/index.html", "index.html", :locals => { :person => person, :page => 'list' }
 end
 
