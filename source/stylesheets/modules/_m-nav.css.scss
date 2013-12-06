@@ -1,14 +1,42 @@
 $m : '.m-nav';
 
 #{$m} {
+  @include transform(translate3d(0, 0, 0));
+  @extend %enable_touch_scroll;
   background: #000;
-  display: block;
   position: absolute;
   margin: 0;
+  padding: 10px;
   top: 0;
   left: $nav_width * -1;
   width: $nav_width;
   height: 100%;
-  overflow-y: scroll;
-  display: block;
+  z-index: 2;
+}
+
+#{$m}__list {
+  margin: 0.5em 0;
+}
+
+#{$m}__category {
+  @include din($font_size: 18px);
+  color: $red;
+  border-bottom: 1px solid;
+}
+
+#{$m}__list-item {
+  @include din($font_size: 18px, $line_height: 1.25);
+  
+  a {
+    display: block;
+    text-decoration: none;
+  }
+
+  a:link, a:visited {
+    color: #fff;
+  }
+
+  a:hover, a:active {
+    color: $red;
+  }
 }

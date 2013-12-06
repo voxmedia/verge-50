@@ -8,6 +8,7 @@ Verge.Pages = (function ($) {
       $pages = $main.children('li'),
       $next = $('.m-header__next'),
       $previous = $('.m-header__previous'),
+      $page_links = $('a[data-page]'),
       pages_count = $pages.length,
       page_class = 'm-pages__page',
       current = 0,
@@ -71,7 +72,7 @@ Verge.Pages = (function ($) {
       $current_page.off(animation_end_event);
       end_current_page = true;
       if(end_next_page) {
-        onEndAnimation($current_page, $next_page);
+        onEndAnimation($next_page, $current_page);
         updatePageTitle($next_page);
         updatePageUrl($next_page);
       }
@@ -81,14 +82,14 @@ Verge.Pages = (function ($) {
       $next_page.off(animation_end_event);
       end_next_page = true;
       if(end_current_page) {
-        onEndAnimation($current_page, $next_page);
+        onEndAnimation($next_page, $current_page);
         updatePageTitle($next_page);
         updatePageUrl($next_page);
       }
     });
 
     if(!support) {
-      onEndAnimation($current_page, $next_page);
+      onEndAnimation($next_page, $current_page);
       updatePageTitle($next_page);
       updatePageUrl($next_page);
     }
@@ -109,7 +110,7 @@ Verge.Pages = (function ($) {
     if(support) {
       $current_page.addClass(animation_class).on(animation_end_event, function() {
         $current_page.off(animation_end_event);
-        onEndAnimation($current_page, $current_page);
+        onEndAnimation($current_page);
       });
     }
   };
@@ -134,12 +135,15 @@ Verge.Pages = (function ($) {
     }
   };
 
-  var onEndAnimation = function($out_page, $in_page) {
+  var onEndAnimation = function($in_page, $out_page) {
     end_current_page = false;
     end_next_page = false;
     is_animating = false;
-    $out_page.attr({ class : $out_page.data().original_class });
-    $in_page.attr({ class : $in_page.data().original_class + ' current' });
+    $in_page.attr({ class : $in_page.data().original_class + ' current' }).css('overflowY', 'hidden');
+    _.delay(function () { $in_page.css('overflowY', 'scroll')}, 10);
+    if (typeof $out_page !== 'undefined') {
+      $out_page.attr({ class : $out_page.data().original_class }).scrollTop(0);
+    }
   };
 
   var updatePageUrl = function ($page) {
@@ -166,10 +170,18 @@ Verge.Pages = (function ($) {
     var id = $page.attr('id'),
         name = $page.data('name');
     if (id) {
-      document.title = "The Verge Fifty" + " – " + name;
+      document.title = name + " | " + Verge.context.app_name;
     } else {
-      document.title = "The Verge Fifty";
+      document.title = Verge.context.app_name;
     }
+  };
+
+  var clickToPage = function () {
+    var $link = $(this),
+        page_id = $link.data('page');
+
+    goToId(page_id);
+    return false;
   };
 
   var init = function () {
@@ -178,6 +190,7 @@ Verge.Pages = (function ($) {
 
     $next.on('click', nextPage);
     $previous.on('click', previousPage);
+    $page_links.on('click', clickToPage);
     $(document).on('keydown', keyboardNav);
 
     $pages.each(function() {

@@ -1,51 +1,1162 @@
 categories:
   - category: &world-changers
       name: The World Changers
+      position: 1
   - category: &dreamers
       name: The Dreamers
+      position: 2
   - category: &noisemakers
       name: The Noisemakers
+      position: 3
   - category: &informers
       name: The Informers
+      position: 4
   - category: &entertainers
       name: The Entertainers
+      position: 5
   - category: &old-guard
       name: The Old Guard
+      position: 6
   - category: &next-wave
       name: The Next Wave
+      position: 7
 
 people:
+  
+  # BEGIN PERSON 1
   - name: Elon Musk
     sort_name: musk
     slug: elon-musk
     position: 1
     category:
       <<: *world-changers
-    bio: Inventor
-    content: Lorem <b>ipsum</b>
+    title:
+      - Inventor, Entrepreneur
+    age: 50
+    blurb: |-
+           <p>“I’ve said I want to die on Mars. Just not on impact.”</p>
+
+           <p>If anyone on Earth said that, you’d smirk, write it off, and move on. Anyone except perhaps Elon Musk, the South African-born billionaire who has made no small plans since earning a fortune selling PayPal to eBay in 2002. In the years since, Musk has spent most of his time floating preposterous ideas and making good on them one by one.</p>
+
+           <p>First came SpaceX, the commercial space venture that has landed government contracts, hovered a reusable launch vehicle over the <a href="http://www.theverge.com/2013/3/11/4088932/spacex-reusable-rocket-prototype-grasshopper-leaps-to-new-record">Texas skies</a>, and successfully docked a spacecraft with the International Space Station, all with the long-term goal of sending humans to Mars. Space travel, historically the exclusive domain of massive government budgets, is suddenly a viable private venture thanks in part to SpaceX. </p>
+
+           <p>Speaking of expensive, entrenched industries with enormously high barriers of entry, there’s Tesla, the electric automaker founded in 2003. Tesla turned its first profit this year, beating giants to the market in the process with a mass-produced, all-electric family sedan.</p>
+
+           <p>But Tesla might be the tamest, least surprising thing Musk ends up doing in his career as a billionaire with big ideas: he recently proposed and laid out plans for the Hyperloop, an ultra-high-speed mass transit system.</p>
+
+           <p>Rockets, cars of the future, and a gesture-controlled laboratory all underwritten by a seemingly limitless supply of money? It’s no wonder Musk is frequently called a real-life Tony Stark.</p>
     achievements:
       - Founded PayPal
       - Founded SpaceX
       - Founded Tesla
+  # END PERSON 1
+
+  
+  # BEGIN PERSON 2
   - name: Jeff Bezos
     sort_name: bezos
     slug: jeff-bezos
     position: 2
     category:
       <<: *world-changers
-    bio: Inventor
-    content: Lorem <b>ipsum</b>
+    title:
+      - TK
+    age: 49
+    blurb: |-
+           <p>&#8220;Invention requires a long-term willingness to be misunderstood,” Jeff Bezos has said, and in the course of his two-decade career he’s been plenty willing.  Bezos’ company, Amazon.com, has since its founding as an online bookstore in 1994 completely revolutionized the way millions of people shop. The Kindle, which debuted in 2007, became the first explosively popular e-reader. </p>
+
+           <p>This year, while many of his colleagues took the death of print media as a given, Bezos spent money from his own pocket to buy the <em>Washington Post</em>. And in the face of unprecedented concerns about data access he launched Mayday, a next-level customer service feature that lets Amazon reps literally hijack your tablet. </p>
+
+           <p>Now Bezos is squeezing every last drop of delay out of Amazon&#8217;s supply chain, paying the Postal Service for Sunday parcel runs and promising an army of delivery drones for 2015. None of these ideas — e-commerce, e-readers, or faster package delivery — were wholly new when Bezos picked them up. But his singular vision, enthusiasm, and seemingly ruthless business acumen have simultaneously crushed competitors and created new avenues for huge businesses in the process.</p>
     achievements:
-      - Founded Amazon
-      - Laughs really loudly
+      - Founder and CEO, Amazon.com
+      - Founder, Blue Origin, human space-flight startup
+      - Owner, *Washington Post*, purchased in August, 2013 for $250 million
+  # END PERSON 2
+
+  
+  # BEGIN PERSON 3
   - name: Marissa Mayer
     sort_name: mayer
     slug: marissa-mayer
     position: 3
     category:
-      <<: *old-guard
-    bio: CEO
-    content: Lorem <b>ipsum</b>
+      <<: *world-changers
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           <p>Marissa Mayer shocked the world when she left Google in 2012 to take the reins at fading internet giant Yahoo. At Google, where she’d been for more than a decade, Mayer held many positions: engineer, product manager, designer, and ultimately part of the executive team.</p>
+
+           <p>In the year since she became CEO of Yahoo, she’s jump-started the company&#8217;s product lineup, modernizing nearly every app and service that Yahoo offers while bringing on hundreds of talented engineers and designers through strategic acquisitions, including the $1.1 billion purchase of Tumblr. Today more than 400 million people use Yahoo&#8217;s mobile products every month, and its stock price is up more than 90 percent year over year. </p>
+
+           <p>These successes are due in large part to Mayer, whose focus on building great mobile apps has helped to revive one of the internet&#8217;s oldest brands. And her work extends beyond Yahoo — she sits on the boards of directors for Walmart and Jawbone as well as Yahoo, and works with nonprofit institutions including the San Francisco Ballet and San Francisco Museum of Modern Art. She is also the first CEO of a Fortune 500 company to be featured in a photo spread in the September issue of <em>Vogue</em>. </p>
     achievements:
-      - Did stuff at Google
-      - Does stuff at Yahoo
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  # END PERSON 3
+
+  
+  # BEGIN PERSON 4
+  - name: Daniek Ek
+    sort_name: ek
+    slug: daniel-ek
+    position: 4
+    category:
+      <<: *world-changers
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           <p>Depending on whom you ask, Daniel Ek, the founder and CEO of streaming music service Spotify, is either saving the music industry or destroying it. </p>
+
+           <p>A Swedish entrepreneur who founded his first company at age 14, Ek was formerly the CEO of uTorrent, the world’s largest BitTorrent client. By founding Spotify in 2006 Ek says he was simply trying to solve an “annoying” problem, not become the head of one of the world’s leading music services. He aims to avoid piracy and work with the major labels, providing an affordable, reliable streaming music service in the process. </p>
+
+           <p>Spotify, now valued above $4 billion, flourishes while its struggling rivals like Rdio and Rhapsody appear poised for extinction as they lay off staff. Spotify’s services, beloved by its 6 million paying customers, are unsurprisingly controversial with music-makers. Ek’s next goal is to gain a dominant position within the market so he can negotiate better royalty payments for artists. Because while artists accuse the company of paying them a pittance for the right to stream their tracks, Spotify, even with all those subscribers, has yet to turn a profit. </p>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  # END PERSON 4
+
+  
+  # BEGIN PERSON 5
+  - name: Glenn Greenwald
+    sort_name: greenwald
+    slug: glenn-greenwald
+    position: 5
+    category:
+      <<: *world-changers
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           <p>In early 2013, Glenn Greenwald, a former lawyer who’d turned to blogging during several Bush-era scandals, was a columnist for <em>The Guardian</em>. He’d written four books; much of his work focused on constitutional law and civil liberties in post-9/11 America. His work brought him to the attention of Edward Snowden, an unknown former NSA contractor who had secretly copied a trove of classified documents. Snowden’s next move — giving them to Greenwald, documentary filmmaker Laura Poitras, and <em>Washington Post</em> reporter Barton Gellman — changed both Snowden’s life and Greenwald’s career trajectory. In June <em>The Guardian</em> began publishing revelatory details of the NSA’s mass-surveillance programs — a story that continues to dominate headlines worldwide. Greenwald, a respected reporter but by no means a household name, was suddenly a very outspoken star.</p>
+
+           <p>Greenwald has used the spotlight to take American journalism to task — it’s failed, he says, in its duty to provide “an adversarial check on the most powerful political and economic factions,” and grown too close to the political and economic powers it’s supposed to monitor. </p>
+
+           <p>Next, with the financial backing of billionaire eBay founder Pierre Omidyar, he and other high-profile journalists will set out to restore passion and vitality to their craft with a new news venture expected to launch in 2014. With Greenwald at the helm, it’s unlikely to be a quiet affair.</p>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  # END PERSON 5
+
+  
+  # BEGIN PERSON 6
+  - name: Zaha Hadid
+    sort_name: hadid
+    slug: zaha-hadid
+    position: 6
+    category:
+      <<: *world-changers
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           <p>Zaha Hadid is one of today’s most celebrated and influential architects — a bold and barrier-breaking designer who has earned a reputation for pushing her field toward more imaginative frontiers. </p>
+
+           <p>Hadid was born and raised in Iraq and has spent the last 40 years in London, where her firm is headquartered. She hasn’t been back to Iraq in decades, but she says it was the rolling dunes and Sumerian ruins of her childhood that sparked her love for architecture at an early age. Her career took off in 1982, when she won a contract to design the never-realized Peak leisure complex in Hong Kong. She soon became known for her curvaceous, sometimes logic-defying aesthetic. Her propensity for futuristic, spectacular designs proved difficult to realize at first, though the past decade has seen an outpouring of Hadid buildings across the globe, raising her to celebrity status in a field traditionally dominated by men. </p>
+
+           <p>In 2004, she became the first woman — and the first Muslim — to win the Pritzker Architecture Prize, and she won the Stirling Prize in both 2010 and 2011. Today, her firm has more than 950 current projects in 44 countries, including the breathtaking Heydar Aliyev center in Azerbaijan, Rome’s MAXXI museum, and most recently the upcoming World Cup stadium in Qatar.    </p>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  # END PERSON 6
+
+  
+  # BEGIN PERSON 7
+  - name: Neil deGrasse Tyson
+    sort_name: tyson
+    slug: neil-degrasse-tyson
+    position: 7
+    category:
+      <<: *world-changers
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           <p>As an astrophysicist, Neil deGrasse Tyson has plenty of accomplishments to his name: he’s the director of the Hayden Planetarium at New York’s American Museum of Natural History, an advisor on the US government&#8217;s space exploration program, and the recipient of 18 honorary degrees. </p>
+
+           <p>But it’s his role as the internet’s favorite scientist that has turned deGrasse Tyson into a bona fide astrophysics rockstar — one with upwards of 1.5 million Twitter followers, a radio show, and an upcoming role hosting the reboot of <em>Cosmos: A Personal Voyage</em>. And while he may not relish the hyper-public profile, deGrasse Tyson tries to put it to good use. “It’s not my goal to do all that I’m doing,” he says. “But I feel a duty to perform this public service, and to help people realize that the fruits of science transform how we live.” With <em>Cosmos</em> now in post-production, deGrasse Tyson hopes to resume the academic research — primarily an analysis of data from the Hubble Space Telescope — that he’s recently been too busy to focus on. </p>
+
+           <p>Even if he steps away from the spotlight, there’s still one place fans will be sure to find him: on Twitter. “Nobody asks me to tweet, but I do it because it comes quite naturally,” he says. “At the rate I’m going, I could keep churning them out for decades to come.”</p>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  # END PERSON 7
+
+  
+  # BEGIN PERSON 8
+  - name: Markus “Notch” Persson
+    sort_name: notch
+    slug: notch
+    position: 8
+    category:
+      <<: *world-changers
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           <p>In the world of video games, Swedish programmer Markus Persson is a poster boy for the ultimate startup fantasy. In 2009 he left his employer, an established game developer, to focus on a side project. Today, that game — <em>Minecraft</em> — has sold more than 33 million copies as a franchise, spawned countless memes and merchandise, and even inspires a yearly conference called Minecon. </p>
+
+           <p>One of the most successful independent titles ever, <em>Minecraft</em>’s seemingly simple open world has had an unmistakable influence on the gaming industry at large. Persson — who goes by “Notch” — has risen to prominence in the independent games scene and beyond, commanding respect and reverence at major events like the Game Developers Conference. </p>
+
+           <p>These days, Persson no longer develops for or plays <em>Minecraft</em>, but he’s still working on experimental designs. “We try to make games we want to make for the sake of making fun games and not necessarily to make a profit,” Persson tells The Verge. “Just make games for yourself and try to have a critical eye to what you do.”</p>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  # END PERSON 8
+
+  
+  # BEGIN PERSON 9
+  - name: Anne Wojcicki
+    sort_name: wojcicki
+    slug: anne-wojcicki
+    position: 9
+    category:
+      <<: *world-changers
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           <p>Anne Wojcicki co-founded 23andMe in 2006 with Linda Avey and Paul Cusenza. With a background in both biology and health care, Wojcicki was uniquely positioned to launch one of the first — and now the most successful — personal DNA-testing services in the world. At the time of the company’s launch, personal DNA testing was prohibitively expensive; one of 23andMe’s goals was to make it affordable. By 2013 the test’s price was $99 with the goal of getting 1 million tests into 23andMe’s database, and nearly half that many completed. </p>
+
+           <p>The data, which 23andMe also uses for large-scale genetic research into diseases such as Parkinson’s, is its most valuable asset. But Wojcicki’s company is currently threatened following demands of a shutdown from the FDA, raising questions about the accuracy of its data and potential public health consequences. 23andMe continues to sell its saliva test and promises to cooperate with the government, but Wojcicki — named the “most daring CEO in America” by <em>Fast Company</em> in 2013 — has much to prove in 2014. </p>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  # END PERSON 9
+
+  
+  # BEGIN PERSON 10
+  - name: Tavi Gevinson
+    sort_name: gevinson
+    slug: tavi-gevinson
+    position: 10
+    category:
+      <<: *world-changers
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           <p>Illinois native Tavi Gevinson started her fashion blog <em>Style Rookie</em> at age 11 in 2008. Combining musings about fashion icons and runway models with pictures of Gevinson’s own eccentric outfits, <em>Style Rookie</em> almost immediately captured the attention of the high fashion world. Within two years Gevinson had appeared in an ad campaign for Rodarte — one of her favorite labels — and been invited as a special guest to New York Fashion Week. </p>
+
+           <p>In 2011, at age 15, she used her blogging experience to launch <em>Rookie</em>, a website aimed at teen girls and conceived as a successor to the smart, iconic ‘90s magazine <em>Sassy</em>. Today, <em>Rookie</em> has over 450,000 unique visitors and 1.2 million visits a month, and Gevinson has published two volumes of a printed <em>Rookie Yearbook</em> which collects illustrations, essays, and interviews with subjects like Morrissey, Emma Watson, and Neil deGrasse Tyson. “Gevinson and friends are forces of nature, a counterbalance to the Manic Pixie Dream Girl, and a great and good face for a new, vigorous, unapologetic feminism,” writes Cory Doctorow in a review of the second volume. </p>
+
+           <p>As she branches out from fashion and publishing, Gevinson is making forays into acting, appearing in 2013 comedy <em>Enough Said</em> alongside Julia Louis-Dreyfus and the late James Gandolfini. She is currently applying to college and will graduate from high school in 2014.</p>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  # END PERSON 10
+
+  
+  # BEGIN PERSON 11
+  - name: Jack Dorsey
+    sort_name: dorsey
+    slug: jack-dorsey
+    position: 11
+    category:
+      <<: *world-changers
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           <p>When the Twitter movie comes, and it&#8217;s <em>only</em> a matter of time, Jack Dorsey will be front and center. He&#8217;s a rare breed that&#8217;s struck billion-dollar startup gold twice as the co-founder of Twitter and CEO and founder of Square, the innovative digital-payments company rumored to be going public in 2014. </p>
+
+           <p>Since Dorsey and co-founder Biz Stone built a twttr prototype in two short weeks in 2006, Twitter&#8217;s 140 characters have upended how we think about serious breaking news and live events, all mixed in with the weird, funny, roiling mass of humanity riffing, joking, and complaining every moment of the day. </p>
+
+           <p>Aaron Sorkin would be thrilled with the raw material: Dorsey&#8217;s the handsome public face and roguish intellect of Twitter. He&#8217;s got a penchant for yoga and fashion, constantly <a href="https://twitter.com/jack">spouts off koan-like Tweets</a>, and the brief zen moments of Dorsey&#8217;s trademark <a href="https://vine.co/v/b2qH2U5ZdQ1">Vine selfies</a> would be the perfect on-screen foil to the company&#8217;s juicy history of power struggles and boardroom battles. Dorsey might not be the flashy Richard Branson-spaceport-tycoon brand of rich and famous, but America&#8217;s sixth-youngest billionaire is just as interesting.  </p>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  # END PERSON 11
+
+  
+  # BEGIN PERSON 12
+  - name: Jonathan Ive
+    sort_name: ive
+    slug: jonathan-ive
+    position: 12
+    category:
+      <<: *world-changers
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           <p>Jony Ive’s resume is short — he’s worked at Apple since 1992, with only a brief, failed toilet-designing stint beforehand — but his legacy is long. From the colorful iMac G3 that stood out in a sea of boxy black PCs to the sleek, machinated iPod that was at once beautiful and intuitive, Ive’s made a career of designing products that are often imitated and rarely equaled — from Apple&#8217;s iconic white headphones to the iPad, Apple&#8217;s products are among the industry&#8217;s most distinctive. Steve Jobs called the native Londoner &#8220;a spiritual partner,&#8221; and after Jobs&#8217; passing Ive&#8217;s influence has only grown: new CEO Tim Cook named him senior vice president of design and tasked him with both hardware and software design. Ive wasted no time in remaking iOS in his own image — simple, beautiful, accessible — and if history is any indication, the copycats will be countless. But by then, Ive will probably be working on something new anyway.</p>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  # END PERSON 12
+
+  
+  # BEGIN PERSON 13
+  - name: Elon Musk
+    sort_name: musk
+    slug: elon-musk
+    position: 13
+    category:
+      <<: *world-changers
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           <p>Lorem <b>ipsum</b></p>
+           <p>HTML works here.</p>
+           <p>Just keep the |- at the top, and make sure the text is aligned with the |<p>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  # END PERSON 13
+
+  
+  # BEGIN PERSON 14
+  - name: Elon Musk
+    sort_name: musk
+    slug: elon-musk
+    position: 14
+    category:
+      <<: *world-changers
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           <p>Lorem <b>ipsum</b></p>
+           <p>HTML works here.</p>
+           <p>Just keep the |- at the top, and make sure the text is aligned with the |<p>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  # END PERSON 14
+
+  
+  # BEGIN PERSON 15
+  - name: Elon Musk
+    sort_name: musk
+    slug: elon-musk
+    position: 15
+    category:
+      <<: *world-changers
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           <p>Lorem <b>ipsum</b></p>
+           <p>HTML works here.</p>
+           <p>Just keep the |- at the top, and make sure the text is aligned with the |<p>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  # END PERSON 15
+
+  
+  # BEGIN PERSON 16
+  - name: Elon Musk
+    sort_name: musk
+    slug: elon-musk
+    position: 16
+    category:
+      <<: *world-changers
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           <p>Lorem <b>ipsum</b></p>
+           <p>HTML works here.</p>
+           <p>Just keep the |- at the top, and make sure the text is aligned with the |<p>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  # END PERSON 16
+
+  
+  # BEGIN PERSON 17
+  - name: Elon Musk
+    sort_name: musk
+    slug: elon-musk
+    position: 17
+    category:
+      <<: *world-changers
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           <p>Lorem <b>ipsum</b></p>
+           <p>HTML works here.</p>
+           <p>Just keep the |- at the top, and make sure the text is aligned with the |<p>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  # END PERSON 17
+
+  
+  # BEGIN PERSON 18
+  - name: Elon Musk
+    sort_name: musk
+    slug: elon-musk
+    position: 18
+    category:
+      <<: *world-changers
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           <p>Lorem <b>ipsum</b></p>
+           <p>HTML works here.</p>
+           <p>Just keep the |- at the top, and make sure the text is aligned with the |<p>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  # END PERSON 18
+
+  
+  # BEGIN PERSON 19
+  - name: Elon Musk
+    sort_name: musk
+    slug: elon-musk
+    position: 19
+    category:
+      <<: *world-changers
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           <p>Lorem <b>ipsum</b></p>
+           <p>HTML works here.</p>
+           <p>Just keep the |- at the top, and make sure the text is aligned with the |<p>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  # END PERSON 19
+
+  
+  # BEGIN PERSON 20
+  - name: Elon Musk
+    sort_name: musk
+    slug: elon-musk
+    position: 20
+    category:
+      <<: *world-changers
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           <p>Lorem <b>ipsum</b></p>
+           <p>HTML works here.</p>
+           <p>Just keep the |- at the top, and make sure the text is aligned with the |<p>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  # END PERSON 20
+
+  
+  # BEGIN PERSON 21
+  - name: Elon Musk
+    sort_name: musk
+    slug: elon-musk
+    position: 21
+    category:
+      <<: *world-changers
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           <p>Lorem <b>ipsum</b></p>
+           <p>HTML works here.</p>
+           <p>Just keep the |- at the top, and make sure the text is aligned with the |<p>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  # END PERSON 21
+
+  
+  # BEGIN PERSON 22
+  - name: Elon Musk
+    sort_name: musk
+    slug: elon-musk
+    position: 22
+    category:
+      <<: *world-changers
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           <p>Lorem <b>ipsum</b></p>
+           <p>HTML works here.</p>
+           <p>Just keep the |- at the top, and make sure the text is aligned with the |<p>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  # END PERSON 22
+
+  
+  # BEGIN PERSON 23
+  - name: Elon Musk
+    sort_name: musk
+    slug: elon-musk
+    position: 23
+    category:
+      <<: *world-changers
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           <p>Lorem <b>ipsum</b></p>
+           <p>HTML works here.</p>
+           <p>Just keep the |- at the top, and make sure the text is aligned with the |<p>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  # END PERSON 23
+
+  
+  # BEGIN PERSON 24
+  - name: Elon Musk
+    sort_name: musk
+    slug: elon-musk
+    position: 24
+    category:
+      <<: *world-changers
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           <p>Lorem <b>ipsum</b></p>
+           <p>HTML works here.</p>
+           <p>Just keep the |- at the top, and make sure the text is aligned with the |<p>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  # END PERSON 24
+
+  
+  # BEGIN PERSON 25
+  - name: Elon Musk
+    sort_name: musk
+    slug: elon-musk
+    position: 25
+    category:
+      <<: *world-changers
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           <p>Lorem <b>ipsum</b></p>
+           <p>HTML works here.</p>
+           <p>Just keep the |- at the top, and make sure the text is aligned with the |<p>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  # END PERSON 25
+
+  
+  # BEGIN PERSON 26
+  - name: Elon Musk
+    sort_name: musk
+    slug: elon-musk
+    position: 26
+    category:
+      <<: *world-changers
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           <p>Lorem <b>ipsum</b></p>
+           <p>HTML works here.</p>
+           <p>Just keep the |- at the top, and make sure the text is aligned with the |<p>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  # END PERSON 26
+
+  
+  # BEGIN PERSON 27
+  - name: Elon Musk
+    sort_name: musk
+    slug: elon-musk
+    position: 27
+    category:
+      <<: *world-changers
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           <p>Lorem <b>ipsum</b></p>
+           <p>HTML works here.</p>
+           <p>Just keep the |- at the top, and make sure the text is aligned with the |<p>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  # END PERSON 27
+
+  
+  # BEGIN PERSON 28
+  - name: Elon Musk
+    sort_name: musk
+    slug: elon-musk
+    position: 28
+    category:
+      <<: *world-changers
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           <p>Lorem <b>ipsum</b></p>
+           <p>HTML works here.</p>
+           <p>Just keep the |- at the top, and make sure the text is aligned with the |<p>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  # END PERSON 28
+
+  
+  # BEGIN PERSON 29
+  - name: Elon Musk
+    sort_name: musk
+    slug: elon-musk
+    position: 29
+    category:
+      <<: *world-changers
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           <p>Lorem <b>ipsum</b></p>
+           <p>HTML works here.</p>
+           <p>Just keep the |- at the top, and make sure the text is aligned with the |<p>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  # END PERSON 29
+
+  
+  # BEGIN PERSON 30
+  - name: Elon Musk
+    sort_name: musk
+    slug: elon-musk
+    position: 30
+    category:
+      <<: *world-changers
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           <p>Lorem <b>ipsum</b></p>
+           <p>HTML works here.</p>
+           <p>Just keep the |- at the top, and make sure the text is aligned with the |<p>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  # END PERSON 30
+
+  
+  # BEGIN PERSON 31
+  - name: Elon Musk
+    sort_name: musk
+    slug: elon-musk
+    position: 31
+    category:
+      <<: *world-changers
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           <p>Lorem <b>ipsum</b></p>
+           <p>HTML works here.</p>
+           <p>Just keep the |- at the top, and make sure the text is aligned with the |<p>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  # END PERSON 31
+
+  
+  # BEGIN PERSON 32
+  - name: Elon Musk
+    sort_name: musk
+    slug: elon-musk
+    position: 32
+    category:
+      <<: *world-changers
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           <p>Lorem <b>ipsum</b></p>
+           <p>HTML works here.</p>
+           <p>Just keep the |- at the top, and make sure the text is aligned with the |<p>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  # END PERSON 32
+
+  
+  # BEGIN PERSON 33
+  - name: Elon Musk
+    sort_name: musk
+    slug: elon-musk
+    position: 33
+    category:
+      <<: *world-changers
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           <p>Lorem <b>ipsum</b></p>
+           <p>HTML works here.</p>
+           <p>Just keep the |- at the top, and make sure the text is aligned with the |<p>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  # END PERSON 33
+
+  
+  # BEGIN PERSON 34
+  - name: Elon Musk
+    sort_name: musk
+    slug: elon-musk
+    position: 34
+    category:
+      <<: *world-changers
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           <p>Lorem <b>ipsum</b></p>
+           <p>HTML works here.</p>
+           <p>Just keep the |- at the top, and make sure the text is aligned with the |<p>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  # END PERSON 34
+
+  
+  # BEGIN PERSON 35
+  - name: Elon Musk
+    sort_name: musk
+    slug: elon-musk
+    position: 35
+    category:
+      <<: *world-changers
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           <p>Lorem <b>ipsum</b></p>
+           <p>HTML works here.</p>
+           <p>Just keep the |- at the top, and make sure the text is aligned with the |<p>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  # END PERSON 35
+
+  
+  # BEGIN PERSON 36
+  - name: Elon Musk
+    sort_name: musk
+    slug: elon-musk
+    position: 36
+    category:
+      <<: *world-changers
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           <p>Lorem <b>ipsum</b></p>
+           <p>HTML works here.</p>
+           <p>Just keep the |- at the top, and make sure the text is aligned with the |<p>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  # END PERSON 36
+
+  
+  # BEGIN PERSON 37
+  - name: Elon Musk
+    sort_name: musk
+    slug: elon-musk
+    position: 37
+    category:
+      <<: *world-changers
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           <p>Lorem <b>ipsum</b></p>
+           <p>HTML works here.</p>
+           <p>Just keep the |- at the top, and make sure the text is aligned with the |<p>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  # END PERSON 37
+
+  
+  # BEGIN PERSON 38
+  - name: Elon Musk
+    sort_name: musk
+    slug: elon-musk
+    position: 38
+    category:
+      <<: *world-changers
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           <p>Lorem <b>ipsum</b></p>
+           <p>HTML works here.</p>
+           <p>Just keep the |- at the top, and make sure the text is aligned with the |<p>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  # END PERSON 38
+
+  
+  # BEGIN PERSON 39
+  - name: Elon Musk
+    sort_name: musk
+    slug: elon-musk
+    position: 39
+    category:
+      <<: *world-changers
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           <p>Lorem <b>ipsum</b></p>
+           <p>HTML works here.</p>
+           <p>Just keep the |- at the top, and make sure the text is aligned with the |<p>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  # END PERSON 39
+
+  
+  # BEGIN PERSON 40
+  - name: Elon Musk
+    sort_name: musk
+    slug: elon-musk
+    position: 40
+    category:
+      <<: *world-changers
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           <p>Lorem <b>ipsum</b></p>
+           <p>HTML works here.</p>
+           <p>Just keep the |- at the top, and make sure the text is aligned with the |<p>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  # END PERSON 40
+
+  
+  # BEGIN PERSON 41
+  - name: Elon Musk
+    sort_name: musk
+    slug: elon-musk
+    position: 41
+    category:
+      <<: *world-changers
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           <p>Lorem <b>ipsum</b></p>
+           <p>HTML works here.</p>
+           <p>Just keep the |- at the top, and make sure the text is aligned with the |<p>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  # END PERSON 41
+
+  
+  # BEGIN PERSON 42
+  - name: Elon Musk
+    sort_name: musk
+    slug: elon-musk
+    position: 42
+    category:
+      <<: *world-changers
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           <p>Lorem <b>ipsum</b></p>
+           <p>HTML works here.</p>
+           <p>Just keep the |- at the top, and make sure the text is aligned with the |<p>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  # END PERSON 42
+
+  
+  # BEGIN PERSON 43
+  - name: Elon Musk
+    sort_name: musk
+    slug: elon-musk
+    position: 43
+    category:
+      <<: *world-changers
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           <p>Lorem <b>ipsum</b></p>
+           <p>HTML works here.</p>
+           <p>Just keep the |- at the top, and make sure the text is aligned with the |<p>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  # END PERSON 43
+
+  
+  # BEGIN PERSON 44
+  - name: Elon Musk
+    sort_name: musk
+    slug: elon-musk
+    position: 44
+    category:
+      <<: *world-changers
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           <p>Lorem <b>ipsum</b></p>
+           <p>HTML works here.</p>
+           <p>Just keep the |- at the top, and make sure the text is aligned with the |<p>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  # END PERSON 44
+
+  
+  # BEGIN PERSON 45
+  - name: Elon Musk
+    sort_name: musk
+    slug: elon-musk
+    position: 45
+    category:
+      <<: *world-changers
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           <p>Lorem <b>ipsum</b></p>
+           <p>HTML works here.</p>
+           <p>Just keep the |- at the top, and make sure the text is aligned with the |<p>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  # END PERSON 45
+
+  
+  # BEGIN PERSON 46
+  - name: Elon Musk
+    sort_name: musk
+    slug: elon-musk
+    position: 46
+    category:
+      <<: *world-changers
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           <p>Lorem <b>ipsum</b></p>
+           <p>HTML works here.</p>
+           <p>Just keep the |- at the top, and make sure the text is aligned with the |<p>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  # END PERSON 46
+
+  
+  # BEGIN PERSON 47
+  - name: Elon Musk
+    sort_name: musk
+    slug: elon-musk
+    position: 47
+    category:
+      <<: *world-changers
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           <p>Lorem <b>ipsum</b></p>
+           <p>HTML works here.</p>
+           <p>Just keep the |- at the top, and make sure the text is aligned with the |<p>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  # END PERSON 47
+
+  
+  # BEGIN PERSON 48
+  - name: Elon Musk
+    sort_name: musk
+    slug: elon-musk
+    position: 48
+    category:
+      <<: *world-changers
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           <p>Lorem <b>ipsum</b></p>
+           <p>HTML works here.</p>
+           <p>Just keep the |- at the top, and make sure the text is aligned with the |<p>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  # END PERSON 48
+
+  
+  # BEGIN PERSON 49
+  - name: Elon Musk
+    sort_name: musk
+    slug: elon-musk
+    position: 49
+    category:
+      <<: *world-changers
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           <p>Lorem <b>ipsum</b></p>
+           <p>HTML works here.</p>
+           <p>Just keep the |- at the top, and make sure the text is aligned with the |<p>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  # END PERSON 49
+
+  
+  # BEGIN PERSON 50
+  - name: Elon Musk
+    sort_name: musk
+    slug: elon-musk
+    position: 50
+    category:
+      <<: *world-changers
+    title:
+      - CEO of Tesla
+      - CEO of Space X
+    age: 50
+    blurb: |-
+           <p>Lorem <b>ipsum</b></p>
+           <p>HTML works here.</p>
+           <p>Just keep the |- at the top, and make sure the text is aligned with the |<p>
+    achievements:
+      - Founded PayPal
+      - Founded SpaceX
+      - Founded Tesla
+  # END PERSON 50
+
+
+
+pages:
+  - name: intro
+    title: Intro
+    slug: intro
+    content: |-
+             <p>Hello this is dog. I can change this later.</p>
+  - name: credits
+    title: Credits
+    slug: credits
+    content: |-
+             <p>I made this. I'll change this later too.</p>
+  - name: full-list
+    title: The Fifty
+    slug: the-list
