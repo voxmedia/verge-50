@@ -197,16 +197,11 @@ Verge.Pages = (function ($) {
     case keys.j:
     case keys.left:
       previousPage();
-<<<<<<< HEAD
-=======
       return false;
->>>>>>> master
       break;
     case keys.k:
     case keys.right:
       nextPage();
-<<<<<<< HEAD
-=======
       return false;
       break;
     case keys.up:
@@ -216,7 +211,6 @@ Verge.Pages = (function ($) {
     case keys.down:
       goToPage($pages.length - 1);
       return false;
->>>>>>> master
       break;
     }
   };
