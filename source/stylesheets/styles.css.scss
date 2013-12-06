@@ -1,32 +1,11 @@
-@import 'normalize';
-@import 'config';
+@import 'fonts';
 @import 'compass';
-
-*, *:before, *:after {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
- }
-
-html, body {
-  height: 100%;
-}
-
-body {
-  padding-top: $header_height;
-}
-
-.no-js body {
-  overflow: auto;
-}
-
-%hide-text {
-  text-indent: -9999px;
-  overflow: hidden;
-}
-
+@import 'compass/reset';
+@import 'config';
+@import 'mixins';
+@import 'global';
 @import 'layouts/l-wraps';
-
 @import 'modules/m-header';
 @import 'modules/m-nav';
 @import 'modules/m-pages';
+@import 'modules/m-person';
