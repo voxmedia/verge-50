@@ -23,25 +23,6 @@ $m : '.m-pages';
     visibility: visible;
     z-index: 1;
   }
-
-  h1 {
-    font-size: 60px;
-    text-align: center;
-  }
-
-  h2 {
-    margin: 50px 0 0 0;
-    text-align: center;
-  }
-
-  p {
-    text-align: center;
-    margin: 0;
-  }
-
-  &.ad h1 {
-    -webkit-transform: none;
-  }
 }
 
 #{$m}__page.to-left {

@@ -76,4 +76,26 @@ module CustomHelpers
       end
     end
   end
+
+  def formatted_names(name)
+    formatted_names = ""
+    name.split('&').each do |n|
+      names = n.split(' ')
+      if names.size > 1
+        last = names.pop
+        first = names.join(' ')
+        formatted_names += "#{first} <i>#{last}</i>"
+      else
+        formatted_names += "<i>#{n}</i>"
+      end
+    end
+    formatted_names
+  end
+
+  def zero_padded(number)
+    if number < 10
+      number = "0" + number.to_s
+    end
+    number
+  end
 end
