@@ -217,10 +217,10 @@ Verge.Pages = (function ($) {
     });
 
     if (pathname && $('#' + pathname).length > 0) {
-      $('#' + pathname).addClass('current');
-      current = $('#' + pathname).index();
+      var $current_page = $('#' + pathname).addClass('current').css('overflow-y', 'auto');
+      current = current_page.index();
     } else {
-      $pages.eq(current).addClass('current');
+      $pages.eq(current).addClass('current').css('overflow-y', 'auto');
     }
   }
 
