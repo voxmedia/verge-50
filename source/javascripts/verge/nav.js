@@ -16,7 +16,7 @@ Verge.Nav = (function ($) {
       transition_end_event = transition_end_events[Modernizr.prefixed('transition')];
 
   var openNav = function () {
-    $nav.removeAttr('style');
+    $nav.removeAttr('style').scrollTop(0);
     $body.addClass(open_class);
     if (!Modernizr.csstransitions) {
       setOverflowManuallyBecauseSafariFuckingSucks();
