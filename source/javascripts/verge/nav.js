@@ -9,8 +9,6 @@ Verge.Nav = (function ($) {
 
   var openNav = function () {
     $body.addClass(open_class);
-    $nav.css('overflowY', 'hidden');
-    _.delay(function () { $nav.css('overflowY', 'scroll')}, 10);
     return false;
   };
 

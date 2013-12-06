@@ -9,7 +9,12 @@ Verge.Pages = (function ($) {
       $next = $('.m-header__next'),
       $previous = $('.m-header__previous'),
       $page_links = $('a[data-page]'),
+<<<<<<< HEAD
       pages_count = 0,
+=======
+      $body = $('body'),
+      pages_count = $pages.length,
+>>>>>>> master
       page_class = 'm-pages__page',
       total_pages_seen = 0,
       last_seen_ad_page_index = -1,
@@ -100,6 +105,9 @@ Verge.Pages = (function ($) {
 
     is_animating = true;
 
+    // =========================================================================================
+    // Ad Support
+    // -----------------------------------------------------------------------------------------
     var handleAdCodeInjection = function(e, ad_html) {
       // Handle the backward case
       if (index < current) {
@@ -119,7 +127,9 @@ Verge.Pages = (function ($) {
       currentPage: current
     });
     $(document).off(Vox.EditorialApps.AdHelpers.Events.AdResponseWithHTML, handleAdCodeInjection);
-    // -- ^^ -- END - Ad code functions -----------------------------------------
+    // ==========================================================================================
+
+    $body.removeClass('open-nav');
 
     $current_page = $pages.eq(current);
 
@@ -182,6 +192,8 @@ Verge.Pages = (function ($) {
         keys = {
             left: 37,
             right: 39,
+            up: 38,
+            down: 40,
             j: 74,
             k: 75
         };
@@ -189,10 +201,26 @@ Verge.Pages = (function ($) {
     case keys.j:
     case keys.left:
       previousPage();
+<<<<<<< HEAD
+=======
+      return false;
+>>>>>>> master
       break;
     case keys.k:
     case keys.right:
       nextPage();
+<<<<<<< HEAD
+=======
+      return false;
+      break;
+    case keys.up:
+      goToPage(0);
+      return false;
+      break;
+    case keys.down:
+      goToPage($pages.length - 1);
+      return false;
+>>>>>>> master
       break;
     }
   };
@@ -201,8 +229,7 @@ Verge.Pages = (function ($) {
     end_current_page = false;
     end_next_page = false;
     is_animating = false;
-    $in_page.attr({ class : $in_page.data().original_class + ' current' }).css('overflowY', 'hidden');
-    _.delay(function () { $in_page.css('overflowY', 'scroll')}, 10);
+    $in_page.attr({ class : $in_page.data().original_class + ' current' });
     if (typeof $out_page !== 'undefined') {
       $out_page.attr({ class : $out_page.data().original_class }).scrollTop(0);
     }
@@ -238,12 +265,15 @@ Verge.Pages = (function ($) {
     }
   };
 
-  var clickToPage = function () {
+  var clickToPage = function (e) {
     var $link = $(this),
         page_id = $link.data('page');
 
-    goToId(page_id);
-    return false;
+    if (e.which === 1 && !e.metaKey && !e.ctrlKey) {
+      e.preventDefault();
+      goToId(page_id);
+    }
+
   };
 
   // Load up all em pages!
