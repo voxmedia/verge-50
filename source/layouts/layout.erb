@@ -27,10 +27,10 @@
 
         $(document).on(Vox.EditorialApps.AdHelpers.Events.AdRequest, function(e,data){
           console.log("asking hymnal for ad",data);
-          if(data.pagesSeen % 4 == 0) {
-            var $html = $("<h1>Hello from Hymnal!</h1>");
-            console.log("injecting something", $html);
-            $(document).trigger(Vox.EditorialApps.AdHelpers.Events.AdResponseWithHTML, $html);
+          if(data.pagesSeen == 2 || data.pagesSeen == 6) {
+            var html = "<h1>Hello from Hymnal!</h1>";
+            console.log("hymnal is emitting: ", html);
+            $(document).trigger(Vox.EditorialApps.AdHelpers.Events.AdResponseWithHTML, html);
             console.log("made it back!");
           }
         });
