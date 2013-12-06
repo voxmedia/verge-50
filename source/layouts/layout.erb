@@ -24,6 +24,10 @@
       <script type="text/javascript">
         // plop the thing here
         Vox.EditorialApps.Ads.render(Vox.EditorialApps.AdHelpers.AdUnitIds.VergeFishTank);
+
+        $(document).on(Vox.EditorialApps.AdHelpers.Events.AdRequest, function(e,data){
+          console.log("asking hymnal for ad",data,e);
+        });
       </script>
     </div>
 
