@@ -1,7 +1,10 @@
 $m : '.m-person';
 
 #{$m} {
+  @extend %clearfix;
   padding: 40px 0;
+  margin-bottom: 40px;
+  border-bottom: 15px solid #000;
 }
 
 #{$m}__content {
@@ -44,7 +47,7 @@ $m : '.m-person';
 }
 
 #{$m}__category {
-  @include din($font-size: 30px, $font_weight: bold);
+  @include din($font-size: 30px, $font_weight: bold, $line_height: 1.2);
   background: $red;
   display: block;
   float: right;
@@ -53,22 +56,46 @@ $m : '.m-person';
   padding-right:0.3em;
 }
 
-#{$m}__position {
-
-}
-
 #{$m}__info {
-  
+  @include din($font-size: 18px);  
+  background: #000;
+  color: #fff;
+  padding: 10px 10px 4px 10px;
+
+  p {
+    margin-bottom: 10px;
+  }
 }
 
 #{$m}__titles {
-
+  @include din($font-size: 18px, $font_weight: bold, $line_height: 1.2);
 }
 
 #{$m}__achievements {
+  background: #fff;
+  color: #000;
+  margin: 0 -10px;
+  padding: 5px 10px;
 
+  li {
+    margin: 10px 0;
+  }
 }
 
 #{$m}__blurb {
-  
+  p {
+    font-size: 16px;
+    color: $dark-grey;
+    margin: 1.5em 0;
+    line-height: 1.5;
+  }
+
+  a {
+    color: $red;
+    text-decoration: none;
+  }
+
+  a:hover, a:active {
+    border-bottom: 1px solid;
+  }
 }
