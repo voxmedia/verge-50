@@ -99,16 +99,16 @@ Verge.Pages = (function ($) {
 
     // check to see if we should show an ad here
     // Get ready for an event from hymnal
-    $(document).on(Vox.EditorialApps.Ads.Events.AdResponseWithHTML, handleAdCodeInjection);
+    $(document).on(Vox.EditorialApps.AdHelpers.Events.AdResponseWithHTML, handleAdCodeInjection);
 
     // See if hymnal has anything for us
-    $(document).triggerHandler(Vox.EditorialApps.Ads.Events.AdRequest, {
+    $(document).triggerHandler(Vox.EditorialApps.AdHelpers.Events.AdRequest, {
       pagesSeen: total_pages_seen,
       currentPage: current
     });
 
     // Event is over, stop listener
-    $(document).off(Vox.EditorialApps.Ads.Events.AdResponseWithHTML, handleAdCodeInjection);
+    $(document).off(Vox.EditorialApps.AdHelpers.Events.AdResponseWithHTML, handleAdCodeInjection);
     // -- ^^ -- END - Ad code functions -----------------------------------------
 
     $current_page = $pages.eq(current);

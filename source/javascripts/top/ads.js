@@ -1,12 +1,18 @@
 var Vox = Vox || {};
 Vox.EditorialApps = Vox.EditorialApps || {};
+Vox.EditorialApps.AdHelpers = Vox.EditorialApps.AdHelpers || {};
 
-Vox.EditorialApps.Ads.AdUnitIds = {
+// Handy place to keep these ad unit id numbers
+// Look in SBN config/openx.yml for a full listing
+Vox.EditorialApps.AdHelpers.AdUnitIds = {
   VergeFishTank: 463319
 };
 
-// Namespaces for events that this will use
-Vox.EditorialApps.Ads.Events = {
+
+// Namespaces for events that this will use to communicate
+// with ad executions on this page
+
+Vox.EditorialApps.AdHelpers.Events = {
   // This is used by Hymnal to let a vox property know that
   // there is HTML content ready to be inserted into the page
   AdResponseWithHTML: 'Vox.Ad.ResponseWithHTML',
@@ -16,9 +22,10 @@ Vox.EditorialApps.Ads.Events = {
   AdRequest:  'Hymnal.requestAd'
 };
 
+
 Vox.EditorialApps.Ads = (function() {
   // This should match the ad unit id from Chorus's config/openx.yml
-  var network_fishtank_ad_unit_id = Vox.EditorialApps.Ads.AdUnitIds.VergeFishTank;
+  var network_fishtank_ad_unit_id = Vox.EditorialApps.AdHelpers.AdUnitIds.VergeFishTank;
 
   // More tricky, view the source of the network to find this
   var network_umbel_api_key = 'lrjhazrpqbgtnrij';
