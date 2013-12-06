@@ -1,6 +1,17 @@
 var Vox = Vox || {};
 Vox.EditorialApps = Vox.EditorialApps || {};
 
+// Namespaces for events that this will use
+Vox.EditorialApps.Ads.Events = {
+  // This is used by Hymnal to let a vox property know that
+  // there is HTML content ready to be inserted into the page
+  AdResponseWithHTML: 'Vox.Ad.ResponseWithHTML',
+
+  // This is used to let hymnal know that the page is ready to receive
+  // ad code
+  AdRequest:  'Hymnal.requestAd'
+};
+
 Vox.EditorialApps.Ads = (function() {
   // This should match the ad unit id from Chorus's config/openx.yml
   var network_fishtank_ad_unit_id = 463319;
