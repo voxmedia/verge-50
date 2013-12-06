@@ -9,6 +9,7 @@ Verge.Pages = (function ($) {
       $next = $('.m-header__next'),
       $previous = $('.m-header__previous'),
       $page_links = $('a[data-page]'),
+      $body = $('body'),
       pages_count = $pages.length,
       page_class = 'm-pages__page',
       current = 0,
@@ -61,6 +62,8 @@ Verge.Pages = (function ($) {
     }
 
     is_animating = true;
+
+    $body.removeClass('open-nav');
 
     $current_page = $pages.eq(current);
 
