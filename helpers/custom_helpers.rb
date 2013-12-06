@@ -47,6 +47,7 @@ module CustomHelpers
 
   # Oh god this is horrible
   def rel_prev_next_links(page = nil, person = nil)
+    puts data.inspect
     if !person.nil?
       page = 'list'
     end
@@ -92,7 +93,8 @@ module CustomHelpers
     formatted_names
   end
 
-  def zero_padded(number)
+  def zero_padded(n)
+    number = n.to_i
     if number < 10
       number = "0" + number.to_s
     end

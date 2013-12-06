@@ -2,7 +2,7 @@
   <% data.content.categories.sort_by{ |c| c.category.position }.each do |c| %>
     <h2 class="m-nav__category"><%= c.category.name %></h2>
     <ol class="m-nav__list">
-      <% data.content.people.find_all{ |p| p.category.name == c.category.name }.sort_by{ |p| p.sort_name }.each do |p| %>
+      <% data.content.people.find_all{ |p| p.category == c.category.name }.sort_by{ |p| p.sort_name }.each do |p| %>
         <li class="m-nav__list-item"><a href="<%= page_url('list', p) %>" data-page="<%= p.slug %>"><%= p.name %></a></li>
       <% end %>
     </ol>
