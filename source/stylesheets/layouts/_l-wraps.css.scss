@@ -13,6 +13,13 @@
   height: 100%;
 }
 
+.l-content-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
 // Moves the main content off the screen depending on which side menu is open.
 // Uses translate3d for hardware acceleration;
 // falls back on changing the left property for browsers that don't support
