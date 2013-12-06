@@ -139,7 +139,8 @@ Verge.Pages = (function ($) {
     end_current_page = false;
     end_next_page = false;
     is_animating = false;
-    $in_page.attr({ class : $in_page.data().original_class + ' current' });
+    $in_page.attr({ class : $in_page.data().original_class + ' current' }).css('overflowY', 'hidden');
+    _.delay(function () { $in_page.css('overflowY', 'scroll')}, 10);
     if (typeof $out_page !== 'undefined') {
       $out_page.attr({ class : $out_page.data().original_class }).scrollTop(0);
     }
