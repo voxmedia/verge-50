@@ -26,7 +26,13 @@
         Vox.EditorialApps.Ads.render(Vox.EditorialApps.AdHelpers.AdUnitIds.VergeFishTank);
 
         $(document).on(Vox.EditorialApps.AdHelpers.Events.AdRequest, function(e,data){
-          console.log("asking hymnal for ad",data,e);
+          console.log("asking hymnal for ad",data);
+          if(data.pagesSeen % 4 == 0) {
+            var $html = $("<h1>Hello from Hymnal!</h1>");
+            console.log("injecting something", $html);
+            $(document).trigger(Vox.EditorialApps.AdHelpers.Events.AdResponseWithHTML, $html);
+            console.log("made it back!");
+          }
         });
       </script>
     </div>

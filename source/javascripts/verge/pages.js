@@ -45,8 +45,20 @@ Verge.Pages = (function ($) {
   /* ------- Start - Ad Handling ------------------------*/
   // Insert the ad markup and a fake menu item before the specified page
   function insertAdBeforePage(ad_html, index) {
-    var $adUnit = $('<li class="m-pages__page ad">'+ad_html + '</li>');
+    console.log("insertAdBeforePage at index: " + index);
+
+    var htmls = $(ad_html).html();
+    // // figure out what kind of thing this is
+    // if(ad_html instanceof jQuery){
+    //   htmls = ad_html.html();
+    // } else {
+    //   htmls = ad_html;
+    // }
+
+    var $adUnit = $('<li class="m-pages__page ad">' + htmls + '</li>');
     // jam this in right before this page
+    console.log("inserting",$adUnit);
+    console.log("will be inserted before: ", $pages.eq(index));
     $adUnit.insertBefore($pages.eq(index));
     last_seen_ad_page_index = index;
     // Rebuild the $pages array
@@ -88,26 +100,24 @@ Verge.Pages = (function ($) {
 
     is_animating = true;
 
-    // --vv-- START - Ad code functions -----------------------------------------
     var handleAdCodeInjection = function(e, ad_html) {
+      // Handle the backward case
       if (index < current) {
-        // Handle the backward case
         index += 1;
       }
+      // this does the actual heavy lifting of inserting ad stuffs
+      console.log("handleAdCodeInjection index: " + index, " current: " + current);
       insertAdBeforePage(ad_html, index);
     };
 
     // check to see if we should show an ad here
     // Get ready for an event from hymnal
+    //  to see if hymnal has anything for us
     $(document).on(Vox.EditorialApps.AdHelpers.Events.AdResponseWithHTML, handleAdCodeInjection);
-
-    // See if hymnal has anything for us
     $(document).triggerHandler(Vox.EditorialApps.AdHelpers.Events.AdRequest, {
       pagesSeen: total_pages_seen,
       currentPage: current
     });
-
-    // Event is over, stop listener
     $(document).off(Vox.EditorialApps.AdHelpers.Events.AdResponseWithHTML, handleAdCodeInjection);
     // -- ^^ -- END - Ad code functions -----------------------------------------
 
@@ -240,6 +250,7 @@ Verge.Pages = (function ($) {
   var setupPages = function(){
     $pages = $main.children('li');
     pages_count = $pages.length;
+    console.log("setupPages called: ", $pages, "length: " + pages_count);
   };
 
   var init = function () {
