@@ -1,6 +1,10 @@
 var Vox = Vox || {};
 Vox.EditorialApps = Vox.EditorialApps || {};
 
+Vox.EditorialApps.Ads.AdUnitIds = {
+  VergeFishTank: 463319
+};
+
 // Namespaces for events that this will use
 Vox.EditorialApps.Ads.Events = {
   // This is used by Hymnal to let a vox property know that
@@ -14,7 +18,7 @@ Vox.EditorialApps.Ads.Events = {
 
 Vox.EditorialApps.Ads = (function() {
   // This should match the ad unit id from Chorus's config/openx.yml
-  var network_fishtank_ad_unit_id = 463319;
+  var network_fishtank_ad_unit_id = Vox.EditorialApps.Ads.AdUnitIds.VergeFishTank;
 
   // More tricky, view the source of the network to find this
   var network_umbel_api_key = 'lrjhazrpqbgtnrij';
