@@ -11,7 +11,7 @@ module CustomHelpers
     when 'index'
       app_name
     else
-      "#{data.content.pages.find{ |p| p.name == page }.title} | #{app_name}"
+      "#{data.pages.find{ |p| p.name == page }.title} | #{app_name}"
     end
   end
 
@@ -26,7 +26,7 @@ module CustomHelpers
     when 'list'
       "#{url_prefix}/#{person['slug']}"
     else
-      "#{url_prefix}/#{data.content.pages.find{ |p| p.name == page }.slug}"
+      "#{url_prefix}/#{data.pages.find{ |p| p.name == page }.slug}"
     end
   end
 
@@ -41,13 +41,12 @@ module CustomHelpers
     when 'list'
       "#{absolute_prefix}#{url_prefix}/#{person['slug']}"
     else
-      "#{absolute_prefix}#{url_prefix}/#{data.content.pages.find{ |p| p.name == page }.slug}"
+      "#{absolute_prefix}#{url_prefix}/#{data.pages.find{ |p| p.name == page }.slug}"
     end
   end
 
   # Oh god this is horrible
   def rel_prev_next_links(page = nil, person = nil)
-    puts data.inspect
     if !person.nil?
       page = 'list'
     end
@@ -57,23 +56,23 @@ module CustomHelpers
       "<link rel='next' href='#{absolute_page_url('intro')}' />"
     when 'intro'
       "<link rel='prev' href='#{absolute_page_url('index')}' />\n" \
-      "<link rel='next' href='#{absolute_page_url('list', data.content.people.first)}' />"
+      "<link rel='next' href='#{absolute_page_url('list', data.people.first)}' />"
     when 'full-list'
-      "<link rel='prev' href='#{absolute_page_url('list', data.content.people.last)}' />\n" \
+      "<link rel='prev' href='#{absolute_page_url('list', data.people.last)}' />\n" \
       "<link rel='next' href='#{absolute_page_url('credits')}' />"
     when 'credits'
       "<link rel='prev' href='#{absolute_page_url('full-list')}' />"
     when 'list'
-      index = data.content.people.index(person)
+      index = data.people.index(person)
       if index == 0
         "<link rel='prev' href='#{absolute_page_url('intro')}' />\n" \
-        "<link rel='next' href='#{absolute_page_url('list', data.content.people[index + 1])}' />"
-      elsif index == data.content.people.size - 1
-        "<link rel='prev' href='#{absolute_page_url('list', data.content.people[index - 1])}' />\n" \
+        "<link rel='next' href='#{absolute_page_url('list', data.people[index + 1])}' />"
+      elsif index == data.people.size - 1
+        "<link rel='prev' href='#{absolute_page_url('list', data.people[index - 1])}' />\n" \
         "<link rel='next' href='#{absolute_page_url('full-list')}' />"
       else
-        "<link rel='prev' href='#{absolute_page_url('list', data.content.people[index - 1])}' />\n" \
-        "<link rel='next' href='#{absolute_page_url('list', data.content.people[index + 1])}' />"
+        "<link rel='prev' href='#{absolute_page_url('list', data.people[index - 1])}' />\n" \
+        "<link rel='next' href='#{absolute_page_url('list', data.people[index + 1])}' />"
       end
     end
   end

@@ -14,7 +14,7 @@
           <% end %>
           <p>Age: <%= person.age %></p>
           <ul class="m-person__achievements">
-            <% person.achievements.each do |t| %>
+            <% person.achievements.split("–").each do |t| %>
               <li><%= t %></li>
             <% end %>
           </ul>
