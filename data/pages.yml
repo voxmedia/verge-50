@@ -1,0 +1,13 @@
+- name: intro
+  title: Intro
+  slug: intro
+  content: |-
+           <p>Hello this is dog. I can change this later.</p>
+- name: credits
+  title: Credits
+  slug: credits
+  content: |-
+           <p>I made this. I'll change this later too.</p>
+- name: full-list
+  title: The Fifty
+  slug: the-list
