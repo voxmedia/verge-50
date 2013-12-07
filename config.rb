@@ -39,3 +39,7 @@ configure :build do
   activate :asset_hash, :exts => %w(.css .js)
   activate :minify_javascript
 end
+
+after_build do 
+  system "rm -f source/images/sprites/*.png"
+end
