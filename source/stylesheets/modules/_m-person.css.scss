@@ -49,20 +49,21 @@ $m : '.m-person';
 }
 
 #{$m}__position {
-  @include din($font_size: 30px, $font_weight: bold);
+  @include din($font_size: 36px, $font_weight: bold);
+  letter-spacing:-1px;
   background: $red;
-  width:40px;
-  height:40px;
+  width:44px;
+  height:44px;
   display: block;
   float: left;
   clear: both;
   text-align:center;
-  border-radius:40px;
-  padding-top: 8px;
+  border-radius:44px;
+  padding-top: 7px;
 }
 
 #{$m}__category {
-  @include din($font-size: 30px, $font_weight: bold, $line_height: 1.2);
+  @include din($font-size: 30px, $line_height: 1.2);
   background: $red;
   display: block;
   float: right;
