@@ -218,7 +218,7 @@ Verge.Pages = (function ($) {
 
     if (pathname && $('#' + pathname).length > 0) {
       var $current_page = $('#' + pathname).addClass('current').css('overflow-y', 'auto');
-      current = current_page.index();
+      current = $current_page.index();
     } else {
       $pages.eq(current).addClass('current').css('overflow-y', 'auto');
     }
