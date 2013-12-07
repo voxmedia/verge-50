@@ -1,5 +1,7 @@
 $m : '.m-header';
 
+$border-color: $really-dark-grey;
+
 #{$m} {
   background: #000;
   border-bottom: 10px solid $dark-grey;
@@ -8,73 +10,89 @@ $m : '.m-header';
   height: $header_height;
   top: 0;
   left: 0;
-  padding: 10px;
   z-index: 3;
 }
 
 #{$m}__nav-toggle {
-  @include sprite('menu-active', $sprites, $sprites_2x);
+  @include link-sprite('menu', 'menu-active', 30px, 25px);
   @extend %hide-text;
+  border-right: 1px solid $border-color;
   display: inline-block;
-  width: 35px;
-  height: 25px;
+  width: 45px;
+  height: 45px;
   float: left;
-  margin-right: 10px;
+  margin-right: 5px;
 }
 
 #{$m}__logo {
   @extend %hide-text;
   display: inline-block;
   width: 143px;
-  height: 25px;
+  height: 45px;
   float: left;
   margin: 0;
   position: relative;
 
   a {
-    @include sprite('header-logo', $sprites, $sprites_2x);
+    @include link-sprite('header-logo', 'header-logo', 143px, 25px);
     display: block;
+    width: 100%;
+    height: 100%;
   }
 }
 
 #{$m}__buttons {
   position: absolute;
-  right: 10px;
-  top: 10px;
+  right: 0;
+  top: 0;
 }
 
 %header-nav-buttons {
-  width: 25px;
-  height: 25px;
-  display: inline-block;
-  margin-right: 10px;
-  position: relative;
+  border-left: 1px solid $border-color;
+  width: 45px;
+  height: 45px;
+  display: block;
+  float: left;
+}
 
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 16px;
-    height: 25px;
-    margin-left: -8px;
+#{$m}__twitter {
+  @include link-sprite('twitter-large', 'twitter-large', 24px, 20px);
+  @extend %hide-text;
+  @extend %header-nav-buttons;
+
+  &:hover {
+    background: #4099FF;
+  }
+}
+
+#{$m}__facebook {
+  @include link-sprite('facebook-large', 'facebook-large', 9px, 19px);
+  @extend %hide-text;
+  @extend %header-nav-buttons;
+
+  &:hover {
+    background: #3B5998;
+  }
+}
+
+#{$m}__google {
+  @include link-sprite('google-large', 'google-large', 24px, 20px);
+  @extend %hide-text;
+  @extend %header-nav-buttons;
+
+  &:hover {
+    background: #d34836;
   }
 }
 
 #{$m}__previous {
+  @include link-sprite('left-arrow', 'left-arrow-active', 16px, 25px);
   @extend %hide-text;
   @extend %header-nav-buttons;
-
-  &:before {
-    @include sprite('left-arrow-active', $sprites, $sprites_2x);
-  }
 }
 
 #{$m}__next {
+  @include link-sprite('right-arrow', 'right-arrow-active', 16px, 25px);
   @extend %hide-text;
   @extend %header-nav-buttons;
-
-  &:before {
-    @include sprite('right-arrow-active', $sprites, $sprites_2x);
-  }
 }

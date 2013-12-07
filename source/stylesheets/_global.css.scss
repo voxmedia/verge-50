@@ -24,9 +24,9 @@ body {
 }
 
 %enable_touch_scroll {
-  overflow-y: scroll;
   -ms-touch-action: pan-y;
   -webkit-overflow-scrolling: touch;
+  overflow: hidden;
 }
 
 %clearfix {

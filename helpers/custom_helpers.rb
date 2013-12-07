@@ -1,82 +1,62 @@
 module CustomHelpers
 
-  def page_title(page = nil, person = nil)
-    if !person.nil?
-      page = 'list'
-    end
-
-    case page
-    when 'list'
-      "#{person['name']} | #{app_name}"
-    when 'index'
+  # Formats the page <title>
+  def page_title(title = nil)
+    if title.nil?
       app_name
     else
-      "#{data.pages.find{ |p| p.name == page }.title} | #{app_name}"
+      "#{title} | #{app_name}"
     end
   end
 
-  def page_url(page = nil, person = nil)
-    if !person.nil?
-      page = 'list'
-    end
-
-    case page
-    when 'index'
+  # Gets the correct relative url for a given slug
+  def page_url(slug = nil)
+    if slug.nil?
       url_prefix
-    when 'list'
-      "#{url_prefix}/#{person['slug']}"
     else
-      "#{url_prefix}/#{data.pages.find{ |p| p.name == page }.slug}"
+      "#{url_prefix}/#{slug}"
     end
   end
 
-  def absolute_page_url(page = nil, person = nil)
-    if !person.nil?
-      page = 'list'
-    end
-
-    case page
-    when 'index'
-      "#{absolute_prefix}#{url_prefix}"
-    when 'list'
-      "#{absolute_prefix}#{url_prefix}/#{person['slug']}"
+  # Same as above, but absolute
+  def absolute_page_url(slug = nil)
+    if slug.nil?
+      "#{absolute_prefix}/#{url_prefix}"
     else
-      "#{absolute_prefix}#{url_prefix}/#{data.pages.find{ |p| p.name == page }.slug}"
+      "#{absolute_prefix}/#{slug}"
     end
   end
 
-  # Oh god this is horrible
-  def rel_prev_next_links(page = nil, person = nil)
-    if !person.nil?
-      page = 'list'
-    end
-
-    case page
+  # Oh god this is horrible but I can't think of a better way of generating these links
+  def rel_prev_next_links(slug = nil, page_type = 'index')
+    case page_type
     when 'index'
-      "<link rel='next' href='#{absolute_page_url('intro')}' />"
+      "<link rel='next' href='#{absolute_page_url(data.pages.find{ |p| p.name == 'intro' }.slug)}' />"
     when 'intro'
-      "<link rel='prev' href='#{absolute_page_url('index')}' />\n" \
-      "<link rel='next' href='#{absolute_page_url('list', data.people.first)}' />"
-    when 'full-list'
-      "<link rel='prev' href='#{absolute_page_url('list', data.people.last)}' />\n" \
-      "<link rel='next' href='#{absolute_page_url('credits')}' />"
-    when 'credits'
-      "<link rel='prev' href='#{absolute_page_url('full-list')}' />"
-    when 'list'
-      index = data.people.index(person)
+      "<link rel='prev' href='#{absolute_page_url}' />\n" \
+      "<link rel='next' href='#{absolute_page_url(data.people.first.slug)}' />"
+    when 'person'
+      index = data.people.index{ |p| p.slug == slug }
       if index == 0
-        "<link rel='prev' href='#{absolute_page_url('intro')}' />\n" \
-        "<link rel='next' href='#{absolute_page_url('list', data.people[index + 1])}' />"
+        "<link rel='prev' href='#{absolute_page_url(data.pages.find{ |p| p.name == 'intro' }.slug)}' />\n" \
+        "<link rel='next' href='#{absolute_page_url(data.people[index + 1].slug)}' />"
       elsif index == data.people.size - 1
-        "<link rel='prev' href='#{absolute_page_url('list', data.people[index - 1])}' />\n" \
-        "<link rel='next' href='#{absolute_page_url('full-list')}' />"
+        "<link rel='prev' href='#{absolute_page_url(data.people[index - 1].slug)}' />\n" \
+        "<link rel='next' href='#{absolute_page_url(data.pages.find{ |p| p.name == 'full-list' }.slug)}' />"
       else
         "<link rel='prev' href='#{absolute_page_url('list', data.people[index - 1])}' />\n" \
         "<link rel='next' href='#{absolute_page_url('list', data.people[index + 1])}' />"
       end
+    when 'full-list'
+      "<link rel='prev' href='#{absolute_page_url(data.people.last.slug)}' />\n" \
+      "<link rel='next' href='#{absolute_page_url(data.pages.find{ |p| p.name == 'credits' }.slug)}' />"
+    when 'credits'
+      "<link rel='prev' href='#{absolute_page_url(data.pages.find{ |p| p.name == 'full-list' }.slug)}' />"
     end
   end
 
+  # Parses people's names and makes sure that everyone's last name is
+  # wrapped in <i> for styling.
   def formatted_names(name)
     formatted_names = ""
     name.split('&').each do |n|
@@ -98,5 +78,26 @@ module CustomHelpers
       number = "0" + number.to_s
     end
     number
+  end
+
+  # Link to share a link on twitter
+  def tweet(slug = nil, text = nil)
+    url = absolute_page_url(slug)
+    via = twitter
+    text ||= app_name
+
+    "https://twitter.com/share?url=#{CGI.escape(url)}&amp;via=#{CGI.escape(via)}&amp;text=#{CGI.escape(text)}"
+  end
+
+  # Link to share a link on facebook
+  def facebook(slug = nil)
+    url = absolute_page_url(slug)
+    "https://www.facebook.com/sharer/sharer.php?u=#{CGI.escape(url)}"
+  end
+
+  # Link to share a link on g+
+  def google_plus(slug = nil)
+    url = absolute_page_url(slug)
+    "https://plus.google.com/share?url=#{CGI.escape(url)}"
   end
 end
