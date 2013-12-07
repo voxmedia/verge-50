@@ -44,8 +44,8 @@ module CustomHelpers
         "<link rel='prev' href='#{absolute_page_url(data.content.people[index - 1].slug)}' />\n" \
         "<link rel='next' href='#{absolute_page_url(data.content.pages.find{ |p| p.name == 'full-list' }.slug)}' />"
       else
-        "<link rel='prev' href='#{absolute_page_url('list', data.content.people[index - 1])}' />\n" \
-        "<link rel='next' href='#{absolute_page_url('list', data.content.people[index + 1])}' />"
+        "<link rel='prev' href='#{absolute_page_url(data.content.people[index - 1])}' />\n" \
+        "<link rel='next' href='#{absolute_page_url(data.content.people[index + 1])}' />"
       end
     when 'full-list'
       "<link rel='prev' href='#{absolute_page_url(data.content.people.last.slug)}' />\n" \
