@@ -69,7 +69,7 @@ Verge.Pages = (function ($) {
 
     current = index;
 
-    $next_page = $pages.eq(current).addClass('current');
+    $next_page = $pages.eq(current).removeAttr('style').addClass('current');
 
     $current_page.addClass(out_class).on(animation_end_event, function() {
       $current_page.off(animation_end_event);
@@ -155,6 +155,7 @@ Verge.Pages = (function ($) {
     end_next_page = false;
     is_animating = false;
     $in_page.attr({ class : $in_page.data().original_class + ' current' });
+    $in_page.css('overflow-y', 'auto');
     if (typeof $out_page !== 'undefined') {
       $out_page.attr({ class : $out_page.data().original_class }).scrollTop(0);
     }
@@ -216,10 +217,10 @@ Verge.Pages = (function ($) {
     });
 
     if (pathname && $('#' + pathname).length > 0) {
-      $('#' + pathname).addClass('current');
-      current = $('#' + pathname).index();
+      var $current_page = $('#' + pathname).addClass('current').css('overflow-y', 'auto');
+      current = $current_page.index();
     } else {
-      $pages.eq(current).addClass('current');
+      $pages.eq(current).addClass('current').css('overflow-y', 'auto');
     }
   }
 

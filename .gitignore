@@ -17,3 +17,6 @@
 .DS_Store
 oauth2.json
 data/people.json
+
+# Ignore image sprites
+/source/images/sprites/*.png
