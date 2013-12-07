@@ -3,7 +3,7 @@
 
   <%= partial "partials/sections/intro", :locals => { :page => data.pages.find{ |p| p.name == 'intro' } } %>
 
-  <% data.people.sort_by{ |p| p.position }.each_with_index do |p, i| %>
+  <% data.people.sort_by{ |p| p.position.to_i }.each_with_index do |p, i| %>
     <%= partial "partials/sections/person", :locals => { :person => p } %>
   <% end %>
 
