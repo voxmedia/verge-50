@@ -1,6 +1,6 @@
 <li class="m-pages__page" id="<%= person.slug %>" data-page-url="<%= page_url(person.slug) %>" data-name="<%= person.name %>">
   <div class="l-content-wrap">
-    <article class="m-person">
+    <article class="m-person <%= list_tier(person.position.to_i) %>">
       <div class="m-person__content">
         <header class="m-person__header">
           <span class="m-person__position"><%= zero_padded(person.position) %></span>
