@@ -24,11 +24,11 @@ activate :directory_indexes
 
 data = YAML::load_file('data/content.yml')
 data['people'].each do |person|
-  proxy "/#{person['slug']}/index.html", "index.html", :locals => { :person => person, :page => 'list' }
+  proxy "/#{person['slug']}/index.html", "index.html", :locals => { :slug => person['slug'], :title => person['name'], :page_type => 'person' }
 end
 
 data['pages'].each do |page|
-  proxy "/#{page['slug']}/index.html", "index.html", :locals => { :page => page['name'] }
+  proxy "/#{page['slug']}/index.html", "index.html", :locals => { :slug => page['slug'], :title => page['title'], :page_type => page['name'] }
 end
 
 # Build-specific configuration
