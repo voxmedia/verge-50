@@ -5,7 +5,7 @@
 <meta name="description" content="" />
 
 <%# OpenGraph Meta Tags %>
-<meta property="fb:app_id" content="179668695452017" />
+<meta property="fb:app_id" content="<%= facebook_app_id %>" />
 <meta property="og:site_name" content="The Verge" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="<%= page_title(page, person) %>" />
@@ -14,8 +14,8 @@
 <meta property="og:url" content="<%= absolute_page_url(page, person) %>" />
 
 <%# Twitter Card Meta Tags %>
-<meta name="twitter:site" content="verge" />
-<meta property="twitter:account_id" content="1465737598" />
+<meta name="twitter:site" content="<%= twitter %>" />
+<meta property="twitter:account_id" content="<%= twitter_account_id %>" />
 <meta name="twitter:card" content="photo" />
 <meta name="twitter:url" content="<%= absolute_page_url(page, person) %>" />
 <meta name="twitter:title" content="<%= page_title(page, person) %>" />
@@ -31,5 +31,5 @@
 <meta name="google-site-verification" content="tDoQLOfV4VmPZrTuSNDQnSyTfhgDRlOMaXgYQ0Bb9Bc" />
 <meta name="msvalidate.01" content="D385D0326A3AE144205C298DB34B4E94" />
 <meta name="y_key" content="0184e2558f89b639" />
-<link rel="canonical" href="<%= absolute_page_url('index') %>" />
+<link rel="canonical" href="<%= absolute_page_url %>" />
 <%= rel_prev_next_links(page, person) %>

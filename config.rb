@@ -17,6 +17,10 @@ set :url_prefix, ''
 set :absolute_prefix, 'http://localhost:4567'
 set :app_name, 'The Verge 50'
 
+set :facebook_app_id, '179668695452017'
+set :twitter, 'verge'
+set :twitter_account_id, '1465737598'
+
 activate :chorus
 activate :directory_indexes
 

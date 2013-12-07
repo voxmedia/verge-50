@@ -1,6 +1,6 @@
 module CustomHelpers
 
-  def page_title(page = nil, person = nil)
+  def page_title(page = 'index', person = nil)
     if !person.nil?
       page = 'list'
     end
@@ -15,7 +15,7 @@ module CustomHelpers
     end
   end
 
-  def page_url(page = nil, person = nil)
+  def page_url(page = 'index', person = nil)
     if !person.nil?
       page = 'list'
     end
@@ -30,7 +30,7 @@ module CustomHelpers
     end
   end
 
-  def absolute_page_url(page = nil, person = nil)
+  def absolute_page_url(page = 'index', person = nil)
     if !person.nil?
       page = 'list'
     end
@@ -46,7 +46,7 @@ module CustomHelpers
   end
 
   # Oh god this is horrible
-  def rel_prev_next_links(page = nil, person = nil)
+  def rel_prev_next_links(page = 'index', person = nil)
     if !person.nil?
       page = 'list'
     end
@@ -97,5 +97,28 @@ module CustomHelpers
       number = "0" + number.to_s
     end
     number
+  end
+
+  def tweet(page = 'index', person = nil)
+    url = absolute_page_url(page, person)
+    via = twitter
+
+    if person.nil?
+      text = app_name
+    else
+      text = "#{app_name}: #{person['name']}"
+    end
+
+    "https://twitter.com/share?url=#{CGI.escape(url)}&amp;via=#{CGI.escape(via)}&amp;text=#{CGI.escape(text)}"
+  end
+
+  def facebook(page = 'index', person = nil)
+    url = absolute_page_url(page, person)
+    "https://www.facebook.com/sharer/sharer.php?u=#{CGI.escape(url)}"
+  end
+
+  def google_plus(page = 'index', person = nil)
+    url = absolute_page_url(page, person)
+    "https://plus.google.com/share?url=#{CGI.escape(url)}"
   end
 end
