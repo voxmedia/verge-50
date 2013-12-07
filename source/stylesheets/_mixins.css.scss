@@ -45,7 +45,7 @@
 
 @mixin link-sprite($sprite, $sprite-active, $width, $height) {
   position: relative;
-  
+
   &:before {
     content: '';
     width: $width;
@@ -54,18 +54,23 @@
     top: 50%;
     left: 50%;
     margin-left: - $width / 2;
-    margin-top: - 25px / 2;
+    margin-top: - $height / 2;
   }
 
-  &:link:before, &:visited:before {
-    @include sprite($sprite, $sprites, $sprites_2x);
-  }
-
-  &:hover:before, &:active:before {
-    @include sprite($sprite-active, $sprites, $sprites_2x);
-  }
+  @if $sprite == $sprite-active {
+    &:before {
+      @include sprite($sprite, $sprites, $sprites_2x);
+    }
+  } @else {
+    &:link:before, &:visited:before {
+      @include sprite($sprite, $sprites, $sprites_2x);
+    }
+    &:hover:before, &:active:before {
+      @include sprite($sprite-active, $sprites, $sprites_2x);
+    }
+  } 
 
   &:active:before {
-    margin-top: 1 - (25px / 2);
+    margin-top: 1 - ($height / 2);
   }
 }

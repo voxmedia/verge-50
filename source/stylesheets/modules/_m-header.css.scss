@@ -51,7 +51,38 @@ $border-color: $really-dark-grey;
   border-left: 1px solid $border-color;
   width: 45px;
   height: 45px;
-  display: inline-block;
+  display: block;
+  float: left;
+}
+
+#{$m}__twitter {
+  @include link-sprite('twitter-large', 'twitter-large', 24px, 20px);
+  @extend %hide-text;
+  @extend %header-nav-buttons;
+
+  &:hover {
+    background: #4099FF;
+  }
+}
+
+#{$m}__facebook {
+  @include link-sprite('facebook-large', 'facebook-large', 9px, 19px);
+  @extend %hide-text;
+  @extend %header-nav-buttons;
+
+  &:hover {
+    background: #3B5998;
+  }
+}
+
+#{$m}__google {
+  @include link-sprite('google-large', 'google-large', 24px, 20px);
+  @extend %hide-text;
+  @extend %header-nav-buttons;
+
+  &:hover {
+    background: #d34836;
+  }
 }
 
 #{$m}__previous {
