@@ -3,7 +3,15 @@ module DataHelpers
   def load_spreadsheet(namespace,file_id)
     puts "loading #{file_id} into #{namespace}"
     require "vox/google_drive/client"
-    $google_drive_client = Vox::GoogleDrive::Client.new({})
+    if File.exist?("/home/gitserver/chorus-git-server/voxdocs-privatekey.p12")
+      $google_drive_client = Vox::GoogleDrive::Client.new({
+        :client_email=>"999943839632@developer.gserviceaccount.com",
+        :person=>"chorus-app@sbnation.com",
+        :client_key_path=>"/home/gitserver/chorus-git-server/voxdocs-privatekey.p12"
+      })
+    else
+      $google_drive_client = Vox::GoogleDrive::Client.new({})
+    end
     options = {:format=>"text/tsv",:file_id=>file_id}
     csv = $google_drive_client.download!(options).body
     fields = []
