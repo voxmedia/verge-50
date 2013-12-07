@@ -21,6 +21,10 @@ require 'helpers/data_helpers'
 helpers DataHelpers
 load_spreadsheet("people","0AveeZxA0SOM1dGdSWWFZdHJGc091Q3FrUERVdG1rRWc")
 
+data['people'].each do |person|
+  proxy "/#{person['slug']}/index.html", "index.html", :locals => { :slug => person['slug'], :title => person['name'], :page_type => 'person' }
+end
+
 data['pages'].each do |page|
   proxy "/#{page['slug']}/index.html", "index.html", :locals => { :slug => page['slug'], :title => page['title'], :page_type => page['name'] }
 end
@@ -30,8 +34,8 @@ configure :build do
   set :url_prefix, "/a/the-verge-50"
   set :absolute_prefix, "http://www.theverge.com"
   activate :asset_hash, :exts => %w(.css .js)
-  activate :minify_javascript
-  activate :minify_css
+  #activate :minify_javascript
+  #activate :minify_css
 end
 
 after_build do 
