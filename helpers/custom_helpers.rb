@@ -100,4 +100,10 @@ module CustomHelpers
     url = absolute_page_url(slug)
     "https://plus.google.com/share?url=#{CGI.escape(url)}"
   end
+
+  # Render a string in Markdown
+  def markdown(text)
+    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
+    markdown.render(text)
+  end
 end
