@@ -106,4 +106,16 @@ module CustomHelpers
     markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
     markdown.render(text)
   end
+
+  # Returns a class that changes the layout of each person's profile
+  # depending on how far down the list they are
+  def list_tier(position)
+    if position <= 10
+      "tier_1"
+    elsif position <= 20
+      "tier_2"
+    else
+      "tier_3"
+    end
+  end
 end

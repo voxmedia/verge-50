@@ -11,10 +11,17 @@ $m : '.m-person';
   width: 100%;
   max-width: 420px;
   float: right;
+
+  .tier_1 &, .tier_3 & {
+    float: right;
+  }
+
+  .tier_2 & {
+    float: left;
+  }
 }
 
 #{$m}__header {
-  @include tilt(-30deg, 50%, 10%, 140px);
   @extend %clearfix;
   color: #fff;
 
@@ -30,6 +37,14 @@ $m : '.m-person';
     i {
       @include din($font_weight: bold);
     }
+  }
+
+  .tier_1 & {
+    @include tilt(-30deg, 10%, 50%, 140px);
+  }
+
+  .tier_2 &, .tier_3 & {
+    @include tilt(30deg, 100%, 50%, 180px);
   }
 }
 
