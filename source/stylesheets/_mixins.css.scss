@@ -42,3 +42,30 @@
     margin-top: $margin;
   } 
 }
+
+@mixin link-sprite($sprite, $sprite-active, $width, $height) {
+  position: relative;
+  
+  &:before {
+    content: '';
+    width: $width;
+    height: $height;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: - $width / 2;
+    margin-top: - 25px / 2;
+  }
+
+  &:link:before, &:visited:before {
+    @include sprite($sprite, $sprites, $sprites_2x);
+  }
+
+  &:hover:before, &:active:before {
+    @include sprite($sprite-active, $sprites, $sprites_2x);
+  }
+
+  &:active:before {
+    margin-top: 1 - (25px / 2);
+  }
+}
