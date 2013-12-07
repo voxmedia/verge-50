@@ -8,9 +8,7 @@ compass_config do |config|
 end
 
 set :css_dir, 'stylesheets'
-
 set :js_dir, 'javascripts'
-
 set :images_dir, 'images'
 
 set :url_prefix, ''
@@ -38,6 +36,6 @@ configure :build do
   set :url_prefix, "/a/the-verge-50"
   set :absolute_prefix, "http://www.theverge.com"
   activate :minify_css
-  activate :asset_hash
+  activate :asset_hash, :exts => %w(.css .js)
   activate :minify_javascript
 end
