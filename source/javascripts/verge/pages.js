@@ -159,6 +159,7 @@ Verge.Pages = (function ($) {
     if (typeof $out_page !== 'undefined') {
       $out_page.attr({ class : $out_page.data().original_class }).scrollTop(0);
     }
+    picturefill($in_page);
   };
 
   var updatePageUrl = function ($page) {
@@ -202,9 +203,18 @@ Verge.Pages = (function ($) {
 
   };
 
+  var picturefill = function ($page) {
+    var picture = $page.find('.picturefill');
+    if (!!window.picturefill && picture.length > 0 && typeof picture.attr('data-picture') === 'undefined') {
+      picture.attr('data-picture', '');
+      window.picturefill();
+    }
+  };
+
   var init = function () {
     var pathname_array = window.location.pathname.split('/'),
-        pathname = pathname_array[pathname_array.length - 1];
+        pathname = pathname_array[pathname_array.length - 1],
+        $current_page;
 
     $next.on('click', nextPage);
     $previous.on('click', previousPage);
@@ -217,11 +227,13 @@ Verge.Pages = (function ($) {
     });
 
     if (pathname && $('#' + pathname).length > 0) {
-      var $current_page = $('#' + pathname).addClass('current').css('overflow-y', 'auto');
+      $current_page = $('#' + pathname).addClass('current').css('overflow-y', 'auto');
       current = $current_page.index();
     } else {
-      $pages.eq(current).addClass('current').css('overflow-y', 'auto');
+      $current_page = $pages.eq(current).addClass('current').css('overflow-y', 'auto');
     }
+
+    picturefill($current_page);
   }
 
   init();

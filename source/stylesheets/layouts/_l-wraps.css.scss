@@ -17,7 +17,7 @@
 .l-content-wrap {
   position: relative;
   width: 100%;
-  max-width: 960px;
+  max-width: $column_width * 11;
   margin: 0 auto;
 }
 
