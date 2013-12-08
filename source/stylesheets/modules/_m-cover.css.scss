@@ -8,10 +8,20 @@ $m : '.m-cover';
 }
 
 #{$m}__logo {
-  @include sprite('main-logo', $sprites, $sprites_2x);
   @extend %hide-text;
   width: 340px;
   height: 291px;
+
+  a {
+    @include sprite('main-logo', $sprites, $sprites_2x);
+    width: 100%;
+    height: 100%;
+    display: block;
+
+    &:hover, a:active {
+      border: none;
+    }
+  }
 }
 
 .flexbox {
