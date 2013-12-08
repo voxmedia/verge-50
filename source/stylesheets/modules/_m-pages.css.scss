@@ -21,6 +21,22 @@ $m : '.m-pages';
   bottom: 0;
   visibility: hidden;
 
+  p {
+    font-size: 16px;
+    color: $dark-grey;
+    margin: 1.5em 0;
+    line-height: 1.5;
+  }
+
+  a {
+    color: $red;
+    text-decoration: none;
+  }
+
+  a:hover, a:active {
+    border-bottom: 1px solid;
+  }
+
   &.current, .no-js & {
     visibility: visible;
     z-index: 1;
