@@ -58,18 +58,18 @@ module CustomHelpers
   # Parses people's names and makes sure that everyone's last name is
   # wrapped in <i> for styling.
   def formatted_names(name)
-    formatted_names = ""
-    name.split('&').each do |n|
+    formatted_names = []
+    name.split(' and ').each do |n|
       names = n.split(' ')
       if names.size > 1
         last = names.pop
         first = names.join(' ')
-        formatted_names += "#{first} <i>#{last}</i>"
+        formatted_names << "#{first} <i>#{last}</i>"
       else
-        formatted_names += "<i>#{n}</i>"
+        formatted_names << "<i>#{n}</i>"
       end
     end
-    formatted_names
+    formatted_names.join(' and ')
   end
 
   def zero_padded(n)
