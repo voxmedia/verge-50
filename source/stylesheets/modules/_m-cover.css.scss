@@ -5,6 +5,12 @@ $m : '.m-cover';
   float: right;
   height: 100%;
   position: relative;
+  text-align: center;
+
+  p {
+    font-size: 12px;
+    white-space: nowrap;
+  }
 }
 
 #{$m}__logo {
