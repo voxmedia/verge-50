@@ -21,9 +21,9 @@ module CustomHelpers
   # Same as above, but absolute
   def absolute_page_url(slug = nil)
     if slug.nil?
-      "#{absolute_prefix}/#{url_prefix}"
+      "#{absolute_prefix}#{url_prefix}"
     else
-      "#{absolute_prefix}/#{slug}"
+      "#{absolute_prefix}#{url_prefix}/#{slug}"
     end
   end
 
