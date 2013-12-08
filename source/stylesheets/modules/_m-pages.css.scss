@@ -33,8 +33,10 @@ $m : '.m-pages';
     text-decoration: none;
   }
 
-  a:hover, a:active {
-    border-bottom: 1px solid;
+  p, li, h1, h2, h3 {
+    a:hover, a:active {
+      border-bottom: 1px solid;
+    }
   }
 
   &.current, .no-js & {

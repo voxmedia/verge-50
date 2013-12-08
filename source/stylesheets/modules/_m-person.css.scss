@@ -2,10 +2,12 @@ $m : '.m-person';
 
 #{$m} {
   @extend %clearfix;
-  padding: 40px 0;
+  padding: 40px 0 20px 0;
   margin-bottom: 40px;
   border-bottom: 15px solid #000;
   position: relative;
+  float: left;
+  width: 100%;
 }
 
 #{$m}__headshot {
@@ -116,14 +118,55 @@ $m : '.m-person';
   }
 }
 
-#{$m}__blurb {
-
-}
-
 #{$m}__headshot {
-
-
   img {
     @include transition(opacity 500ms);
   }
+}
+
+#{$m}__share {
+  @extend %clearfix;
+  border-top: 1px solid #000;
+
+  h4 {
+    @include din($font-size: 20px, $line_height: 1.2);
+    color: #000;
+    display: block;
+    float: left;
+    margin-right: 5px;
+  }
+}
+
+#{$m}__share-buttons {
+  float: right;
+}
+
+%small-social-buttons {
+  width: 24px;
+  height: 24px;
+  display: block;
+  float: left;
+  margin-left: 10px;
+
+  &:hover, &:active {
+    border-bottom: none;
+  }
+}
+
+#{$m}__twitter {
+  @include link-sprite('twitter-small', 'twitter-small-active', 19px, 16px);
+  @extend %hide-text;
+  @extend %small-social-buttons;
+}
+
+#{$m}__facebook {
+  @include link-sprite('facebook-small', 'facebook-small-active', 8px, 16px);
+  @extend %hide-text;
+  @extend %small-social-buttons;
+}
+
+#{$m}__google {
+  @include link-sprite('google-small', 'google-small-active', 19px, 16px);
+  @extend %hide-text;
+  @extend %small-social-buttons;
 }
