@@ -2,9 +2,8 @@ $m : '.m-person';
 
 #{$m} {
   @extend %clearfix;
-  padding: 40px 0 20px 0;
-  margin-bottom: 40px;
-  border-bottom: 15px solid #000;
+  @extend %-padded;
+  @extend %-thick-bottom-border;
   position: relative;
   float: left;
   width: 100%;
@@ -126,6 +125,7 @@ $m : '.m-person';
 
 #{$m}__share {
   @extend %clearfix;
+  margin-bottom: 20px;
   border-top: 1px solid #000;
 
   h4 {

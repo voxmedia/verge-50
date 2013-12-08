@@ -29,6 +29,15 @@ body {
   overflow: hidden;
 }
 
+%-padded {
+  padding: 40px 0 0 0;
+  margin-bottom: 40px;
+}
+
+%-thick-bottom-border {
+  border-bottom: 10px solid #000;
+}
+
 %clearfix {
     zoom:1;
     &:before, &:after {
