@@ -58,7 +58,7 @@ $m : '.m-person';
   }
 
   .tier_2 &, .tier_3 & {
-    @include tilt(30deg, 100%, 20%, 180px);
+    @include tilt(30deg, 100%, 30%, 180px);
   }
 }
 
@@ -93,7 +93,10 @@ $m : '.m-person';
   padding: 10px 10px 4px 10px;
 
   p {
-    margin-bottom: 10px;
+    font-size: 18px;
+    color: #fff;
+    line-height: 1;
+    margin: 0 0 10px;
   }
 }
 
@@ -114,21 +117,7 @@ $m : '.m-person';
 }
 
 #{$m}__blurb {
-  p {
-    font-size: 16px;
-    color: $dark-grey;
-    margin: 1.5em 0;
-    line-height: 1.5;
-  }
 
-  a {
-    color: $red;
-    text-decoration: none;
-  }
-
-  a:hover, a:active {
-    border-bottom: 1px solid;
-  }
 }
 
 #{$m}__headshot {
