@@ -139,15 +139,6 @@ Verge.Pages = (function ($) {
       nextPage();
       return false;
       break;
-    case keys.up:
-      goToPage(0);
-      return false;
-      break;
-    case keys.down:
-      goToPage($pages.length - 1);
-      return false;
-      break;
-    }
   };
 
   var onEndAnimation = function($in_page, $out_page) {
