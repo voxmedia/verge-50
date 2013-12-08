@@ -39,6 +39,7 @@
   .csstransforms & {
     @include transform(rotate($angle));
     @include transform-origin($y_offset, $x_offset);
+    -webkit-font-smoothing: antialiased;
     margin-top: $margin;
   } 
 }
