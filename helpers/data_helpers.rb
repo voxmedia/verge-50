@@ -35,6 +35,7 @@ module DataHelpers
     File.open("data/#{namespace}.json","w") do | f |
       f << JSON.dump(values)
     end
+    data.touch_file("data/#{namespace}.json")
     if File.exist?("oauth2.json")
       s = JSON.parse(File.read("oauth2.json"))
       s["authorization_uri"] = "https://accounts.google.com/o/oauth2/auth"
