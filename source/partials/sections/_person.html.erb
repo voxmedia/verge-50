@@ -28,7 +28,7 @@
         <div class="m-person__share">
           <h4>Share</h4>
           <div class="m-person__share-buttons">
-            <a class="m-person__twitter" title="Share <%= person.name %>'s The Verge 50 profile on Twitter" data-social href="<%= tweet(person.slug) %>">Twitter</a>
+            <a class="m-person__twitter" title="Share <%= person.name %>'s The Verge 50 profile on Twitter" data-social href="<%= tweet(person.slug, "The Verge 50: #{person.name}") %>">Twitter</a>
             <a class="m-person__facebook" title="Share <%= person.name %>'s The Verge 50 profile on Facebook"  data-social href="<%= facebook(person.slug) %>">Facebook</a>
             <a class="m-person__google" title="Share <%= person.name %>'s The Verge 50 profile on Google+"  data-social href="<%= google_plus(person.slug) %>">Google</a>
           </div>
