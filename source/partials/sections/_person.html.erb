@@ -12,8 +12,8 @@
           <% person.title.each do |t| %>
             <h3 class="m-person__titles"><%= t %></h3>
           <% end %>
+          <p>Age: <%= person.age %></p>
           <ul class="m-person__achievements">
-            <li>Age: <%= person.age %></li>
             <% person.achievements.split("*").each do |t| %>
               <li><%= t %></li>
             <% end %>

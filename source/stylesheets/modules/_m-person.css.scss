@@ -77,11 +77,15 @@ $m : '.m-person';
   background: #000;
   color: #fff;
   padding: 10px 10px 4px 10px;
+
+  p {
+    margin-bottom: 10px;
+  }
 }
 
 #{$m}__titles {
-  @include din($font-size: 18px, $font_weight: bold, $line_height: 1.2);
-  margin: 0 0 10px 0;
+  @include din($font-size: 18px, $line_height: 1.2);
+  margin: 0;
 }
 
 #{$m}__achievements {
@@ -91,7 +95,7 @@ $m : '.m-person';
   padding: 5px 10px;
 
   li {
-    margin: 10px 0;
+    margin: 5px 0;
   }
 }
 
