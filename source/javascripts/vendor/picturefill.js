@@ -36,7 +36,7 @@
             picImg.style.opacity = 0;
             picImg.addEventListener('load', function () {
               this.style.opacity = 1;
-            })
+            });
           }
         }
         else if( matchedEl === picImg.parentNode ){

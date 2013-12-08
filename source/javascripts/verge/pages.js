@@ -139,6 +139,7 @@ Verge.Pages = (function ($) {
       nextPage();
       return false;
       break;
+    }
   };
 
   var onEndAnimation = function($in_page, $out_page) {
