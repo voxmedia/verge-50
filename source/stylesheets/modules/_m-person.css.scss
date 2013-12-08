@@ -5,11 +5,25 @@ $m : '.m-person';
   padding: 40px 0;
   margin-bottom: 40px;
   border-bottom: 15px solid #000;
+  position: relative;
+}
+
+#{$m}__headshot {
+  width: 100%;
+  max-width: $column_width * 6;
+
+  .tier_1 &, .tier_3 & {
+    float: left;
+  }
+
+  .tier_2 & {
+    float: right;
+  }
 }
 
 #{$m}__content {
   width: 100%;
-  max-width: 420px;
+  max-width: $column_width * 5;
   float: right;
 
   .tier_1 &, .tier_3 & {
@@ -44,7 +58,7 @@ $m : '.m-person';
   }
 
   .tier_2 &, .tier_3 & {
-    @include tilt(30deg, 100%, 50%, 180px);
+    @include tilt(30deg, 100%, 20%, 180px);
   }
 }
 
@@ -114,5 +128,13 @@ $m : '.m-person';
 
   a:hover, a:active {
     border-bottom: 1px solid;
+  }
+}
+
+#{$m}__headshot {
+
+
+  img {
+    @include transition(opacity 500ms);
   }
 }
