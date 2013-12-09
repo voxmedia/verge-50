@@ -105,8 +105,12 @@ Verge.Pages = (function ($) {
     //  to see if hymnal has anything for us
     $(document).on(Vox.EditorialApps.AdHelpers.Events.AdResponseWithHTML, handleAdCodeInjection);
     $(document).triggerHandler(Vox.EditorialApps.AdHelpers.Events.AdRequest, {
+      // How many pages have they seen
       pagesSeen: total_pages_seen,
-      currentPage: current
+      // Where are they now?
+      currentPage: current,
+      // Where are they going?
+      nextPage: desired_page_index,
     });
     $(document).off(Vox.EditorialApps.AdHelpers.Events.AdResponseWithHTML, handleAdCodeInjection);
     // ==========================================================================================
