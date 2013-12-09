@@ -9,4 +9,13 @@ $l : '.l-column';
     padding-right: 0;
     padding-left: 10px;
   }
+
+  @media (max-width: $break_medium) {
+    width: 100%;
+    padding: 0;
+
+    &.right {
+      padding: 0;
+    }
+  }
 }

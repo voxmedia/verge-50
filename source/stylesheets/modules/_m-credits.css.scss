@@ -14,6 +14,12 @@ $m : '.m-credits';
     text-align: center;
     white-space: nowrap;
     padding-top: 0.1em;
+
+    @media (max-width: $break_medium) {
+      font-size: 46px;
+      letter-spacing: 8px;
+      text-indent: 8px;
+    }
   }
 }
 
@@ -21,7 +27,8 @@ $m : '.m-credits';
   @extend %clearfix;
   @extend %-padded;
   @extend %-thick-bottom-border;
-  width: $column_width * 8;
+  max-width: $column_width * 8;
+  width: 100%;
   position: relative;
   margin: 40px auto;
   padding: 0 0 20px 0;
@@ -39,5 +46,11 @@ $m : '.m-credits';
     a:link, a:visited {
       color: #fff;
     }
+  }
+
+  @media (max-width: $break_medium) {
+    margin: 0 auto;
+    max-width: $column_width * 4;
+    padding: 20px;
   }
 }

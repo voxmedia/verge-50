@@ -15,6 +15,12 @@ $m : '.m-full-list';
     border-top: 10px solid #000;
     border-bottom: 10px solid #000;
     padding-top: 0.1em;
+
+    @media (max-width: $break_medium) {
+      font-size: 46px;
+      letter-spacing: 8px;
+      text-indent: 8px;
+    }
   }
 }
 
@@ -22,10 +28,17 @@ $m : '.m-full-list';
   @extend %clearfix;
   @extend %-padded;
   @extend %-thick-bottom-border;
-  width: $column_width * 8;
+  max-width: $column_width * 8;
+  width: 100%;
   position: relative;
   margin: 40px auto;
   padding: 0 0 20px 0;
+
+  @media (max-width: $break_medium) {
+    max-width: $column_width * 4;
+    padding: 20px;
+    margin: 0 auto;
+  }
 }
 
 #{$m}__category {

@@ -4,7 +4,8 @@ $m : '.m-intro';
   @extend %clearfix;
   @extend %-padded;
   @extend %-thick-bottom-border;
-  width: $column_width * 6;
+  max-width: $column_width * 6;
+  width: 100%;
   position: relative;
   float: left;
 
@@ -17,5 +18,16 @@ $m : '.m-intro';
     border-top: 10px solid #000;
     border-bottom: 10px solid #000;
     padding-top: 0.1em;
+
+    @media (max-width: $break_medium) {
+      font-size: 46px;
+      letter-spacing: 8px;
+      text-indent: 8px;
+    }
+  }
+
+  @media (max-width: $break_medium) {
+    max-width: $column_width * 4;
+    padding: 20px;
   }
 }
