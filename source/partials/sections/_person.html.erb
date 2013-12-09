@@ -12,7 +12,7 @@
         </header>
 
         <aside class="m-person__info">
-          <% person.title.each do |t| %>
+          <% person.title.split(',').each do |t| %>
             <h3 class="m-person__titles"><%= t %></h3>
           <% end %>
           <p>Age: <%= person.age %></p>
