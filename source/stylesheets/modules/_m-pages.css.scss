@@ -28,6 +28,14 @@ $m : '.m-pages';
     line-height: 1.5;
   }
 
+  em, i {
+    font-style: italic;
+  }
+
+  strong, b {
+    font-weight: bold;
+  }
+
   a {
     color: $red;
     text-decoration: none;
