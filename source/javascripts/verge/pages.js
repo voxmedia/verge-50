@@ -57,6 +57,7 @@ Verge.Pages = (function ($) {
     // Magic data elements this framework needs
     $adUnit.data().original_class = $adUnit.attr('class');
     $adUnit.data('page-url', url_prefix);
+    $adUnit.data('name', 'Advertisement');
 
     // Place this in the corret place in the DOM
     console.log("insertAdBeforePage | inserting", $adUnit);
