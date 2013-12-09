@@ -17,8 +17,7 @@ set :twitter_account_id, '1465737598'
 activate :directory_indexes
 
 
-require 'helpers/data_helpers'
-helpers DataHelpers
+helpers Middleman::Chorus::GoogleDrive::Helpers
 load_spreadsheet("people","0AveeZxA0SOM1dGdSWWFZdHJGc091Q3FrUERVdG1rRWc")
 
 data['people'].each do |person|
