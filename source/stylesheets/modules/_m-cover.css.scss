@@ -11,6 +11,14 @@ $m : '.m-cover';
     font-size: 12px;
     white-space: nowrap;
   }
+
+  @media (max-width: $break_medium) {
+    width: 200px;
+    float: none;
+    margin: 0 auto;
+
+    p {  display: none; }
+  }
 }
 
 #{$m}__logo {
@@ -26,6 +34,15 @@ $m : '.m-cover';
 
     &:hover, a:active {
       border: none;
+    }
+  }
+
+  @media (max-width: $break_medium) {
+    width: 200px;
+    height: 172px;
+
+    a {
+      @include sprite('main-logo-small', $sprites, $sprites_2x);
     }
   }
 }
