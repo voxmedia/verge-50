@@ -118,4 +118,18 @@ module CustomHelpers
       "tier_3"
     end
   end
+
+  def resize_text(name)
+    if name.size >= 29
+      "smallest"
+    elsif name.size >= 25
+      "tiny"
+    elsif name.size >= 20
+      "very-small"
+    elsif name.size >= 15
+      "smaller"
+    elsif name.size >= 10
+      "small"
+    end
+  end
 end

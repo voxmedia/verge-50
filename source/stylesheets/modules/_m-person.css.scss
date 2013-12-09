@@ -68,6 +68,26 @@ $m : '.m-person';
     i {
       @include din($font_weight: bold);
     }
+
+    &.smallest {
+      font-size: 34px;
+    }
+
+    &.tiny {
+      font-size: 44px;
+    }
+
+    &.very-small {
+      font-size: 48px;
+    }
+
+    &.smaller {
+      font-size: 54px;
+    }
+
+    &.small {
+      font-size: 60px;
+    }
   }
 
   .flexbox & {
