@@ -1,5 +1,10 @@
 <li class="m-pages__page">
   <div class="l-content-wrap">
-    <h2>The Verge 50</h2>
+    <article class="m-cover">
+      <div class="m-cover__content">
+        <h2 class="m-cover__logo"><a href="<%= page_url(data.pages.find{ |p| p.name == 'intro' }.slug)%>" data-page="<%= data.pages.find{ |p| p.name == 'intro' }.slug %>"><%= app_name %></a></h2>
+        <p>Use the arrows above or your keyboard’s arrow keys to navigate.</p>
+      </div>
+    </article>
   </div>
 </li>

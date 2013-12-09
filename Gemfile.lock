@@ -5,12 +5,28 @@ GIT
     middleman-chorus (0.0.1)
       middleman-core (>= 3.0.0)
 
+GIT
+  remote: git@github.com:voxmedia/vox-google-drive.git
+  revision: 65468cfa12fd7fdaa9a405aff46f4dbbd6084df8
+  specs:
+    vox-google-drive (0.0.1)
+      css_parser (~> 1.3.5)
+      google-api-client (~> 0.7.0.rc2)
+      json (~> 1.8.1)
+      nokogiri (~> 1.5.10)
+      thor (~> 0.18.1)
+
 GEM
   remote: http://rubygems.org/
   specs:
     activesupport (3.2.15)
       i18n (~> 0.6, >= 0.6.4)
       multi_json (~> 1.0)
+    addressable (2.3.5)
+    autoparse (0.3.3)
+      addressable (>= 2.3.1)
+      extlib (>= 0.9.15)
+      multi_json (>= 1.0.0)
     chunky_png (1.2.9)
     coffee-script (2.2.0)
       coffee-script-source
@@ -20,20 +36,40 @@ GEM
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
       sass (~> 3.1)
+    css_parser (1.3.5)
+      addressable
     em-websocket (0.5.0)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.5.3)
     eventmachine (1.0.3)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    extlib (0.9.16)
+    faraday (0.9.0.rc6)
+      multipart-post (~> 1.2.0)
     ffi (1.9.3)
     fssm (0.2.10)
+    google-api-client (0.7.0.rc2)
+      addressable (>= 2.3.2)
+      autoparse (>= 0.3.3)
+      extlib (>= 0.9.15)
+      faraday (>= 0.9.0.rc5)
+      jwt (>= 0.1.5)
+      launchy (>= 2.1.1)
+      multi_json (>= 1.0.0)
+      signet (>= 0.5.0)
+      uuidtools (>= 2.1.0)
     haml (4.0.4)
       tilt
     hike (1.2.3)
     http_parser.rb (0.5.3)
     i18n (0.6.5)
+    json (1.8.1)
+    jwt (0.1.8)
+      multi_json (>= 1.5)
     kramdown (1.2.0)
+    launchy (2.4.2)
+      addressable (~> 2.3)
     listen (1.3.1)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
@@ -68,6 +104,8 @@ GEM
       sprockets-helpers (~> 1.0.0)
       sprockets-sass (~> 1.0.0)
     multi_json (1.8.2)
+    multipart-post (1.2.0)
+    nokogiri (1.5.10)
     rack (1.5.2)
     rack-livereload (0.3.15)
       rack
@@ -80,6 +118,11 @@ GEM
       ffi (>= 0.5.0)
     redcarpet (2.3.0)
     sass (3.2.12)
+    signet (0.5.0)
+      addressable (>= 2.2.3)
+      faraday (>= 0.9.0.rc5)
+      jwt (>= 0.1.5)
+      multi_json (>= 1.0.0)
     sprockets (2.10.1)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -95,6 +138,7 @@ GEM
     uglifier (2.1.2)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
+    uuidtools (2.1.4)
 
 PLATFORMS
   ruby
@@ -104,4 +148,5 @@ DEPENDENCIES
   middleman-chorus!
   middleman-livereload (~> 3.1.0)
   redcarpet (~> 2.3.0)
+  vox-google-drive!
   wdm (~> 0.1.0)

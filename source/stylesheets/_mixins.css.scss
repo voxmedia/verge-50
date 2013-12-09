@@ -1,10 +1,10 @@
 @mixin din($font_size: inherit, $font_weight: normal, $font_style: normal, $text_transform: uppercase, $line_height: 1) {
   @if $font_weight == bold {
-    font-family: DINNextLTPro-BoldCondensed;
+    font-family: 'DINNextLTPro-BoldCondensed', sans-serif;
   } @else if $font_weight == heavy {
-    font-family: DINNextLTPro-HeavyCondensed;
+    font-family: 'DINNextLTPro-HeavyCondensed', sans-serif;
   } @else {
-    font-family: DINNextLTPro-Condensed;
+    font-family: 'DINNextLTPro-Condensed', sans-serif;
   }
   font-style: $font_style;
   font-size: $font_size;
@@ -35,10 +35,43 @@
   }
 }
 
-@mixin tilt($angle, $x_offset, $y_offset, $margin) {
+@mixin tilt($angle, $y_offset, $x_offset, $margin) {
   .csstransforms & {
     @include transform(rotate($angle));
     @include transform-origin($y_offset, $x_offset);
+    -webkit-font-smoothing: antialiased;
     margin-top: $margin;
   } 
+}
+
+@mixin link-sprite($sprite, $sprite-active, $width, $height) {
+  position: relative;
+
+  &:before {
+    content: '';
+    width: $width;
+    height: $height;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: - $width / 2;
+    margin-top: - $height / 2;
+  }
+
+  @if $sprite == $sprite-active {
+    &:before {
+      @include sprite($sprite, $sprites, $sprites_2x);
+    }
+  } @else {
+    &:link:before, &:visited:before {
+      @include sprite($sprite, $sprites, $sprites_2x);
+    }
+    &:hover:before, &:active:before {
+      @include sprite($sprite-active, $sprites, $sprites_2x);
+    }
+  } 
+
+  &:active:before {
+    margin-top: 1 - ($height / 2);
+  }
 }

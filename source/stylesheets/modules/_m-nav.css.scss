@@ -25,7 +25,7 @@ $m : '.m-nav';
 }
 
 #{$m}__list-item {
-  @include din($font_size: 18px, $line_height: 1.25);
+  @include sans-serif($font_size: 14px, $line_height: 1.5);
   
   a {
     display: block;

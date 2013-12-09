@@ -1,20 +1,23 @@
-<li class="m-pages__page" id="<%= person.slug %>" data-page-url="<%= page_url('list', person) %>" data-name="<%= person.name %>">
+<li class="m-pages__page" id="<%= person.slug %>" data-page-url="<%= page_url(person.slug) %>" data-name="<%= person.name %>">
   <div class="l-content-wrap">
-    <article class="m-person">
+    <article class="m-person <%= list_tier(person.position.to_i) %>">
+      <%= partial "partials/sections/headshot", :locals => { :person => person } %>
       <div class="m-person__content">
         <header class="m-person__header">
           <span class="m-person__position"><%= zero_padded(person.position) %></span>
-          <h2><%= formatted_names(person.name) %></h2>
-          <span class="m-person__category"><%= person.category.name %></span>
+          <div class="m-person__name">
+            <h2 class="<%= resize_text(person.name) %>"><%= formatted_names(person.name) %></h2>
+          </div>
+          <span class="m-person__category"><%= person.category %></span>
         </header>
 
         <aside class="m-person__info">
           <% person.title.each do |t| %>
-            <h3 class="m-person__title"><%= t %></h3>
+            <h3 class="m-person__titles"><%= t %></h3>
           <% end %>
           <p>Age: <%= person.age %></p>
           <ul class="m-person__achievements">
-            <% person.achievements.each do |t| %>
+            <% person.achievements.split("*").each do |t| %>
               <li><%= t %></li>
             <% end %>
           </ul>
@@ -22,6 +25,15 @@
 
         <div class="m-person__blurb">
           <%= person.blurb %>
+        </div>
+
+        <div class="m-person__share">
+          <h4>Share</h4>
+          <div class="m-person__share-buttons">
+            <a class="m-person__twitter" title="Share <%= person.name %>'s The Verge 50 profile on Twitter" data-social href="<%= tweet(person.slug, "The Verge 50: #{person.name}") %>">Twitter</a>
+            <a class="m-person__facebook" title="Share <%= person.name %>'s The Verge 50 profile on Facebook"  data-social href="<%= facebook(person.slug) %>">Facebook</a>
+            <a class="m-person__google" title="Share <%= person.name %>'s The Verge 50 profile on Google+"  data-social href="<%= google_plus(person.slug) %>">Google</a>
+          </div>
         </div>
       </div>
     </article>
