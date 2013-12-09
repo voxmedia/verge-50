@@ -76,11 +76,17 @@ Verge.Pages = (function ($) {
       $adPage.remove();
       // Rebuild the $pages array
       setupPages();
-      last_seen_ad_page_index = -1;
-      // reset index if moving forward only
-      if(last_seen_ad_page_index < current){
-        current = previous_index;
+
+      var pages_moved_since_ad = Math.abs(last_seen_ad_page_index-current);
+      // Going backwards
+      if(pages_moved_since_ad == 1){
+        if(last_seen_ad_page_index < current){
+          // reset index if moving forward only
+          current-=1;
+        }
       }
+
+      last_seen_ad_page_index = -1;
     }
   }
 
@@ -88,7 +94,7 @@ Verge.Pages = (function ($) {
     var handleAdCodeInjection = function(e, ad_html) {
       // Handle the backward case
       if (desired_page_index < current) {
-        desired_page_index -= 1;
+        desired_page_index +=1;
       }
       // this does the actual heavy lifting of inserting ad stuffs
       insertAdBeforePage(ad_html, desired_page_index);
