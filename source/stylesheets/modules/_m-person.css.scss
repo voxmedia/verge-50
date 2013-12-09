@@ -10,15 +10,22 @@ $m : '.m-person';
 }
 
 #{$m}__headshot {
-  width: 100%;
-  max-width: $column_width * 6;
+  width: 640px;
+  text-align: center;
 
-  .tier_1 &, .tier_3 & {
+  .tier_1 & {
     float: left;
+    margin-left: ($column_width * 6) - 640px;
   }
 
   .tier_2 & {
     float: right;
+    margin-right: ($column_width * 6) - 640px;
+  }
+
+  .tier_3 & {
+    float: left;
+    margin-left: ($column_width * 6) - 640px;
   }
 }
 
