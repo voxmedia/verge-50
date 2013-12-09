@@ -14,11 +14,9 @@ module DataHelpers
     end
     options = {:format=>"text/tsv",:file_id=>file_id}
     csv = $google_drive_client.download!(options).body.split("\n")
-    puts csv
     fields = []
     values = []
     csv.each_with_index do | line,index |
-      puts "working on #{index} - #{line[0,40]}"
       line.strip!
       row = line.split("\t")
       if index == 0
