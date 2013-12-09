@@ -29,15 +29,15 @@
         // plop the thing here
         Vox.EditorialApps.Ads.render(Vox.EditorialApps.AdHelpers.AdUnitIds.VergeFishTank);
 
-        $()
+        // Uncomment for ad injection without hymnal/openx
 
-        $(document).on(Vox.EditorialApps.AdHelpers.Events.AdRequest, function(e,data){
-          if(data.pagesSeen == 2 || data.pagesSeen == 6) {
-            console.log("sending hymnal for ad",data);
-            var html = "<h1 style=\"color:white; text-align:center;font-size:24pt;\">Hello from Hymnal!</h1>";
-            $(document).triggerHandler(Vox.EditorialApps.AdHelpers.Events.AdResponseWithHTML, html);
-          }
-        });
+        // $(document).on(Vox.EditorialApps.AdHelpers.Events.AdRequest, function(e,data){
+        //   if(data.pagesSeen == 2 || data.pagesSeen == 6) {
+        //     console.log("sending hymnal for ad",data);
+        //     var html = "<h1 style=\"color:white; text-align:center;font-size:24pt;\">Hello from Hymnal!</h1>";
+        //     $(document).triggerHandler(Vox.EditorialApps.AdHelpers.Events.AdResponseWithHTML, html);
+        //   }
+        // });
       </script>
     </div>
 
