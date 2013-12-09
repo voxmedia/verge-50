@@ -17,6 +17,6 @@ $sprites_2x: sprite-map('../images/sprites/global_2x/*.png', $spacing: 20px);
 
 // Breakpoints
 
-$break_small: <%= break_small %>px;
-$break_medium: <%= break_medium %>px;
-$break_large: <%= break_large %>px;
+$break_small: 400px;
+$break_medium: 720px;
+$break_large: 975px;
