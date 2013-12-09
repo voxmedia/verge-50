@@ -21,6 +21,15 @@
   height: 100%;
   max-width: $column_width * 11;
   margin: 0 auto;
+
+  @media (max-width: $break_large) {
+    max-width: $column_width * 8;
+  }
+
+  @media (max-width: $break_medium) {
+    max-width: $column_width * 4;
+    padding: 0 20px;
+  }
 }
 
 // Moves the main content off the screen depending on which side menu is open.

@@ -26,6 +26,10 @@ $m : '.m-pages';
     color: $dark-grey;
     margin: 1.5em 0;
     line-height: 1.5;
+
+    @media (max-width: $break_medium) {
+      font-size: 12px;
+    }
   }
 
   em, i {

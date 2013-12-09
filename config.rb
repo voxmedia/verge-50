@@ -14,6 +14,10 @@ set :facebook_app_id, '179668695452017'
 set :twitter, 'verge'
 set :twitter_account_id, '1465737598'
 
+set :break_small, 400
+set :break_medium, 720
+set :break_large, 975
+
 activate :directory_indexes
 
 

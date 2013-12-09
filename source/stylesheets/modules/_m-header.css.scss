@@ -63,6 +63,10 @@ $border-color: $really-dark-grey;
   &:hover {
     background: #4099FF;
   }
+
+  @media (max-width: $break_medium) {
+    display: none;
+  }
 }
 
 #{$m}__facebook {
@@ -73,6 +77,10 @@ $border-color: $really-dark-grey;
   &:hover {
     background: #3B5998;
   }
+
+  @media (max-width: $break_medium) {
+    display: none;
+  }
 }
 
 #{$m}__google {
@@ -82,6 +90,10 @@ $border-color: $really-dark-grey;
 
   &:hover {
     background: #d34836;
+  }
+
+  @media (max-width: $break_medium) {
+    display: none;
   }
 }
 

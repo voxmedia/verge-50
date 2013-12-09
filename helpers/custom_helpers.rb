@@ -132,4 +132,12 @@ module CustomHelpers
       "small"
     end
   end
+
+  def mq(query, retina = false)
+    if retina
+      "(#{query}) and (-webkit-min-device-pixel-ratio: 1.3), (#{query}) and (min-device-pixel-ratio: 1.3), (#{query}) and (min-resolution: '124.8dpi')"
+    else
+      "(#{query})"
+    end
+  end
 end

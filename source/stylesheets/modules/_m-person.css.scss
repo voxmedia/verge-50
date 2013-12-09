@@ -11,7 +11,12 @@ $m : '.m-person';
 
 #{$m}__headshot {
   width: 640px;
+  height: 640px;
   text-align: center;
+
+  img {
+    max-width: 100%;
+  }
 
   .tier_1 & {
     float: left;
@@ -27,6 +32,21 @@ $m : '.m-person';
     float: left;
     margin-left: ($column_width * 6) - 640px;
   }
+
+  @media (max-width: $break_large) {
+    .tier_1 &, .tier_2 &, .tier_3 & {
+      width: $column_width * 4;
+      height: $column_width * 4;
+      margin: 0;
+    }
+  }
+
+  @media (max-width: $break_medium) {
+    .tier_1 &, .tier_2 &, .tier_3 & {
+      float: none;
+      margin-bottom: -60px;
+    }
+  }
 }
 
 #{$m}__content {
@@ -41,6 +61,14 @@ $m : '.m-person';
   .tier_2 & {
     float: left;
   }
+
+  @media (max-width: $break_large) {
+    max-width: $column_width * 4;
+  }
+
+  @media (max-width: $break_medium) {
+    float: none;
+  }
 }
 
 #{$m}__header {
@@ -54,6 +82,10 @@ $m : '.m-person';
   .tier_2 &, .tier_3 & {
     @include tilt(30deg, 100%, 30%, 180px);
   }
+
+  @media (max-width: $break_medium) {
+    margin: 0 20px;
+  }
 }
 
 #{$m}__name {
@@ -64,6 +96,10 @@ $m : '.m-person';
   float: left;
   clear: both;
   width: 100%;
+
+  @media (max-width: $break_medium) {
+    min-height: 60px;
+  }
 
   h2 {
     @include din($font_size: 72px);
@@ -95,6 +131,56 @@ $m : '.m-person';
 
     &.small {
       font-size: 60px;
+    }
+
+    @media (max-width: $break_large) {
+      @include din($font_size: 60px);
+      padding-top: 0.1em;
+
+      &.smallest {
+        font-size: 26px;
+      }
+
+      &.tiny {
+        font-size: 32px;
+      }
+
+      &.very-small {
+        font-size: 34px;
+      }
+
+      &.smaller {
+        font-size: 42px;
+      }
+
+      &.small {
+        font-size: 48px;
+      }
+    }
+
+    @media (max-width: $break_medium) {
+      @include din($font_size: 54px);
+      padding-top: 0.1em;
+
+      &.tiny {
+        font-size: 22px;
+      }
+
+      &.smallest {
+        font-size: 18px;
+      }
+
+      &.very-small {
+        font-size: 24px;
+      }
+
+      &.smaller {
+        font-size: 26px;
+      }
+
+      &.small {
+        font-size: 32px;
+      }
     }
   }
 
@@ -139,6 +225,11 @@ $m : '.m-person';
   clear: both;
   padding-left:0.3em;
   padding-right:0.3em;
+
+  @media (max-width: $break_medium) {
+    font-size: 20px;
+    padding-top: 0.1em;
+  }
 }
 
 #{$m}__info {
