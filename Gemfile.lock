@@ -1,6 +1,6 @@
 GIT
   remote: git@github.com:voxmedia/middleman-chorus.git
-  revision: 283cdfad2fb1988565993a5b06e352d576a0d4e6
+  revision: 4ea8b54dd401cebacb53be99e77bbea8179c1d3b
   specs:
     middleman-chorus (0.0.1)
       middleman-core (>= 3.0.0)
