@@ -58,7 +58,7 @@ Verge.Pages = (function ($) {
     var $adUnit = $(li);
 
     $adUnit.data().original_class = $adUnit.attr('class');
-    $adUnit.data('page-url',"hymnal");
+    $adUnit.data('page-url',"advertisement");
 
     // jam this in right before this page
     console.log("insertAdBeforePage | inserting", $adUnit);
@@ -71,25 +71,18 @@ Verge.Pages = (function ($) {
     console.log("insertAdBeforePage | inserted", $adUnit[0]);
   }
 
-  function removeAdIfWasJustSeen(current_index) {
+  function removeAdIfWasJustSeen(previous_index) {
     // console.log("removeAdIfWasJustSeen | checking if we can remove ads");
-    console.log("removeAdIfWasJustSeen | last seen at at: " + last_seen_ad_page_index + ", ad_was_shown_last: " + ad_was_shown_last);
-    console.log("removeAdIfWasJustSeen | index: " + current_index);
-    if (ad_was_shown_last &&
-        current_index === last_seen_ad_page_index) {
+    if (previous_index === last_seen_ad_page_index) {
       console.log("doing something...");
       var $adPage = $pages.eq(last_seen_ad_page_index);
       console.log("removeAdIfWasJustSeen | trying to remove!", $adPage.get(0));
-      console.log("removeAdIfWasJustSeen | current: ", current_index);
       $adPage.remove();
       // Rebuild the $pages array
       setupPages();
-      // current -= 1;
       console.log("removeAdIfWasJustSeen | current: ", current);
       ad_was_shown_last = false;
       lastSeenAdPage = -1;
-    } else {
-      console.log("removeAdIfWasJustSeen | noop");
     }
   }
 
