@@ -31,8 +31,9 @@
 
         // Placeholder for ad support, while testing....
         // TODO: Remove before publishing
+        var ads_on = [2,6,10];
         $(document).on(Vox.EditorialApps.AdHelpers.Events.AdRequest, function(e,data){
-          if(data.pagesSeen == 2 || data.pagesSeen == 6) {
+          if(_.contains(ads_on,data.pagesSeen)) {
             var html = "<h1 style=\"text-align:center;font-size:46pt;padding-top:3em;\">Ads go here!</h1>";
             $(document).triggerHandler(Vox.EditorialApps.AdHelpers.Events.AdResponseWithHTML, html);
           }

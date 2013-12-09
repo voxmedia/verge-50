@@ -72,11 +72,15 @@ Verge.Pages = (function ($) {
   function removeAdIfWasJustSeen(previous_index) {
     if (previous_index === last_seen_ad_page_index) {
       var $adPage = $pages.eq(last_seen_ad_page_index);
-      console.log("removeAdIfWasJustSeen | removing ", $adPage.get(0));
+      console.log("removeAdIfWasJustSeen | removing. previous_index: " + previous_index + " current: " + current);
       $adPage.remove();
       // Rebuild the $pages array
       setupPages();
-      lastSeenAdPage = -1;
+      last_seen_ad_page_index = -1;
+      // reset index if moving forward only
+      if(last_seen_ad_page_index < current){
+        current = previous_index;
+      }
     }
   }
 
