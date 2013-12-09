@@ -5,7 +5,9 @@
       <div class="m-person__content">
         <header class="m-person__header">
           <span class="m-person__position"><%= zero_padded(person.position) %></span>
-          <h2><%= formatted_names(person.name) %></h2>
+          <div class="m-person__name">
+            <h2><%= formatted_names(person.name) %></h2>
+          </div>
           <span class="m-person__category"><%= person.category %></span>
         </header>
 

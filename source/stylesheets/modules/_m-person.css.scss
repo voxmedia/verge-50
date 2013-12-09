@@ -40,26 +40,51 @@ $m : '.m-person';
   @extend %clearfix;
   color: #fff;
 
-  h2 {
-    @include din($font_size: 72px);
-    background: #000;
-    margin: 5px 0;
-    float: left;
-    clear: both;
-    width: 100%;
-    text-align: center;
-
-    i {
-      @include din($font_weight: bold);
-    }
-  }
-
   .tier_1 & {
     @include tilt(-30deg, 10%, 50%, 140px);
   }
 
   .tier_2 &, .tier_3 & {
     @include tilt(30deg, 100%, 30%, 180px);
+  }
+}
+
+#{$m}__name {
+  background: #000;
+  min-height: 100px;
+  margin: 5px 0;
+  float: left;
+  clear: both;
+  width: 100%;
+
+  h2 {
+    @include din($font_size: 72px);
+    background: #000;
+    text-align: center;
+    width: 100%;
+    padding-top: 0.1em;
+
+    i {
+      @include din($font_weight: bold);
+    }
+  }
+
+  .flexbox & {
+    @extend %flexbox;
+  }
+
+  .no-flexbox &:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em; /* Adjusts for spacing */
+  }
+
+  .no-flexbox & h2 {
+    display: inline-block;
+    vertical-align: middle;
+    padding-top:0;
   }
 }
 
