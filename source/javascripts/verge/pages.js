@@ -25,7 +25,8 @@ Verge.Pages = (function ($) {
         'animation' : 'animationend'
       },
       animation_end_event = animation_end_events[Modernizr.prefixed('animation')],
-      support = Modernizr.cssanimations;
+      support = Modernizr.cssanimations,
+      url_prefix = Verge.context.url_prefix === '' ? '/' : Verge.context.url_prefix;
 
   var nextPage = function () {
     goToPage(current + 1);
@@ -55,7 +56,7 @@ Verge.Pages = (function ($) {
 
     // Magic data elements this framework needs
     $adUnit.data().original_class = $adUnit.attr('class');
-    $adUnit.data('page-url',"advertisement");
+    $adUnit.data('page-url', url_prefix);
 
     // Place this in the corret place in the DOM
     console.log("insertAdBeforePage | inserting", $adUnit);
@@ -228,8 +229,7 @@ Verge.Pages = (function ($) {
     var page_url, new_url, prefix, state;
     if (Modernizr.history) {
       page_url = $page.data('page-url');
-      prefix = Verge.context.url_prefix === '' ? '/' : Verge.context.url_prefix;
-      new_url = _.isUndefined(page_url) ? prefix : page_url;
+      new_url = _.isUndefined(page_url) ? url_prefix : page_url;
 
       if (new_url === location.pathname) {
         return;
