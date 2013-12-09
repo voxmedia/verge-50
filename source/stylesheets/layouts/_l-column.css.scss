@@ -1,0 +1,12 @@
+$l : '.l-column';
+
+#{$l} {
+  float: left;
+  width: 50%;
+  padding-right: 10px;
+
+  &.right {
+    padding-right: 0;
+    padding-left: 10px;
+  }
+}

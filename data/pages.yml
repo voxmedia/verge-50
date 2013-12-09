@@ -8,8 +8,6 @@
 - name: credits
   title: Credits
   slug: credits
-  content: |-
-           <p>TBD</p>
 - name: full-list
   title: The Fifty
   slug: the-list
