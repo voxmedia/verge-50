@@ -13,12 +13,14 @@ module DataHelpers
       $google_drive_client = Vox::GoogleDrive::Client.new({})
     end
     options = {:format=>"text/tsv",:file_id=>file_id}
-    csv = $google_drive_client.download!(options).body
+    csv = $google_drive_client.download!(options).body.split("\n")
+    puts csv
     fields = []
     values = []
     csv.each_with_index do | line,index |
+      puts "working on #{index} - #{line[0,40]}"
       line.strip!
-      row = line.split("\t") 
+      row = line.split("\t")
       if index == 0
         fields = row
       else
@@ -26,12 +28,13 @@ module DataHelpers
           row_value = {}
           fields.each_with_index do | field,i |
             value = row[i]
-            row_value[field] = value  
+            row_value[field] = value
           end
           values << row_value
         end
       end
     end
+    puts "Writing to #{namespace}.json"
     File.open("data/#{namespace}.json","w") do | f |
       f << JSON.dump(values)
     end
@@ -40,7 +43,7 @@ module DataHelpers
       s = JSON.parse(File.read("oauth2.json"))
       s["authorization_uri"] = "https://accounts.google.com/o/oauth2/auth"
       s["token_credential_uri"] = "https://accounts.google.com/o/oauth2/token"
-      File.open("oauth2.json","w"){|f| f << JSON.dump(s) } 
+      File.open("oauth2.json","w"){|f| f << JSON.dump(s) }
     end
     values
   end
