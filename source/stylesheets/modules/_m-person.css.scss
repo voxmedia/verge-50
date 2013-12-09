@@ -67,6 +67,7 @@ $m : '.m-person';
 
     i {
       @include din($font_weight: bold);
+      font-style: normal;
     }
 
     &.smallest {
