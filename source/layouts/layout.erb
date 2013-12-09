@@ -2,7 +2,7 @@
 <html>
   <head>
     <%= partial "partials/meta_tags",
-                :locals => { 
+                :locals => {
                 :slug => slug ||= nil,
                 :title => title ||= nil,
                 :page_type => page_type ||= 'index' } %>
@@ -20,9 +20,26 @@
      };
     </script>
   </head>
-  
+
   <body>
     <%= partial 'partials/header' %>
+
+    <div class="hymnal-loading-zone" style="display:none;">
+      <script type="text/javascript">
+        // plop the thing here
+        Vox.EditorialApps.Ads.render(Vox.EditorialApps.AdHelpers.AdUnitIds.VergeFishTank);
+
+        // Placeholder for ad support, while testing....
+        // TODO: Remove before publishing
+        $(document).on(Vox.EditorialApps.AdHelpers.Events.AdRequest, function(e,data){
+          if(data.pagesSeen == 2 || data.pagesSeen == 6) {
+            var html = "<h1 style=\"text-align:center;font-size:46pt;padding-top:3em;\">Ads go here!</h1>";
+            $(document).triggerHandler(Vox.EditorialApps.AdHelpers.Events.AdResponseWithHTML, html);
+          }
+        });
+      </script>
+    </div>
+
     <div class="l-outer-wrap">
       <div class="l-inner-wrap">
         <%= partial 'partials/nav' %>

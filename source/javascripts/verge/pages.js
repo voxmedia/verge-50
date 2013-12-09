@@ -5,13 +5,15 @@ var Verge = Verge || {};
 Verge.Pages = (function ($) {
 
   var $main = $('.m-pages'),
-      $pages = $main.children('li'),
+      $pages = [],
       $next = $('.m-header__next'),
       $previous = $('.m-header__previous'),
       $page_links = $('a[data-page]'),
+      pages_count = 0, // set later
       $body = $('body'),
-      pages_count = $pages.length,
       page_class = 'm-pages__page',
+      total_pages_seen = 0,
+      last_seen_ad_page_index = -1,
       current = 0,
       is_animating = false,
       end_current_page = false,
@@ -41,6 +43,67 @@ Verge.Pages = (function ($) {
     return false;
   };
 
+  /* ------- Start - Ad Handling ------------------------*/
+  // Insert the ad markup and a fake menu item before the specified page
+  function insertAdBeforePage(ad_html, index) {
+
+    var li = document.createElement('li');
+        li.className = page_class +' m-pages__ad';
+        li.id = 'ad_'+index;
+        li.innerHTML = ad_html;
+    var $adUnit = $(li);
+
+    // Magic data elements this framework needs
+    $adUnit.data().original_class = $adUnit.attr('class');
+    $adUnit.data('page-url',"advertisement");
+
+    // Place this in the corret place in the DOM
+    console.log("insertAdBeforePage | inserting", $adUnit);
+    $adUnit.insertBefore($pages.eq(index));
+
+    // Record this to remove later
+    last_seen_ad_page_index = index;
+
+    // Rebuild the $pages array
+    setupPages();
+  }
+
+  function removeAdIfWasJustSeen(previous_index) {
+    if (previous_index === last_seen_ad_page_index) {
+      var $adPage = $pages.eq(last_seen_ad_page_index);
+      console.log("removeAdIfWasJustSeen | removing ", $adPage.get(0));
+      $adPage.remove();
+      // Rebuild the $pages array
+      setupPages();
+      lastSeenAdPage = -1;
+    }
+  }
+
+  var checkForAdContent = function(desired_page_index){
+    var handleAdCodeInjection = function(e, ad_html) {
+      // Handle the backward case
+      if (desired_page_index < current) {
+        desired_page_index -= 1;
+      }
+      // this does the actual heavy lifting of inserting ad stuffs
+      insertAdBeforePage(ad_html, desired_page_index);
+    };
+
+    // check to see if we should show an ad here
+    // Get ready for an event from hymnal
+    //  to see if hymnal has anything for us
+    $(document).on(Vox.EditorialApps.AdHelpers.Events.AdResponseWithHTML, handleAdCodeInjection);
+    $(document).triggerHandler(Vox.EditorialApps.AdHelpers.Events.AdRequest, {
+      pagesSeen: total_pages_seen,
+      currentPage: current
+    });
+    $(document).off(Vox.EditorialApps.AdHelpers.Events.AdResponseWithHTML, handleAdCodeInjection);
+    // ==========================================================================================
+    return desired_page_index;
+  };
+
+  /* ------- End - Ad Handling ------------------------*/
+
   var goToPage = function (index) {
     var $current_page, $next_page, out_class, in_class;
 
@@ -52,6 +115,8 @@ Verge.Pages = (function ($) {
       goToSamePage(index);
       return false;
     }
+
+    total_pages_seen += 1;
 
     if (index > current) {
       out_class = 'to-left';
@@ -67,8 +132,11 @@ Verge.Pages = (function ($) {
 
     $current_page = $pages.eq(current);
 
-    current = index;
+    // Check to see if it is time to inject an ad
+    // Note this might need to modify index value
+    index = checkForAdContent(index);
 
+    current = index;
     $next_page = $pages.eq(current).removeAttr('style').addClass('current');
 
     $current_page.addClass(out_class).on(animation_end_event, function() {
@@ -90,6 +158,7 @@ Verge.Pages = (function ($) {
         updatePageUrl($next_page);
       }
     });
+
 
     if(!support) {
       onEndAnimation($next_page, $current_page);
@@ -132,7 +201,7 @@ Verge.Pages = (function ($) {
     case keys.j:
     case keys.left:
       previousPage();
-      return false;  
+      return false;
       break;
     case keys.k:
     case keys.right:
@@ -143,6 +212,7 @@ Verge.Pages = (function ($) {
   };
 
   var onEndAnimation = function($in_page, $out_page) {
+    removeAdIfWasJustSeen($pages.index($out_page));
     end_current_page = false;
     end_next_page = false;
     is_animating = false;
@@ -195,6 +265,12 @@ Verge.Pages = (function ($) {
 
   };
 
+  // Load up all em pages!
+  var setupPages = function(){
+    $pages = $main.children('li');
+    pages_count = $pages.length;
+  };
+
   var picturefill = function ($page) {
     var picture = $page.find('.picturefill');
     if (!!window.picturefill && picture.length > 0 && typeof picture.attr('data-picture') === 'undefined') {
@@ -204,6 +280,8 @@ Verge.Pages = (function ($) {
   };
 
   var init = function () {
+    setupPages();
+
     var pathname_array = window.location.pathname.split('/'),
         pathname = pathname_array[pathname_array.length - 1],
         $current_page;
@@ -217,7 +295,7 @@ Verge.Pages = (function ($) {
         e.preventDefault();
         goToPage(0);
       }
-    })
+    });
 
     $pages.each(function() {
       var $page = $(this);
@@ -232,7 +310,7 @@ Verge.Pages = (function ($) {
     }
 
     picturefill($current_page);
-  }
+  };
 
   init();
 

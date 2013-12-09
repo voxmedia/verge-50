@@ -1,3 +1,5 @@
 //= require_tree ./top
+var Verge = Verge || {};
 
-Verge.Ads.setup();
+
+Vox.EditorialApps.Ads.setup();
