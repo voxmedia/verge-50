@@ -212,9 +212,11 @@ Verge.Pages = (function ($) {
     $previous.on('click', previousPage);
     $page_links.on('click', clickToPage);
     $(document).on('keydown', keyboardNav);
-    $('.m-header__logo').click('a', function () {
-      goToPage(0);
-      return false;
+    $('.m-header__logo').click('a', function (e) {
+      if (e.which === 1 && !e.metaKey && !e.ctrlKey) {
+        e.preventDefault();
+        goToPage(0);
+      }
     })
 
     $pages.each(function() {
