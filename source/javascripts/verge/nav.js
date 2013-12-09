@@ -21,11 +21,13 @@ Verge.Nav = (function ($) {
     if (!Modernizr.csstransitions) {
       setOverflowManuallyBecauseSafariFuckingSucks();
     }
+    _gaq.push(['_trackEvent', Verge.Context.app_name, 'Open Nav']);
     return false;
   };
 
   var closeNav = function () {
     $body.removeClass(open_class);
+    _gaq.push(['_trackEvent', Verge.Context.app_name, 'Close Nav']);
     return false;
   };
 

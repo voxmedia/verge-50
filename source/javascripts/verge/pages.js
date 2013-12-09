@@ -26,15 +26,17 @@ Verge.Pages = (function ($) {
       },
       animation_end_event = animation_end_events[Modernizr.prefixed('animation')],
       support = Modernizr.cssanimations,
-      url_prefix = Verge.context.url_prefix === '' ? '/' : Verge.context.url_prefix;
+      url_prefix = Verge.Context.url_prefix === '' ? '/' : Verge.Context.url_prefix;
 
   var nextPage = function () {
     goToPage(current + 1);
+    _gaq.push(['_trackEvent', Verge.Context.app_name, 'Navigation', 'Next']);
     return false;
   };
 
   var previousPage = function () {
     goToPage(current - 1);
+    _gaq.push(['_trackEvent', Verge.Context.app_name, 'Navigation', 'Previous']);
     return false;
   };
 
@@ -160,8 +162,7 @@ Verge.Pages = (function ($) {
       end_current_page = true;
       if(end_next_page) {
         onEndAnimation($next_page, $current_page);
-        updatePageTitle($next_page);
-        updatePageUrl($next_page);
+        onNewPageView($next_page);
       }
     });
 
@@ -170,16 +171,14 @@ Verge.Pages = (function ($) {
       end_next_page = true;
       if(end_current_page) {
         onEndAnimation($next_page, $current_page);
-        updatePageTitle($next_page);
-        updatePageUrl($next_page);
+        onNewPageView($next_page);
       }
     });
 
 
     if(!support) {
       onEndAnimation($next_page, $current_page);
-      updatePageTitle($next_page);
-      updatePageUrl($next_page);
+      onNewPageView($next_page);
     }
   };
 
@@ -240,22 +239,34 @@ Verge.Pages = (function ($) {
     picturefill($in_page);
   };
 
-  var updatePageUrl = function ($page) {
-    var page_url, new_url, prefix, state;
-    if (Modernizr.history) {
-      page_url = $page.data('page-url');
-      new_url = _.isUndefined(page_url) ? url_prefix : page_url;
+  var onNewPageView = function ($page) {
+    var page_url, new_url;
 
-      if (new_url === location.pathname) {
+    page_url = $page.data('page-url');
+    new_url = _.isUndefined(page_url) ? url_prefix : page_url;
+
+    updatePageTitle($page);
+    updatePageUrl(new_url);
+
+    _gaq.push(['_trackPageview', new_url]);
+    _gaq.push(['_setCustomVar', 3, Verge.Content.app_name + ' pages seen', total_pages_seen, 2]);
+  }
+
+  var updatePageUrl = function (url) {
+    var state;
+
+    if (Modernizr.history) {
+
+      if (url === location.pathname) {
         return;
       }
 
       state = {
         id: _.uniqueId(),
-        url: new_url
+        url: url
       };
 
-      window.history.replaceState(state, '', new_url);
+      window.history.replaceState(state, '', url);
     }
   };
 
@@ -263,9 +274,9 @@ Verge.Pages = (function ($) {
     var id = $page.attr('id'),
         name = $page.data('name');
     if (id) {
-      document.title = name + " | " + Verge.context.app_name;
+      document.title = name + " | " + Verge.Context.app_name;
     } else {
-      document.title = Verge.context.app_name;
+      document.title = Verge.Context.app_name;
     }
   };
 
@@ -276,6 +287,7 @@ Verge.Pages = (function ($) {
     if (e.which === 1 && !e.metaKey && !e.ctrlKey) {
       e.preventDefault();
       goToId(page_id);
+      _gaq.push(['_trackEvent', Verge.Context.app_name, 'Menu Navigation', page_id]);
     }
 
   };
@@ -308,6 +320,7 @@ Verge.Pages = (function ($) {
     $('.m-header__logo').click('a', function (e) {
       if (e.which === 1 && !e.metaKey && !e.ctrlKey) {
         e.preventDefault();
+        _gaq.push(['_trackEvent', Verge.Context.app_name, 'Navigation', 'Home']);
         goToPage(0);
       }
     });
