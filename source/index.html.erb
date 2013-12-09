@@ -1,14 +1,14 @@
 <ol class="m-pages">
   <%= partial "partials/sections/cover" %>
 
-  <%= partial "partials/sections/intro", :locals => { :page => data.content.pages.find{ |p| p.name == 'intro' } } %>
+  <%= partial "partials/sections/intro", :locals => { :page => data.pages.find{ |p| p.name == 'intro' } } %>
 
-  <% data.content.people.sort_by{ |p| p.position }.each_with_index do |p, i| %>
+  <% data.people.sort_by{ |p| p.position.to_i }.each_with_index do |p, i| %>
     <%= partial "partials/sections/person", :locals => { :person => p } %>
   <% end %>
 
-  <%= partial "partials/sections/full_list", :locals => { :page => data.content.pages.find{ |p| p.name == 'full-list' } } %>
+  <%= partial "partials/sections/full_list", :locals => { :page => data.pages.find{ |p| p.name == 'full-list' } } %>
 
-  <%= partial "partials/sections/credits", :locals => { :page => data.content.pages.find{ |p| p.name == 'credits' } } %>
+  <%= partial "partials/sections/credits", :locals => { :page => data.pages.find{ |p| p.name == 'credits' } } %>
 
 </ol>

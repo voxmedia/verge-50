@@ -139,8 +139,12 @@ Verge.Pages = (function ($) {
 
     checkForAdContent(index);
 
-    current = index;
-    $next_page = $pages.eq(current).addClass('current');
+// <<<<<<< HEAD
+//     current = index;
+//     $next_page = $pages.eq(current).addClass('current');
+// =======
+    $next_page = $pages.eq(current).removeAttr('style').addClass('current');
+// >>>>>>> master
 
     console.log("goToPage | now current: " + current);
 
@@ -216,14 +220,6 @@ Verge.Pages = (function ($) {
       nextPage();
       return false;
       break;
-    case keys.up:
-      goToPage(0);
-      return false;
-      break;
-    case keys.down:
-      goToPage($pages.length - 1);
-      return false;
-      break;
     }
   };
 
@@ -232,9 +228,11 @@ Verge.Pages = (function ($) {
     end_next_page = false;
     is_animating = false;
     $in_page.attr({ class : $in_page.data().original_class + ' current' });
+    $in_page.css('overflow-y', 'auto');
     if (typeof $out_page !== 'undefined') {
       $out_page.attr({ class : $out_page.data().original_class }).scrollTop(0);
     }
+    picturefill($in_page);
   };
 
   var updatePageUrl = function ($page) {
@@ -285,16 +283,31 @@ Verge.Pages = (function ($) {
     console.log("setupPages length: " + pages_count);
   };
 
+  var picturefill = function ($page) {
+    var picture = $page.find('.picturefill');
+    if (!!window.picturefill && picture.length > 0 && typeof picture.attr('data-picture') === 'undefined') {
+      picture.attr('data-picture', '');
+      window.picturefill();
+    }
+  };
+
   var init = function () {
     setupPages();
 
     var pathname_array = window.location.pathname.split('/'),
-        pathname = pathname_array[pathname_array.length - 1];
+        pathname = pathname_array[pathname_array.length - 1],
+        $current_page;
 
     $next.on('click', nextPage);
     $previous.on('click', previousPage);
     $page_links.on('click', clickToPage);
     $(document).on('keydown', keyboardNav);
+    $('.m-header__logo').click('a', function (e) {
+      if (e.which === 1 && !e.metaKey && !e.ctrlKey) {
+        e.preventDefault();
+        goToPage(0);
+      }
+    });
 
     $pages.each(function() {
       var $page = $(this);
@@ -302,11 +315,13 @@ Verge.Pages = (function ($) {
     });
 
     if (pathname && $('#' + pathname).length > 0) {
-      $('#' + pathname).addClass('current');
-      current = $('#' + pathname).index();
+      $current_page = $('#' + pathname).addClass('current').css('overflow-y', 'auto');
+      current = $current_page.index();
     } else {
-      $pages.eq(current).addClass('current');
+      $current_page = $pages.eq(current).addClass('current').css('overflow-y', 'auto');
     }
+
+    picturefill($current_page);
   };
 
   init();
