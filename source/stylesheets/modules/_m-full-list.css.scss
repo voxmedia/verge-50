@@ -36,8 +36,8 @@ $m : '.m-full-list';
 
   @media (max-width: $break_medium) {
     max-width: $column_width * 4;
-    padding: 20px;
-    margin: 0 auto;
+    padding-bottom: 20px;
+    margin: 20px auto;
   }
 }
 

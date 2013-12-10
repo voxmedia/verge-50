@@ -32,6 +32,11 @@ body {
 %-padded {
   padding: 40px 0 0 0;
   margin-bottom: 40px;
+
+  @media (max-width: $break_medium) {
+    padding-top: 20px;
+    margin-bottom: 20px;
+  }
 }
 
 %-thick-bottom-border {
