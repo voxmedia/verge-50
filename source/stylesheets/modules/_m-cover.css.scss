@@ -47,3 +47,33 @@ $m : '.m-cover';
     margin-top: -150px;
   }
 }
+
+#cover {
+  @media (min-width: $break_medium) {
+    background-image: url('/images/name-collage-left.png');
+    background-repeat: no-repeat;
+    background-position: -250px center;
+  }
+
+  @media (min-width: $break_medium) and (-webkit-min-device-pixel-ratio: '1.3'),
+         (min-width: $break_medium) and (min-resolution: '124.8dpi') {
+    background-image: url('/images/name-collage-left@2x.png');
+    background-repeat: no-repeat;
+    background-position: -250px center;
+    background-size: 691px 1313px;
+  }
+
+  @media (min-width: $break_large) {
+    background-image: url('/images/name-collage-left.png');
+    background-repeat: no-repeat;
+    background-position: left center;
+  }
+
+  @media (min-width: $break_large) and (-webkit-min-device-pixel-ratio: '1.3'),
+         (min-width: $break_large) and (min-resolution: '124.8dpi') {
+    background-image: url('/images/name-collage-left@2x.png');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 691px 1313px;
+  }
+}
