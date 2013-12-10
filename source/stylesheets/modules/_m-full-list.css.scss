@@ -84,7 +84,7 @@ $m : '.m-full-list';
 }
 
 #{$m}__pane {
-  @extend %cleafix;
+  @extend %clearfix;
   display: none;
 
   .category &.category {
