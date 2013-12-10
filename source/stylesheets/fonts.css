@@ -32,25 +32,25 @@
   
 @font-face {
   font-family: 'DINNextLTPro-Condensed';
-  src: url('webfonts/293D82_0_0.eot');
-  src: url('webfonts/293D82_0_0.eot?#iefix') format('embedded-opentype'),
-       url('webfonts/293D82_0_0.woff') format('woff'),
-       url('webfonts/293D82_0_0.ttf') format('truetype');
+  src: url('//fonts.voxmedia.com/the-verge-50/293D82_0_0.eot');
+  src: url('//fonts.voxmedia.com/the-verge-50/293D82_0_0.eot?#iefix') format('embedded-opentype'),
+       url('//fonts.voxmedia.com/the-verge-50/293D82_0_0.woff') format('woff'),
+       url('//fonts.voxmedia.com/the-verge-50/293D82_0_0.ttf') format('truetype');
 }
   
 @font-face {
   font-family: 'DINNextLTPro-BoldCondensed';
-  src: url('webfonts/293D82_1_0.eot');
-  src: url('webfonts/293D82_1_0.eot?#iefix') format('embedded-opentype'),
-       url('webfonts/293D82_1_0.woff') format('woff'),
-       url('webfonts/293D82_1_0.ttf') format('truetype');
+  src: url('//fonts.voxmedia.com/the-verge-50/293D82_1_0.eot');
+  src: url('//fonts.voxmedia.com/the-verge-50/293D82_1_0.eot?#iefix') format('embedded-opentype'),
+       url('//fonts.voxmedia.com/the-verge-50/293D82_1_0.woff') format('woff'),
+       url('//fonts.voxmedia.com/the-verge-50/293D82_1_0.ttf') format('truetype');
 }
   
 @font-face {
   font-family: 'DINNextLTPro-HeavyCondensed';
-  src: url('webfonts/293D82_2_0.eot');
-  src: url('webfonts/293D82_2_0.eot?#iefix') format('embedded-opentype'),
-       url('webfonts/293D82_2_0.woff') format('woff'),
-       url('webfonts/293D82_2_0.ttf') format('truetype');
+  src: url('//fonts.voxmedia.com/the-verge-50/293D82_2_0.eot');
+  src: url('//fonts.voxmedia.com/the-verge-50/293D82_2_0.eot?#iefix') format('embedded-opentype'),
+       url('//fonts.voxmedia.com/the-verge-50/293D82_2_0.woff') format('woff'),
+       url('//fonts.voxmedia.com/the-verge-50/293D82_2_0.ttf') format('truetype');
 }
  
