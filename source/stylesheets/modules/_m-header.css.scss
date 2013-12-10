@@ -14,7 +14,7 @@ $border-color: $really-dark-grey;
 }
 
 #{$m}__nav-toggle {
-  @include link-sprite('menu', 'menu-active', 30px, 25px);
+  @include link-sprite('menu-active', 'menu', 30px, 25px);
   @extend %hide-text;
   border-right: 1px solid $border-color;
   display: inline-block;
@@ -98,13 +98,13 @@ $border-color: $really-dark-grey;
 }
 
 #{$m}__previous {
-  @include link-sprite('left-arrow', 'left-arrow-active', 16px, 25px);
+  @include link-sprite('left-arrow-active', 'left-arrow', 16px, 25px);
   @extend %hide-text;
   @extend %header-nav-buttons;
 }
 
 #{$m}__next {
-  @include link-sprite('right-arrow', 'right-arrow-active', 16px, 25px);
+  @include link-sprite('right-arrow-active', 'right-arrow', 16px, 25px);
   @extend %hide-text;
   @extend %header-nav-buttons;
 }
