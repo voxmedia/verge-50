@@ -28,18 +28,21 @@ Verge.Pages = (function ($) {
       support = Modernizr.cssanimations,
       url_prefix = Verge.Context.url_prefix === '' ? '/' : Verge.Context.url_prefix;
 
+  // Goes to the next page, duh.
   var nextPage = function () {
     goToPage(current + 1);
     _gaq.push(['_trackEvent', Verge.Context.app_name, 'Navigation', 'Next']);
     return false;
   };
 
+  // Same as above, but backwards.
   var previousPage = function () {
     goToPage(current - 1);
     _gaq.push(['_trackEvent', Verge.Context.app_name, 'Navigation', 'Previous']);
     return false;
   };
 
+  // Goes to the page with the given ID.
   var goToId = function (id) {
     var index = $('#' + id).index();
     goToPage(index);
@@ -125,10 +128,14 @@ Verge.Pages = (function ($) {
   var goToPage = function (index) {
     var $current_page, $next_page, out_class, in_class;
 
+    // If the page is already animating, GTFO.
     if (is_animating) {
       return false;
     }
 
+    // If going to the same page I'm already in, or the desired page
+    // is before the first one or after the last one,
+    // call the function that triggers the rubber band animation and GTFO.
     if (index >= pages_count || index < 0 || index === current) {
       goToSamePage(index);
       return false;
@@ -136,6 +143,8 @@ Verge.Pages = (function ($) {
 
     total_pages_seen += 1;
 
+    // These classes determine the direction of the animations, depending
+    // on which direction I'm moving.
     if (index > current) {
       out_class = 'to-left';
       in_class = 'from-right';
@@ -146,8 +155,10 @@ Verge.Pages = (function ($) {
 
     is_animating = true;
 
+    // Close the nav.
     $body.removeClass('open-nav');
 
+    // Get the currently visible page.
     $current_page = $pages.eq(current);
 
     // Check to see if it is time to inject an ad
@@ -155,33 +166,42 @@ Verge.Pages = (function ($) {
     index = checkForAdContent(index);
 
     current = index;
+
+    // Make the new page the current page.
     $next_page = $pages.eq(current).removeAttr('style').addClass('current');
 
+    // Animates the current page out of view
     $current_page.addClass(out_class).on(animation_end_event, function() {
       $current_page.off(animation_end_event);
       end_current_page = true;
+      // Callbacks fire only after both pages stop animating.
       if(end_next_page) {
         onEndAnimation($next_page, $current_page);
         onNewPageView($next_page);
       }
     });
 
+    // Animates the new page into view.
     $next_page.addClass(in_class).on(animation_end_event, function() {
       $next_page.off(animation_end_event);
       end_next_page = true;
+      // Callbacks fire only after both pages stop animating.
       if(end_current_page) {
         onEndAnimation($next_page, $current_page);
         onNewPageView($next_page);
       }
     });
 
-
+    // If browser does not support CSS animations, fire post-animation callbacks
+    // immediately.
     if(!support) {
       onEndAnimation($next_page, $current_page);
       onNewPageView($next_page);
     }
   };
 
+  // If going to the same page, does a simple "rubber band bounce"
+  // animation.
   var goToSamePage = function (index) {
     var $current_page = $pages.eq(current),
         animation_class;
@@ -202,6 +222,7 @@ Verge.Pages = (function ($) {
     }
   };
 
+  // Adds navigation via left/right and j/k keys.
   var keyboardNav = function (e) {
     var key = e.keyCode || e.which,
         keys = {
@@ -226,6 +247,13 @@ Verge.Pages = (function ($) {
     }
   };
 
+  // After animation ends:
+  // 1. Remove ad if it was just seen
+  // 2. Reset pre-animation variables
+  // 3. Mark new page as current
+  // 4. Manually set overflow-y:auto to new page to deal with Safari overflow bug
+  // 5. Scroll previous page to the top (so it starts at the top if animated back into view)
+  // 6. Call picturefill to load new page's images.
   var onEndAnimation = function($in_page, $out_page) {
     removeAdIfWasJustSeen($pages.index($out_page));
     end_current_page = false;
@@ -239,6 +267,11 @@ Verge.Pages = (function ($) {
     picturefill($in_page);
   };
 
+  // After new page is animated into view:
+  // 1. Update the document <title>
+  // 2. Update the browser's URL
+  // 3. Track the new page view in GA
+  // 4. Track how many pages the user has seen in GA.
   var onNewPageView = function ($page) {
     var page_url, new_url;
 
@@ -252,6 +285,7 @@ Verge.Pages = (function ($) {
     _gaq.push(['_setCustomVar', 3, Verge.Content.app_name + ' pages seen', total_pages_seen, 2]);
   }
 
+  // Updates browser's URL if it supports HTML5 History API.
   var updatePageUrl = function (url) {
     var state;
 
@@ -270,6 +304,7 @@ Verge.Pages = (function ($) {
     }
   };
 
+  // Updates the document <title>
   var updatePageTitle = function ($page) {
     var id = $page.attr('id'),
         name = $page.data('name');
@@ -280,6 +315,7 @@ Verge.Pages = (function ($) {
     }
   };
 
+  // Handles links to pages in side menu and full-list page.
   var clickToPage = function (e) {
     var $link = $(this),
         page_id = $link.data('page');
@@ -298,6 +334,7 @@ Verge.Pages = (function ($) {
     pages_count = $pages.length;
   };
 
+  // Triggers picturefill on the given $page.
   var picturefill = function ($page) {
     var picture = $page.find('.picturefill');
     if (!!window.picturefill && picture.length > 0 && typeof picture.attr('data-picture') === 'undefined') {
@@ -325,11 +362,15 @@ Verge.Pages = (function ($) {
       }
     });
 
+    // Stores each page's CSS class as a data attribute so I can reset it after
+    // animating it.
     $pages.each(function() {
       var $page = $(this);
       $page.data().original_class = $page.attr('class');
     });
 
+    // If I land at a page's URL, mark that page as current, and do the overflow
+    // thing to fix Safari. Else, go to the first page.
     if (pathname && $('#' + pathname).length > 0) {
       $current_page = $('#' + pathname).addClass('current').css('overflow-y', 'auto');
       current = $current_page.index();
@@ -337,6 +378,7 @@ Verge.Pages = (function ($) {
       $current_page = $pages.eq(current).addClass('current').css('overflow-y', 'auto');
     }
 
+    // Call picture fill on the current page.
     picturefill($current_page);
   };
 
