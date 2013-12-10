@@ -1,20 +1,36 @@
 <li class="m-pages__page" id="<%= page.slug %>" data-page-url="<%= page_url(page.slug) %>" data-name="<%= page.title %>">
   <div class="l-content-wrap">
-    <article class="m-full-list">
+    <article class="m-full-list category">
       <div class="m-full-list__content">
         <h2><%= page.title %></h2>
 
-        <div class="l-column">
-          <%= partial "partials/sections/full_list_category", :locals => { :c => data.categories.find{ |c| c.category.name == 'The World Changers' } } %>
-          <%= partial "partials/sections/full_list_category", :locals => { :c => data.categories.find{ |c| c.category.name == 'The Old Guard' } } %>
-          <%= partial "partials/sections/full_list_category", :locals => { :c => data.categories.find{ |c| c.category.name == 'The Noisemakers' } } %>
-          <%= partial "partials/sections/full_list_category", :locals => { :c => data.categories.find{ |c| c.category.name == 'The Next Wave' } } %>
+        <p>View by <a href="#category" class="m-full-list__toggle category">Category</a> | <a href="#position" class="m-full-list__toggle position">Position</a></p>
+
+        <div id="category" class="m-full-list__pane category">
+          <div class="l-column">
+            <%= partial "partials/sections/full_list_category", :locals => { :c => data.categories.find{ |c| c.category.name == 'The World Changers' } } %>
+            <%= partial "partials/sections/full_list_category", :locals => { :c => data.categories.find{ |c| c.category.name == 'The Old Guard' } } %>
+            <%= partial "partials/sections/full_list_category", :locals => { :c => data.categories.find{ |c| c.category.name == 'The Noisemakers' } } %>
+            <%= partial "partials/sections/full_list_category", :locals => { :c => data.categories.find{ |c| c.category.name == 'The Next Wave' } } %>
+          </div>
+
+          <div class="l-column right">
+            <%= partial "partials/sections/full_list_category", :locals => { :c => data.categories.find{ |c| c.category.name == 'The Informers' } } %>
+            <%= partial "partials/sections/full_list_category", :locals => { :c => data.categories.find{ |c| c.category.name == 'The Entertainers' } } %>
+            <%= partial "partials/sections/full_list_category", :locals => { :c => data.categories.find{ |c| c.category.name == 'The Dreamers' } } %>
+          </div>
         </div>
 
-        <div class="l-column right">
-          <%= partial "partials/sections/full_list_category", :locals => { :c => data.categories.find{ |c| c.category.name == 'The Informers' } } %>
-          <%= partial "partials/sections/full_list_category", :locals => { :c => data.categories.find{ |c| c.category.name == 'The Entertainers' } } %>
-          <%= partial "partials/sections/full_list_category", :locals => { :c => data.categories.find{ |c| c.category.name == 'The Dreamers' } } %>
+        <div id="position" class="m-full-list__pane position" %>
+          <% data.people.sort_by{ |p| p.position.to_i }.each_slice(25).with_index do |slice, i| %>
+              <div class="l-column <%= "right" if i > 0 %>">
+                <ol>
+                  <% slice.each do |p| %>
+                    <li><%= p.position %>.  <a href="<%= page_url(p.slug) %>" data-page="<%= p.slug %>"><%= p.name %></a></li>
+                  <% end %>
+                </ol>
+              </div>
+          <% end %>
         </div>
       </div>
     </article>

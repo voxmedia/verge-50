@@ -11,6 +11,8 @@ Verge.Pages = (function ($) {
       $page_links = $('a[data-page]'),
       pages_count = 0, // set later
       $body = $('body'),
+      $list_toggles = $('.m-full-list__toggle'),
+      $full_list = $('.m-full-list'),
       page_class = 'm-pages__page',
       total_pages_seen = 0,
       last_seen_ad_page_index = -1,
@@ -343,6 +345,13 @@ Verge.Pages = (function ($) {
     }
   };
 
+  var toggleListLayout = function () {
+    var $link = $(this),
+        css_class = $link.attr('href').replace('#', '');
+    $full_list.removeClass('position category').addClass(css_class);
+    return false;
+  };
+
   var init = function () {
     setupPages();
 
@@ -354,6 +363,8 @@ Verge.Pages = (function ($) {
     $previous.on('click', previousPage);
     $page_links.on('click', clickToPage);
     $(document).on('keydown', keyboardNav);
+    $list_toggles.on('click', toggleListLayout);
+
     $('.m-header__logo').click('a', function (e) {
       if (e.which === 1 && !e.metaKey && !e.ctrlKey) {
         e.preventDefault();
