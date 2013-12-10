@@ -321,9 +321,9 @@ Verge.Pages = (function ($) {
         page_id = $link.data('page');
 
     if (e.which === 1 && !e.metaKey && !e.ctrlKey) {
-      e.preventDefault();
       goToId(page_id);
       _gaq.push(['_trackEvent', Verge.Context.app_name, 'Menu Navigation', page_id]);
+      return false;
     }
 
   };
