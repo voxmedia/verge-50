@@ -42,6 +42,13 @@ $m : '.m-credits';
 
   li {
     @include din($font_size: 16px, $line_height: 1.25);
+    color: #aaa;
+    letter-spacing: 1px;
+
+    em {
+      color: #fff;
+      font-style: normal;
+    }
     
     a:link, a:visited {
       color: #fff;
