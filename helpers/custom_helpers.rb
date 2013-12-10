@@ -134,10 +134,20 @@ module CustomHelpers
   end
 
   def mq(query, retina = false)
+
+    case query
+    when 'small'
+      q = "(max-width: #{break_medium}px)"
+    when 'medium'
+      q = "(min-width: #{break_medium}px) and (max-width: #{break_large}px)"
+    when 'large'
+      q = "(min-width: #{break_large}px)"
+    end
+
     if retina
-      "(#{query}) and (-webkit-min-device-pixel-ratio: 1.3), (#{query}) and (min-device-pixel-ratio: 1.3), (#{query}) and (min-resolution: '124.8dpi')"
+      "#{q} and (-webkit-min-device-pixel-ratio: 1.3), #{q} and (min-device-pixel-ratio: 1.3), #{q} and (min-resolution: '124.8dpi')"
     else
-      "(#{query})"
+      "#{q}"
     end
   end
 
