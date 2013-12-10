@@ -44,7 +44,9 @@ $m : '.m-person';
   @media (max-width: $break_medium) {
     .tier_1 &, .tier_2 &, .tier_3 & {
       float: none;
-      margin-bottom: -60px;
+      margin-bottom: -80px;
+      width: 100%;
+      height: auto;
     }
   }
 }
