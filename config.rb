@@ -9,6 +9,7 @@ set :images_dir, 'images'
 set :url_prefix, ''
 set :absolute_prefix, 'http://localhost:4567'
 set :app_name, 'The Verge 50'
+set :app_meta_description, 'The Verge 50'
 
 set :facebook_app_id, '179668695452017'
 set :twitter, 'verge'

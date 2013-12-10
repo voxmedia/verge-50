@@ -140,4 +140,14 @@ module CustomHelpers
       "(#{query})"
     end
   end
+
+  def meta_description(slug)
+    person = data.people.find{ |p| p.slug == slug }
+
+    if person.nil?
+      app_meta_description
+    else
+      "#{person.name}, #{person.age}, #{person.title} &ndash; #{truncate_words(person.blurb.gsub(/<\/?[^>]*>/, ""), :length => 50)}"
+    end
+  end
 end
