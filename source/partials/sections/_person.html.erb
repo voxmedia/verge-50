@@ -13,7 +13,9 @@
 
         <aside class="m-person__info">
           <h3 class="m-person__titles"><%= person.title %></h3>
-          <p>Age: <%= person.age %></p>
+          <% unless person.age.blank? %>
+            <p>Age: <%= person.age %></p>
+          <% end %>
           <ul class="m-person__achievements">
             <% person.achievements.split("*").each do |t| %>
               <li><%= t %></li>
