@@ -6,19 +6,6 @@ $m : '.m-cover';
   height: 100%;
   position: relative;
   text-align: center;
-
-  p {
-    font-size: 12px;
-    white-space: nowrap;
-  }
-
-  @media (max-width: $break_medium) {
-    width: 200px;
-    float: none;
-    margin: 0 auto;
-
-    p {  display: none; }
-  }
 }
 
 #{$m}__logo {
