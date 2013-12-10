@@ -310,7 +310,7 @@ Verge.Pages = (function ($) {
   var updatePageTitle = function ($page) {
     var id = $page.attr('id'),
         name = $page.data('name');
-    if (id) {
+    if (typeof id !== 'undefined' && typeof name !== 'undefined') {
       document.title = name + " | " + Verge.Context.app_name;
     } else {
       document.title = Verge.Context.app_name;
