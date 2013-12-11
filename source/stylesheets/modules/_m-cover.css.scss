@@ -7,8 +7,11 @@ $m : '.m-cover';
   position: relative;
   text-align: center;
 
+
   @media (max-width: $break_medium) {
-    width: 300px;
+    width: 200px;
+    float: none;
+    margin: 0 auto;
   }
 }
 
