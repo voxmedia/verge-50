@@ -1,10 +1,10 @@
 @mixin din($font_size: inherit, $font_weight: normal, $font_style: normal, $text_transform: uppercase, $line_height: 1) {
   @if $font_weight == bold {
-    font-family: 'DINNextLTPro-BoldCondensed', sans-serif;
+    font-family: "DINNextLTPro-BoldCondensed", "ff-din-web-condensed", sans-serif;
   } @else if $font_weight == heavy {
-    font-family: 'DINNextLTPro-HeavyCondensed', sans-serif;
+    font-family: "DINNextLTPro-HeavyCondensed", "ff-din-web-condensed", sans-serif;
   } @else {
-    font-family: 'DINNextLTPro-Condensed', sans-serif;
+    font-family: "ff-din-web-condensed", sans-serif;
   }
   font-style: $font_style;
   font-size: $font_size;
@@ -81,6 +81,7 @@
   #{$child} {
     display: table-cell;
     vertical-align: middle;
+    padding-top: 0.15em;
   }
 }
 
