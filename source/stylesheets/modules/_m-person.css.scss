@@ -189,17 +189,20 @@ $m : '.m-person';
 
 #{$m}__position {
   @include din($font_size: 36px, $line_height: 1, $font_weight: bold);
+  @include round-box(22px);
   letter-spacing:-1px;
   background: $red;
-  width:44px;
-  height:44px;
   display: block;
   float: left;
   clear: both;
   text-align:center;
-  border-radius:44px;
 
   @include vertical-center('span');
+
+  @media (max-width: $break_medium) {
+    @include round-box(15px);
+    font-size: 24px;
+  }
 }
 
 #{$m}__category {

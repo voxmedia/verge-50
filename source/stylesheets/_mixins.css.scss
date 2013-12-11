@@ -76,7 +76,6 @@
 }
 
 @mixin vertical-center($child) {
-  
   display: table;
 
   #{$child} {
@@ -84,6 +83,12 @@
     display: table-cell;
     vertical-align: middle;
   }
+}
+
+@mixin round-box($radius) {
+  width:$radius * 2;
+  height:$radius * 2;
+  border-radius:$radius;
 }
 
 @mixin slide-in($delay) {
