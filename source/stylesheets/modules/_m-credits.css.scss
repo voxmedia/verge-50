@@ -9,11 +9,9 @@ $m : '.m-credits';
   h2 {
     @include din($font_size: 100px, $font_weight: heavy);
     border-top: 10px solid #000;
-    border-bottom: 10px solid #000;
     letter-spacing:65px;
     text-align: center;
     white-space: nowrap;
-    padding-top: 0.1em;
 
     @media (max-width: $break_medium) {
       font-size: 46px;

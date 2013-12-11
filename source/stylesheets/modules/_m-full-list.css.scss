@@ -23,13 +23,15 @@ $m : '.m-full-list';
     text-align: center;
     white-space: nowrap;
     border-top: 10px solid #000;
-    border-bottom: 10px solid #000;
-    padding-top: 0.1em;
 
     @media (max-width: $break_medium) {
       font-size: 46px;
       letter-spacing: 8px;
       text-indent: 8px;
+    }
+
+    & + p {
+      margin-top: 0;
     }
   }
 
