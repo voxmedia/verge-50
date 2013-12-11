@@ -227,6 +227,7 @@ Verge.Pages = (function ($) {
   // Adds navigation via left/right and j/k keys.
   var keyboardNav = function (e) {
     var key = e.keyCode || e.which,
+        $current = $pages.eq(current),
         keys = {
             left: 37,
             right: 39,
@@ -244,6 +245,14 @@ Verge.Pages = (function ($) {
     case keys.k:
     case keys.right:
       nextPage();
+      return false;
+      break;
+    case keys.down:
+      $current.scrollTop($current.scrollTop() + 25);
+      return false;
+      break;
+    case keys.up:
+      $current.scrollTop($current.scrollTop() - 25);
       return false;
       break;
     }
