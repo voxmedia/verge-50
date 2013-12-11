@@ -283,8 +283,8 @@ Verge.Pages = (function ($) {
     updatePageTitle($page);
     updatePageUrl(new_url);
 
-    _gaq.push(['_trackPageview', new_url]);
     _gaq.push(['_setCustomVar', 3, Verge.Context.app_name + ' pages seen', total_pages_seen, 2]);
+    _gaq.push(['_trackPageview', new_url]);
   }
 
   // Updates browser's URL if it supports HTML5 History API.
