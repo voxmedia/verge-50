@@ -10,7 +10,6 @@
   font-size: $font_size;
   text-transform: $text_transform;
   line-height: $line-height;
-  padding-top:0.2em;
 }
 
 @mixin sans-serif($font_size: inherit, $font_weight: 300, $font_style: normal, $line_height: 1) {
@@ -73,6 +72,26 @@
 
   &:active:before {
     margin-top: 1 - ($height / 2);
+  }
+}
+
+@mixin vertical-center($child) {
+  .flexbox & {
+    @extend %flexbox;
+
+    #{$child} {
+      padding-top: 0.1em;
+    }
+  }
+
+  .no-flexbox & {
+    display: table;
+
+    #{$child} {
+      padding-top: 0.1em;
+      display: table-cell;
+      vertical-align: middle;
+    }
   }
 }
 

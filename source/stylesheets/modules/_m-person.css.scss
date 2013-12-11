@@ -105,11 +105,10 @@ $m : '.m-person';
   }
 
   h2 {
-    @include din($font_size: 72px);
+    @include din($font_size: 72px, $line_height: 1);
     background: #000;
     text-align: center;
     width: 100%;
-    padding-top: 0.1em;
 
     i {
       @include din($font_weight: bold);
@@ -138,7 +137,6 @@ $m : '.m-person';
 
     @media (max-width: $break_large) {
       @include din($font_size: 60px);
-      padding-top: 0.1em;
 
       &.smallest {
         font-size: 26px;
@@ -163,7 +161,6 @@ $m : '.m-person';
 
     @media (max-width: $break_medium) {
       @include din($font_size: 54px);
-      padding-top: 0.1em;
 
       &.tiny {
         font-size: 22px;
@@ -187,27 +184,11 @@ $m : '.m-person';
     }
   }
 
-  .flexbox & {
-    @extend %flexbox;
-  }
-
-  .no-flexbox &:before {
-    content: '';
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
-    margin-right: -0.25em; /* Adjusts for spacing */
-  }
-
-  .no-flexbox & h2 {
-    display: inline-block;
-    vertical-align: middle;
-    padding-top:0;
-  }
+  @include vertical-center('h2');
 }
 
 #{$m}__position {
-  @include din($font_size: 36px, $font_weight: bold);
+  @include din($font_size: 36px, $line_height: 1, $font_weight: bold);
   letter-spacing:-1px;
   background: $red;
   width:44px;
@@ -217,22 +198,24 @@ $m : '.m-person';
   clear: both;
   text-align:center;
   border-radius:44px;
-  padding-top: 7px;
+
+  @include vertical-center('span');
 }
 
 #{$m}__category {
-  @include din($font-size: 30px, $line_height: 1.2);
+  @include din($font-size: 30px, $line_height: 1);
   background: $red;
   display: block;
   float: right;
   clear: both;
-  padding-left:0.3em;
-  padding-right:0.3em;
+  height: 40px;
+  padding: 0 10px;
 
   @media (max-width: $break_medium) {
     font-size: 20px;
-    padding-top: 0.1em;
   }
+
+  @include vertical-center('span');
 }
 
 #{$m}__info {

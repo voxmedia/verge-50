@@ -4,11 +4,11 @@
       <%= partial "partials/sections/headshot", :locals => { :person => person } %>
       <div class="m-person__content">
         <header class="m-person__header">
-          <span class="m-person__position"><%= zero_padded(person.position) %></span>
+          <div class="m-person__position"><span><%= zero_padded(person.position) %></span></div>
           <div class="m-person__name">
             <h2 class="<%= resize_text(person.name) %>"><%= formatted_names(person.name) %></h2>
           </div>
-          <span class="m-person__category"><%= person.category %></span>
+          <div class="m-person__category"><span><%= person.category %></span></div>
         </header>
 
         <aside class="m-person__info">
