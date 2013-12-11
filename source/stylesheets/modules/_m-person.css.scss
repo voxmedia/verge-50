@@ -92,6 +92,7 @@ $m : '.m-person';
 }
 
 #{$m}__name {
+  @include vertical-center('h2');
   background: #000;
   height: 100px;
   margin: 5px 0;
@@ -183,12 +184,11 @@ $m : '.m-person';
       }
     }
   }
-
-  @include vertical-center('h2');
 }
 
 #{$m}__position {
   @include din($font_size: 36px, $line_height: 1, $font_weight: bold);
+  @include vertical-center('span');
   @include round-box(22px);
   letter-spacing:-1px;
   background: $red;
@@ -196,8 +196,6 @@ $m : '.m-person';
   float: left;
   clear: both;
   text-align:center;
-
-  @include vertical-center('span');
 
   @media (max-width: $break_medium) {
     @include round-box(15px);
@@ -207,6 +205,7 @@ $m : '.m-person';
 
 #{$m}__category {
   @include din($font-size: 30px, $line_height: 1);
+  @include vertical-center('span');
   background: $red;
   display: block;
   float: right;
@@ -217,8 +216,6 @@ $m : '.m-person';
   @media (max-width: $break_medium) {
     font-size: 20px;
   }
-
-  @include vertical-center('span');
 }
 
 #{$m}__info {
