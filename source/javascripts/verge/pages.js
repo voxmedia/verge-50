@@ -67,7 +67,6 @@ Verge.Pages = (function ($) {
     $adUnit.data('name', 'Advertisement');
 
     // Place this in the corret place in the DOM
-    console.log("insertAdBeforePage | inserting", $adUnit);
     $adUnit.insertBefore($pages.eq(index));
 
     // Record this to remove later
@@ -80,7 +79,6 @@ Verge.Pages = (function ($) {
   function removeAdIfWasJustSeen(previous_index) {
     if (previous_index === last_seen_ad_page_index) {
       var $adPage = $pages.eq(last_seen_ad_page_index);
-      console.log("removeAdIfWasJustSeen | removing. previous_index: " + previous_index + " current: " + current);
       $adPage.remove();
       // Rebuild the $pages array
       setupPages();
