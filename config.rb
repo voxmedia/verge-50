@@ -24,6 +24,7 @@ activate :directory_indexes
 
 helpers Middleman::Chorus::GoogleDrive::Helpers
 load_spreadsheet("people","0AveeZxA0SOM1dGdSWWFZdHJGc091Q3FrUERVdG1rRWc")
+load_spreadsheet("pages", "0AmBvdyiOpUoSdGtKLVc2ZlRPUXYwOERpT0FYWWs2alE")
 
 data['people'].each do |person|
   proxy "/#{person['slug']}/index.html", "index.html", :locals => { :slug => person['slug'], :title => person['name'], :page_type => 'person' }
