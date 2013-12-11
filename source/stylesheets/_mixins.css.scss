@@ -79,7 +79,6 @@
   display: table;
 
   #{$child} {
-    padding-top: 0.1em;
     display: table-cell;
     vertical-align: middle;
   }
