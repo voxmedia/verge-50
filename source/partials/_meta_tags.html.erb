@@ -9,7 +9,7 @@
 <meta property="og:site_name" content="The Verge" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="<%= page_title(title) %>" />
-<meta property="og:image" content="" />
+<meta property="og:image" content="<%= image_path("/images/verge-50-cover.jpg") %>" />
 <meta property="og:description" content="<%= meta_description(slug) %>" />
 <meta property="og:url" content="<%= absolute_page_url(slug) %>" />
 
@@ -19,12 +19,13 @@
 <meta name="twitter:card" content="photo" />
 <meta name="twitter:url" content="<%= absolute_page_url(slug) %>" />
 <meta name="twitter:title" content="<%= page_title(title) %>" />
-<meta name="twitter:image" content="" />
-<meta name="twitter:image:width" content="" />
-<meta name="twitter:image:height" content="" />
+<meta name="twitter:image" content="<%= image_path("/images/verge-50-cover.jpg") %>" />
+<meta name="twitter:image:width" content="1200" />
+<meta name="twitter:image:height" content="630" />
 
 <link rel="shortcut icon" href="http://cdn0.sbnation.com/images/verge/favicon.vc44a54f.ico" />
 <link rel="apple-touch-icon" href="/images/verge/apple-touch-icon.png" />
+<link rel="image_src" href="<%= image_path("/images/verge-50-cover.jpg") %>" />
 
 <meta name="google-site-verification" content="TYyhlycNMOtUSht2aoB7heWTK8m-H45_YJizKavkO8s" />
 <meta name="google-site-verification" content="IucFf_TKtbFFH8_YeFyEteQIwYPdANM1R46_U9DpAr4" />
