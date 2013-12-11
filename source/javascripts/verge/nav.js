@@ -29,9 +29,7 @@ Verge.Nav = (function ($) {
   var closeNav = function () {
     $body.removeClass(open_class);
     _gaq.push(['_trackEvent', Verge.Context.app_name, 'Close Nav']);
-    if (e.which === 1 && !e.metaKey && !e.ctrlKey) {
-      return false;
-    }
+    return false;
   };
 
   var toggleNav = function () {
@@ -49,7 +47,6 @@ Verge.Nav = (function ($) {
 
   var init = function () {
     $toggle.on('click', toggleNav);
-    $document.on('click', closeNav);
 
     if (Modernizr.csstransitions) {
       $wrap.on(transition_end_event, setOverflowManuallyBecauseSafariFuckingSucks);
