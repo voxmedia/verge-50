@@ -161,14 +161,14 @@ $m : '.m-person';
     }
 
     @media (max-width: $break_medium) {
-      @include din($font_size: 54px);
+      @include din($font_size: 40px);
 
       &.tiny {
-        font-size: 22px;
+        font-size: 20px;
       }
 
       &.smallest {
-        font-size: 18px;
+        font-size: 16px;
       }
 
       &.very-small {
@@ -180,7 +180,7 @@ $m : '.m-person';
       }
 
       &.small {
-        font-size: 32px;
+        font-size: 30px;
       }
     }
   }
