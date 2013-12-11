@@ -74,6 +74,7 @@ $m : '.m-person';
 }
 
 #{$m}__header {
+  @include slide-in(100ms);
   @extend %clearfix;
   color: #fff;
 
@@ -235,6 +236,7 @@ $m : '.m-person';
 }
 
 #{$m}__info {
+  @include slide-in(200ms);
   @include din($font-size: 18px);  
   background: #000;
   color: #fff;
@@ -269,6 +271,10 @@ $m : '.m-person';
   img {
     @include transition(opacity 500ms);
   }
+}
+
+#{$m}__blurb {
+  @include slide-in(300ms);
 }
 
 #{$m}__share {
