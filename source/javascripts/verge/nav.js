@@ -7,6 +7,7 @@ Verge.Nav = (function ($) {
       $body = $('body'),
       $document = $(document),
       $wrap = $('.l-inner-wrap'),
+      $content_blocker = $('#mobile-content-blocker'),
       open_class = 'open-nav';
       transition_end_events = {
         'WebkitTransition' : 'webkitTransitionEnd',
@@ -47,6 +48,7 @@ Verge.Nav = (function ($) {
 
   var init = function () {
     $toggle.on('click', toggleNav);
+    $content_blocker.on('click', closeNav);
 
     if (Modernizr.csstransitions) {
       $wrap.on(transition_end_event, setOverflowManuallyBecauseSafariFuckingSucks);
