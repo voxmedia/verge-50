@@ -92,7 +92,6 @@ Vox.EditorialApps.Ads = (function() {
     // Call this where the ad should show up in the page
     show: function(ad_unit_id){
       // this is only valid after setup is called
-      console.log("showing ad_unit_id: " + ad_unit_id);
       window.SBN.OpenX.showAd(ad_unit_id);
     },
 
