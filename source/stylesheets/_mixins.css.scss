@@ -78,16 +78,18 @@
 
 @mixin slide-in($delay) {
 
-  .current .tier_1 &, .current .tier_3 & {
-    -webkit-animation: slide-left  $page_speed $delay ease both;
-    -moz-animation: slide-left $page_speed $delay ease both;
-    animation: slide-left $page_speed $delay ease both;
-  }
+  @media (min-width: $break_small) {
+    .current .tier_1 &, .current .tier_3 & {
+      -webkit-animation: slide-left  $page_speed $delay ease both;
+      -moz-animation: slide-left $page_speed $delay ease both;
+      animation: slide-left $page_speed $delay ease both;
+    }
 
-  .current .tier_2 & {
-    -webkit-animation: slide-right  $page_speed $delay ease both;
-    -moz-animation: slide-right $page_speed $delay ease both;
-    animation: slide-right $page_speed $delay ease both;
+    .current .tier_2 & {
+      -webkit-animation: slide-right  $page_speed $delay ease both;
+      -moz-animation: slide-right $page_speed $delay ease both;
+      animation: slide-right $page_speed $delay ease both;
+    }
   }
 }
 
