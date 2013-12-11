@@ -76,22 +76,13 @@
 }
 
 @mixin vertical-center($child) {
-  .flexbox & {
-    @extend %flexbox;
+  
+  display: table;
 
-    #{$child} {
-      padding-top: 0.1em;
-    }
-  }
-
-  .no-flexbox & {
-    display: table;
-
-    #{$child} {
-      padding-top: 0.1em;
-      display: table-cell;
-      vertical-align: middle;
-    }
+  #{$child} {
+    padding-top: 0.1em;
+    display: table-cell;
+    vertical-align: middle;
   }
 }
 
