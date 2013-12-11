@@ -92,21 +92,21 @@
 }
 
 @-webkit-keyframes slide-right {
-  from { -webkit-transform: translateX(-100%); opacity: 0; }
+  from { -webkit-transform: translateX(-10%); opacity: 0; }
 }
 @-moz-keyframes slide-right {
-  from { -moz-transform: translateX(-100%); opacity: 0; }
+  from { -moz-transform: translateX(-10%); opacity: 0; }
 }
 @keyframes slide-right {
-  from { transform: translateX(-100%); opacity: 0; }
+  from { transform: translateX(-10%); opacity: 0; }
 }
 
 @-webkit-keyframes slide-left {
-  from { -webkit-transform: translateX(100%); opacity: 0; }
+  from { -webkit-transform: translateX(10%); opacity: 0; }
 }
 @-moz-keyframes slide-left {
-  from { -moz-transform: translateX(100%); opacity: 0; }
+  from { -moz-transform: translateX(10%); opacity: 0; }
 }
 @keyframes slide-left {
-  from { transform: translateX(100%); opacity: 0; }
+  from { transform: translateX(10%); opacity: 0; }
 }
