@@ -155,9 +155,9 @@ module CustomHelpers
     person = data.people.find{ |p| p.slug == slug }
 
     if person.nil?
-      app_meta_description
+      truncate_words(data.pages.find{ |p| p.slug == 'intro' }.content.gsub(/<\/?[^>]*>/, ""), :length => 100)
     else
-      "#{person.name}, #{person.age}, #{person.title} &ndash; #{truncate_words(person.blurb.gsub(/<\/?[^>]*>/, ""), :length => 50)}"
+      "#{person.name}, #{person.age}, #{person.title} &ndash; #{truncate_words(person.blurb.gsub(/<\/?[^>]*>/, ""), :length => 100)}"
     end
   end
 end

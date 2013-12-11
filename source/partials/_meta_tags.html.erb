@@ -14,12 +14,13 @@
 <meta property="og:url" content="<%= absolute_page_url(slug) %>" />
 
 <%# Twitter Card Meta Tags %>
-<meta name="twitter:site" content="<%= twitter %>" />
+<meta name="twitter:site" content="@<%= twitter %>" />
 <meta property="twitter:account_id" content="<%= twitter_account_id %>" />
-<meta name="twitter:card" content="photo" />
+<meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:url" content="<%= absolute_page_url(slug) %>" />
 <meta name="twitter:title" content="<%= page_title(title) %>" />
-<meta name="twitter:image" content="<%= image_path("/images/verge-50-cover.jpg") %>" />
+<meta name="twitter:description" content="<%= meta_description(slug) %>" />
+<meta name="twitter:image:src" content="<%= image_path("/images/verge-50-cover.jpg") %>" />
 <meta name="twitter:image:width" content="1200" />
 <meta name="twitter:image:height" content="630" />
 
