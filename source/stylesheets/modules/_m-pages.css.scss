@@ -63,99 +63,99 @@ $m : '.m-pages';
 }
 
 #{$m}__page.to-left {
-  -webkit-animation: k-move-to-left $page_speed ease both;
-  -moz-animation: k-move-to-left $page_speed ease both;
-  animation: k-move-to-left $page_speed ease both;
+  -webkit-animation: move-to-left $page_speed ease both;
+  -moz-animation: move-to-left $page_speed ease both;
+  animation: move-to-left $page_speed ease both;
 }
 
 #{$m}__page.from-left {
-  -webkit-animation: k-move-from-left $page_speed ease both;
-  -moz-animation: k-move-from-left $page_speed ease both;
-  animation: k-move-from-left $page_speed ease both;
+  -webkit-animation: move-from-left $page_speed ease both;
+  -moz-animation: move-from-left $page_speed ease both;
+  animation: move-from-left $page_speed ease both;
 }
 
 #{$m}__page.to-right {
-  -webkit-animation: k-move-to-right $page_speed ease both;
-  -moz-animation: k-move-to-right $page_speed ease both;
-  animation: k-move-to-right $page_speed ease both;
+  -webkit-animation: move-to-right $page_speed ease both;
+  -moz-animation: move-to-right $page_speed ease both;
+  animation: move-to-right $page_speed ease both;
 }
 
 #{$m}__page.from-right {
-  -webkit-animation: k-move-from-right $page_speed ease both;
-  -moz-animation: k-move-from-right $page_speed ease both;
-  animation: k-move-from-right $page_speed ease both;
+  -webkit-animation: move-from-right $page_speed ease both;
+  -moz-animation: move-from-right $page_speed ease both;
+  animation: move-from-right $page_speed ease both;
 }
 
 #{$m}__page.bounce-left {
-  -webkit-animation: k-bounce-left $page_speed/2 2 alternate ease both;
-  -moz-animation: k-bounce-left $page_speed/2 2 alternate ease both;
-  animation: k-bounce-left $page_speed/2 2 alternate ease both;
+  -webkit-animation: bounce-left $page_speed/2 2 alternate ease both;
+  -moz-animation: bounce-left $page_speed/2 2 alternate ease both;
+  animation: bounce-left $page_speed/2 2 alternate ease both;
 }
 
 #{$m}__page.bounce-right {
-  -webkit-animation: k-bounce-right $page_speed/2 2 alternate ease both;
-  -moz-animation: k-bounce-right $page_speed/2 2 alternate ease both;
-  animation: k-bounce-right $page_speed/2 2 alternate ease both;
+  -webkit-animation: bounce-right $page_speed/2 2 alternate ease both;
+  -moz-animation: bounce-right $page_speed/2 2 alternate ease both;
+  animation: bounce-right $page_speed/2 2 alternate ease both;
 }
 
 // Animations for page transitions
 
-@-webkit-keyframes k-move-to-left {
+@-webkit-keyframes move-to-left {
   to { -webkit-transform: translateX(-100%); }
 }
-@-moz-keyframes k-move-to-left {
+@-moz-keyframes move-to-left {
   to { -moz-transform: translateX(-100%); }
 }
-@keyframes k-move-to-left {
+@keyframes move-to-left {
   to { transform: translateX(-100%); }
 }
 
-@-webkit-keyframes k-move-from-left {
+@-webkit-keyframes move-from-left {
   from { -webkit-transform: translateX(-100%); }
 }
-@-moz-keyframes k-move-from-left {
+@-moz-keyframes move-from-left {
   from { -moz-transform: translateX(-100%); }
 }
-@keyframes k-move-from-left {
+@keyframes move-from-left {
   from { transform: translateX(-100%); }
 }
 
-@-webkit-keyframes k-move-to-right { 
+@-webkit-keyframes move-to-right { 
   to { -webkit-transform: translateX(100%); }
 }
-@-moz-keyframes k-move-to-right { 
+@-moz-keyframes move-to-right { 
   to { -moz-transform: translateX(100%); }
 }
-@keyframes k-move-to-right { 
+@keyframes move-to-right { 
   to { transform: translateX(100%); }
 }
 
-@-webkit-keyframes k-move-from-right {
+@-webkit-keyframes move-from-right {
   from { -webkit-transform: translateX(100%); }
 }
-@-moz-keyframes k-move-from-right {
+@-moz-keyframes move-from-right {
   from { -moz-transform: translateX(100%); }
 }
-@keyframes k-move-from-right {
+@keyframes move-from-right {
   from { transform: translateX(100%); }
 }
 
-@-webkit-keyframes k-bounce-left {
+@-webkit-keyframes bounce-left {
   to { -webkit-transform: translateX(-2%); }
 }
-@-moz-keyframes k-bounce-left {
+@-moz-keyframes bounce-left {
   to { -moz-transform: translateX(-2%); }
 }
-@keyframes k-bounce-left {
+@keyframes bounce-left {
   to { transform: translateX(-2%); }
 }
 
-@-webkit-keyframes k-bounce-right {
+@-webkit-keyframes bounce-right {
   to { -webkit-transform: translateX(2%); }
 }
-@-moz-keyframes k-bounce-right {
+@-moz-keyframes bounce-right {
   to { -moz-transform: translateX(2%); }
 }
-@keyframes k-bounce-right {
+@keyframes bounce-right {
   to { transform: translateX(2%); }
 }
