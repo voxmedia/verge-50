@@ -29,7 +29,9 @@ Verge.Nav = (function ($) {
   var closeNav = function () {
     $body.removeClass(open_class);
     _gaq.push(['_trackEvent', Verge.Context.app_name, 'Close Nav']);
-    return false;
+    if (e.which === 1 && !e.metaKey && !e.ctrlKey) {
+      return false;
+    }
   };
 
   var toggleNav = function () {

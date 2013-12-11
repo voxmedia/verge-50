@@ -365,7 +365,7 @@ Verge.Pages = (function ($) {
     $(document).on('keydown', keyboardNav);
     $list_toggles.on('click', toggleListLayout);
 
-    $('.m-header__logo').click('a', function (e) {
+    $('.cover-link').click('a', function (e) {
       if (e.which === 1 && !e.metaKey && !e.ctrlKey) {
         e.preventDefault();
         _gaq.push(['_trackEvent', Verge.Context.app_name, 'Navigation', 'Home']);
