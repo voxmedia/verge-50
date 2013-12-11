@@ -289,6 +289,10 @@ $m : '.m-person';
     float: left;
     margin-right: 5px;
   }
+
+  @media (max-width: $break_small) {
+    display: none;
+  }
 }
 
 #{$m}__share-buttons {
