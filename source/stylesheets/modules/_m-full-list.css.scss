@@ -28,6 +28,10 @@ $m : '.m-full-list';
       font-size: 46px;
       letter-spacing: 8px;
       text-indent: 8px;
+      border-top: 5px solid #000;
+    }
+    @media (max-width: $break_small) {
+      border: none;
     }
 
     & + p {

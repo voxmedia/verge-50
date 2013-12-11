@@ -36,6 +36,11 @@ body {
 
 %-thick-bottom-border {
   border-bottom: 10px solid #000;
+
+  @media (max-width: $break_medium) {
+    border-bottom: 5px solid #000;
+  }
+
 }
 
 %clearfix {
