@@ -6,6 +6,10 @@ $m : '.m-cover';
   height: 100%;
   position: relative;
   text-align: center;
+
+  @media (max-width: $break_medium) {
+    width: 300px;
+  }
 }
 
 #{$m}__logo {
