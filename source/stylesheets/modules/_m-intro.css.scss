@@ -33,28 +33,28 @@ $m : '.m-intro';
 
 #intro {
   @media (min-width: $break_medium) {
-    background-image: url('/images/50.png'), url('/images/name-collage-right.png');
+    background-image: image-url('/images/50.png'), image-url('/images/name-collage-right.png');
     background-repeat: no-repeat;
     background-position: left bottom, 220% center;
   }
 
   @media (min-width: $break_medium) and (-webkit-min-device-pixel-ratio: '1.3'),
          (min-width: $break_medium) and (min-resolution: '124.8dpi') {
-    background-image: url('/images/50.png'), url('/images/name-collage-right@2x.png');
+    background-image: image-url('/images/50.png'), image-url('/images/name-collage-right@2x.png');
     background-repeat: no-repeat;
     background-position: left bottom, 220% center;
     background-size: 765px 735px, 493px 1313px;
   }
 
   @media (min-width: $break_large) {
-    background-image: url('/images/50.png'), url('/images/name-collage-right.png');
+    background-image: image-url('/images/50.png'), image-url('/images/name-collage-right.png');
     background-repeat: no-repeat;
     background-position: left bottom, right center;
   }
 
   @media (min-width: $break_large) and (-webkit-min-device-pixel-ratio: '1.3'),
          (min-width: $break_large) and (min-resolution: '124.8dpi') {
-    background-image: url('/images/50.png'), url('/images/name-collage-right@2x.png');
+    background-image: image-url('/images/50.png'), image-url('/images/name-collage-right@2x.png');
     background-repeat: no-repeat;
     background-position: left bottom, right center;
     background-size: 765px 735px, 493px 1313px;
