@@ -56,7 +56,8 @@ $m : '.m-full-list';
   }
 
   li, p {
-    @include din($font_size: 16px, $line_height: 1.25);
+    @include din($font_size: 16px, $line_height: 1.5);
+    padding-top: 0;
     
     a:link, a:visited {
       color: #000;
