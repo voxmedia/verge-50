@@ -20,9 +20,13 @@ body {
   }
 }
 
+@-ms-viewport { width: device-width; }
+
 .no-js body {
   overflow: auto;
 }
+
+// Global placeholders
 
 %hide-text {
   text-indent: -9999px;
