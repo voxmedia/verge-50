@@ -33,14 +33,16 @@ Verge.Pages = (function ($) {
   // Goes to the next page, duh.
   var nextPage = function (e) {
     goToPage(current + 1);
-    _gaq.push(['_trackEvent', Verge.Context.app_name, 'Navigation (' + e.data.source + ')', 'Next']);
+    var event_source = typeof e.data.source === 'undefined' ? 'Navigation' : 'Navigation (' + e.data.source + ')';
+    _gaq.push(['_trackEvent', Verge.Context.app_name, event_source, 'Next']);
     return false;
   };
 
   // Same as above, but backwards.
   var previousPage = function (e) {
     goToPage(current - 1);
-    _gaq.push(['_trackEvent', Verge.Context.app_name, 'Navigation (' + e.data.source + ')', 'Previous']);
+    var event_source = typeof e.data.source === 'undefined' ? 'Navigation' : 'Navigation (' + e.data.source + ')';
+    _gaq.push(['_trackEvent', Verge.Context.app_name, event_source, 'Previous']);
     return false;
   };
 
