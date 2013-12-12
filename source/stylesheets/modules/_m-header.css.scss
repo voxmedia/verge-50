@@ -10,7 +10,7 @@ $border-color: $really-dark-grey;
   height: $header_height;
   top: 0;
   left: 0;
-  z-index: 3;
+  z-index: 15;
 
   .has-sponsorship & {
     @media (max-width: $break_medium) {

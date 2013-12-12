@@ -21,6 +21,10 @@ $m : '.m-pages';
   bottom: 0;
   visibility: hidden;
 
+  &.page {
+    z-index: 5;
+  }
+
   p {
     font-size: 16px;
     color: $dark-grey;
