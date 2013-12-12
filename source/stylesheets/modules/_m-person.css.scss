@@ -48,6 +48,11 @@ $m : '.m-person';
       width: 100%;
       height: 300px;
     }
+
+    // Special case for NDT
+    #neil-degrasse-tyson & {
+      height: 425px;
+    }
   }
 }
 
