@@ -31,16 +31,16 @@ Verge.Pages = (function ($) {
       url_prefix = Verge.Context.url_prefix === '' ? '/' : Verge.Context.url_prefix;
 
   // Goes to the next page, duh.
-  var nextPage = function () {
+  var nextPage = function (e) {
     goToPage(current + 1);
-    _gaq.push(['_trackEvent', Verge.Context.app_name, 'Navigation', 'Next']);
+    _gaq.push(['_trackEvent', Verge.Context.app_name, 'Navigation (' + e.data.source + ')', 'Next']);
     return false;
   };
 
   // Same as above, but backwards.
-  var previousPage = function () {
+  var previousPage = function (e) {
     goToPage(current - 1);
-    _gaq.push(['_trackEvent', Verge.Context.app_name, 'Navigation', 'Previous']);
+    _gaq.push(['_trackEvent', Verge.Context.app_name, 'Navigation (' + e.data.source + ')', 'Previous']);
     return false;
   };
 
@@ -239,12 +239,12 @@ Verge.Pages = (function ($) {
     switch (key) {
     case keys.j:
     case keys.left:
-      previousPage();
+      previousPage(e);
       return false;
       break;
     case keys.k:
     case keys.right:
-      nextPage();
+      nextPage(e);
       return false;
       break;
     case keys.down:
@@ -367,10 +367,10 @@ Verge.Pages = (function ($) {
         pathname = pathname_array[pathname_array.length - 1],
         $current_page;
 
-    $next.on('click', nextPage);
-    $previous.on('click', previousPage);
+    $next.on('click', { source: 'Arrows'}, nextPage);
+    $previous.on('click', { source: 'Arrows'}, previousPage);
     $page_links.on('click', clickToPage);
-    $(document).on('keydown', keyboardNav);
+    $(document).on('keydown', { source: 'Keyboard'}, keyboardNav);
     $list_toggles.on('click', toggleListLayout);
 
     $('.cover-link').click('a', function (e) {
