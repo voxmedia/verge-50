@@ -214,11 +214,13 @@ Verge.Pages = (function ($) {
       animation_class = 'bounce-left';
     }
 
-    if(support) {
-      $current_page.addClass(animation_class).on(animation_end_event, function() {
-        $current_page.off(animation_end_event);
-        onEndAnimation($current_page);
-      });
+    $current_page.addClass(animation_class).on(animation_end_event, function() {
+      $current_page.off(animation_end_event);
+      onEndAnimation($current_page);
+    });
+
+    if(!support) {
+      onEndAnimation($current_page);
     }
   };
 
