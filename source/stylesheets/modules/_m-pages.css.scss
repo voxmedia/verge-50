@@ -21,7 +21,7 @@ $m : '.m-pages';
   bottom: 0;
   visibility: hidden;
 
-  &.page {
+  &.page.current {
     z-index: 5;
   }
 
