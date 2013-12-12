@@ -12,7 +12,7 @@
       <% end %>
     </ol>
   <% end %>
-  <ol class="m-nav__list">
+  <ol class="m-nav__list bottom">
     <li class="m-nav__list-item"><a href="<%= data.pages.find{|p| p.name == 'full-list'}.slug %>" data-page="<%= data.pages.find{|p| p.name == 'full-list'}.slug %>"><%= data.pages.find{|p| p.name == 'full-list'}.title %></a></li>
     <li class="m-nav__list-item"><a href="<%= data.pages.find{|p| p.name == 'credits'}.slug %>" data-page="<%= data.pages.find{|p| p.name == 'credits'}.slug %>"><%= data.pages.find{|p| p.name == 'credits'}.title %></a></li>
   </ol>
