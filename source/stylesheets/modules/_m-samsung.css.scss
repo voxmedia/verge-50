@@ -16,6 +16,7 @@ $m : '.m-samsung-stb';
   }
 
   @media (max-width: $break_medium) {
+    @include transition(transform 100ms, left 100ms, right 100ms);
     background: rgba(0,0,0,0.75);
     width: 100%;
     height: 30px;
@@ -26,6 +27,14 @@ $m : '.m-samsung-stb';
       width: 250px;
       height: 18px;
       margin: 5px auto 0 auto;
+    }
+
+    .csstransforms3d .open-nav & {
+      @include transform(translate3d($nav_width, 0, 0));
+    }
+
+    .no-csstransforms3d .open-nav & {
+      left: $nav_width;
     }
   }
 }
