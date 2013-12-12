@@ -11,6 +11,13 @@ $border-color: $really-dark-grey;
   top: 0;
   left: 0;
   z-index: 3;
+
+  .has-sponsorship & {
+    @media (max-width: $break_medium) {
+      border: none;
+      height: $header_height - 10px;
+    }
+  }
 }
 
 #{$m}__nav-toggle {

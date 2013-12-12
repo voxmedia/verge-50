@@ -12,6 +12,12 @@ html, body {
 body {
   @include sans-serif($line_height: 1.5);
   padding-top: $header_height;
+
+  &.has-sponsorship {
+    @media (max-width: $break_medium) {
+      padding-top: $header_height - 10px;
+    }
+  }
 }
 
 .no-js body {
