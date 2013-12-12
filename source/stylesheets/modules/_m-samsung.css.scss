@@ -1,11 +1,11 @@
 $m : '.m-samsung-stb';
 
 #{$m} {
-  width: 200px;
-  height: 20px;
+  width: 250px;
+  height: 18px;
   position: absolute;
   left: 205px;
-  bottom: 14px;
+  bottom: 15px;
 
   img {
     max-width: 100%;
@@ -23,9 +23,9 @@ $m : '.m-samsung-stb';
     top: $header_height - 10;
 
     a {
-      width: 200px;
-      height: 20px;
-      margin: 6px auto 0 auto;
+      width: 250px;
+      height: 18px;
+      margin: 5px auto 0 auto;
     }
   }
 }
