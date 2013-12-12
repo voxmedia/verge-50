@@ -343,13 +343,6 @@ Verge.Pages = (function ($) {
   var setupPages = function(){
     $pages = $main.children('li');
     pages_count = $pages.length;
-
-    // Stores each page's CSS class as a data attribute so I can reset it after
-    // animating it.
-    $pages.each(function() {
-      var $page = $(this);
-      $page.data().original_class = $page.attr('class');
-    });
   };
 
   // Triggers picturefill on the given $page.
@@ -387,6 +380,13 @@ Verge.Pages = (function ($) {
         _gaq.push(['_trackEvent', Verge.Context.app_name, 'Navigation', 'Home']);
         goToPage(0);
       }
+    });
+
+    // Stores each page's CSS class as a data attribute so I can reset it after
+    // animating it.
+    $pages.each(function() {
+      var $page = $(this);
+      $page.data().original_class = $page.attr('class');
     });
 
     // If I land at a page's URL, mark that page as current, and do the overflow
