@@ -55,6 +55,7 @@
     left: 50%;
     margin-left: - $width / 2;
     margin-top: - $height / 2;
+    overflow: hidden;
   }
 
   @if $sprite == $sprite-active {

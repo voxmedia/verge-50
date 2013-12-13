@@ -1,3 +1,4 @@
+<a href="#" class="m-pages__nav previous nav-previous">Previous</a>
 <ol class="m-pages">
   <%= partial "partials/sections/cover" %>
 
@@ -10,5 +11,5 @@
   <%= partial "partials/sections/full_list", :locals => { :page => data.pages.find{ |p| p.name == 'full-list' } } %>
 
   <%= partial "partials/sections/credits", :locals => { :page => data.pages.find{ |p| p.name == 'credits' } } %>
-
 </ol>
+<a href="#" class="m-pages__nav next nav-next">Next</a>

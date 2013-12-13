@@ -6,8 +6,8 @@ Verge.Pages = (function ($) {
 
   var $main = $('.m-pages'),
       $pages = [],
-      $next = $('.m-header__next'),
-      $previous = $('.m-header__previous'),
+      $next = $('.nav-next'),
+      $previous = $('.nav-previous'),
       $page_links = $('a[data-page]'),
       pages_count = 0, // set later
       $body = $('body'),
@@ -291,6 +291,7 @@ Verge.Pages = (function ($) {
     page_url = $page.data('page-url');
     new_url = _.isUndefined(page_url) ? url_prefix : page_url;
 
+    updateBodyClass($page);
     updatePageTitle($page);
     updatePageUrl(new_url);
 
@@ -324,6 +325,12 @@ Verge.Pages = (function ($) {
       document.title = name + " | " + Verge.Context.app_name;
     } else {
       document.title = Verge.Context.app_name;
+    }
+  };
+
+  var updateBodyClass = function ($page) {
+    if ($page.hasClass('page')) {
+      $body.attr('class', 'has-sponsorship ' + $page.attr('id'));
     }
   };
 

@@ -66,6 +66,45 @@ $m : '.m-pages';
   }
 }
 
+#{$m}__nav {
+  @include transition(opacity 100ms, background-color 100ms);
+  @extend %hide-text;
+  width: 80px;
+  height: 100%;
+  z-index: 15;
+  top: 0;
+  opacity: 0.25;
+
+  &:hover, &:active {
+    opacity: 1;
+    background: rgba(255,255,255,0.5);
+  }
+
+  &.previous {
+    @include link-sprite('carousel-previous', 'carousel-previous', 20px, 124px);
+    position: absolute;
+    left: 0;
+
+    .cover &, .index & {
+      display: none;
+    }
+  }
+
+  &.next {
+    @include link-sprite('carousel-next', 'carousel-next', 20px, 124px);
+    position: absolute;
+    right: 0;
+
+    .credits & {
+      display: none;
+    }
+  }
+
+  @media(max-width: 1100px) {
+    display: none;
+  }
+}
+
 #{$m}__page.to-left {
   -webkit-animation: move-to-left $page_speed ease both;
   -moz-animation: move-to-left $page_speed ease both;
