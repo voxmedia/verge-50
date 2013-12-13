@@ -69,10 +69,11 @@ $m : '.m-pages';
 #{$m}__nav {
   @include transition(opacity 100ms, background-color 100ms);
   @extend %hide-text;
-  width: 80px;
-  height: 100%;
+  width: 60px;
+  height: 180px;
   z-index: 15;
-  top: 0;
+  top: 50%;
+  margin-top: -90px;
   opacity: 0.25;
 
   &:hover, &:active {
@@ -83,7 +84,7 @@ $m : '.m-pages';
   &.previous {
     @include link-sprite('carousel-previous', 'carousel-previous', 20px, 124px);
     position: absolute;
-    left: 0;
+    left: 25px;
 
     .cover &, .index & {
       display: none;
@@ -93,7 +94,7 @@ $m : '.m-pages';
   &.next {
     @include link-sprite('carousel-next', 'carousel-next', 20px, 124px);
     position: absolute;
-    right: 0;
+    right: 25px;
 
     .credits & {
       display: none;
