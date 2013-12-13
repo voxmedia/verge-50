@@ -44,6 +44,7 @@ configure :build do
   activate :minify_css
 end
 
-# after_build do 
-#   system "rm -f source/images/sprites/*.png"
-# end
+
+after_build do 
+  system "rm -f source/images/sprites/*.png"
+end
