@@ -18,3 +18,6 @@
 oauth2.json
 data/people.json
 data/pages.json
+
+# Ignore image sprites
+/source/images/sprites/*.png
