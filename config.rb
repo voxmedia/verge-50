@@ -36,15 +36,13 @@ end
 
 # Build-specific configuration
 configure :build do
+  puts "local build"
+  # clear out sprites
+  system "rm -f source/images/sprites/*.png"
   set :url_prefix, "/a/the-verge-50"
   set :absolute_prefix, "http://www.theverge.com"
-  activate :asset_hash
+  activate :asset_hash,:ignore=>[/sprites\/.+\.png$/]
   activate :chorus
   activate :minify_javascript
   activate :minify_css
-end
-
-
-after_build do 
-  system "rm -f source/images/sprites/*.png"
 end

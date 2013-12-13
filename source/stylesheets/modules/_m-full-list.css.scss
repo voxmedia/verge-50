@@ -106,14 +106,14 @@ $m : '.m-full-list';
 
 #the-list {
     @media (min-width: $break_medium) {
-    background-image: image-url('/images/50.png');
+    background-image: image-url('50.png');
     background-repeat: no-repeat;
     background-position: left bottom;
   }
 
   @media (min-width: $break_medium) and (-webkit-min-device-pixel-ratio: '1.3'),
          (min-width: $break_medium) and (min-resolution: '124.8dpi') {
-    background-image: image-url('/images/50.png');
+    background-image: image-url('50.png');
     background-repeat: no-repeat;
     background-position: left bottom;
     background-size: 765px 735px;

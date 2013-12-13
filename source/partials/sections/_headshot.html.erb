@@ -1,17 +1,17 @@
 <div class="m-person__headshot">
 <span class="picturefill" data-alt="<%= person.name %>">
 
-  <span data-src="<%= image_path "/images/people/#{person.slug}/small.jpg" %>"></span>
-  <span data-src="<%= image_path "/images/people/#{person.slug}/small@2x.jpg" %>" data-media="<%= mq('small', true) %>"></span>
+  <span data-src="<%= image_path "people/#{person.slug}/small.jpg" %>"></span>
+  <span data-src="<%= image_path "people/#{person.slug}/small@2x.jpg" %>" data-media="<%= mq('small', true) %>"></span>
 
-  <span data-src="<%= image_path "/images/people/#{person.slug}/medium.jpg" %>" data-media="<%= mq('medium') %>"></span>
-  <span data-src="<%= image_path "/images/people/#{person.slug}/medium@2x.jpg" %>" data-media="<%= mq('medium', true)  %>"></span>
+  <span data-src="<%= image_path "people/#{person.slug}/medium.jpg" %>" data-media="<%= mq('medium') %>"></span>
+  <span data-src="<%= image_path "people/#{person.slug}/medium@2x.jpg" %>" data-media="<%= mq('medium', true)  %>"></span>
 
-  <span data-src="<%= image_path "/images/people/#{person.slug}/large.jpg" %>" data-media="<%= mq('large')  %>"></span>
-  <span data-src="<%= image_path "/images/people/#{person.slug}/large@2x.jpg" %>" data-media="<%= mq('large', true)  %>"></span>
+  <span data-src="<%= image_path "people/#{person.slug}/large.jpg" %>" data-media="<%= mq('large')  %>"></span>
+  <span data-src="<%= image_path "people/#{person.slug}/large@2x.jpg" %>" data-media="<%= mq('large', true)  %>"></span>
   
   <noscript>
-      <img src="<%= image_path "/images/people/#{person.slug}/small.jpg" %>" alt="<%= person.name %>" />
+      <img src="<%= image_path "people/#{person.slug}/small.jpg" %>" alt="<%= person.name %>" />
   </noscript>
 </span>
 </div>
