@@ -295,6 +295,12 @@ Verge.Pages = (function ($) {
     updatePageTitle($page);
     updatePageUrl(new_url);
 
+    _gaq.push(['_setCustomVar',
+      3,
+      'Verge 50 slide views',
+      total_pages_seen.toString(),               
+      2
+    ]);
     _gaq.push(['_trackPageview', new_url]);
   }
 
