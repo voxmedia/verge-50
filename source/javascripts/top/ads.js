@@ -4,8 +4,11 @@ Vox.EditorialApps.AdHelpers = Vox.EditorialApps.AdHelpers || {};
 
 // Handy place to keep these ad unit id numbers
 // Look in SBN config/openx.yml for a full listing
+
+// All of these will be requested from OpenX
 Vox.EditorialApps.AdHelpers.AdUnitIds = {
-  VergeFishTank: 463319
+  VergeFishTank: 463319,
+  // SomethingDorky: 1234567
 };
 
 
@@ -24,8 +27,6 @@ Vox.EditorialApps.AdHelpers.Events = {
 
 
 Vox.EditorialApps.Ads = (function() {
-  // This should match the ad unit id from Chorus's config/openx.yml
-  var network_fishtank_ad_unit_id = Vox.EditorialApps.AdHelpers.AdUnitIds.VergeFishTank;
 
   // More tricky, view the source of the network to find this
   var network_umbel_api_key = 'lrjhazrpqbgtnrij';
@@ -50,7 +51,16 @@ Vox.EditorialApps.Ads = (function() {
 
         SBN.OpenX.addVariable('network', network_name);
 
-        SBN.OpenX.setAdUnitsOnPage([network_fishtank_ad_unit_id]);
+        var ad_units_on_page = [];
+
+        if(typeof(Vox.EditorialApps.AdHelpers.AdUnitIds) === "object"){
+          for(var key in Vox.EditorialApps.AdHelpers.AdUnitIds){
+            ad_units_on_page.push(Vox.EditorialApps.AdHelpers.AdUnitIds[key]);
+          }
+        }
+
+        // These need to be fetched prior to when they are going to be placed on the page
+        SBN.OpenX.setAdUnitsOnPage(ad_units_on_page);
         SBN.OpenX.fetchAds();
 
       } else {
