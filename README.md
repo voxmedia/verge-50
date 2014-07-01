@@ -19,7 +19,7 @@
 
 ## Credits
 
-**Product Team**: [James Chae](https://twitter.com/chae_day), [Kelsey Scherer](https://twitter.com/kelsa_), [Guillermo Esteves](https://twitter.com/gesteves), [Brian Anderson](https://twitter.com/banderson623).
+**Product Team**: [James Chae](https://twitter.com/chae_day), [Kelsey Scherer](https://twitter.com/kelsa_), [Guillermo Esteves](https://twitter.com/gesteves), [Brian Anderson](https://twitter.com/banderson623), [Chao Li](https://twitter.com/cli6cli6), [Pablo Mercado](https://twitter.com/odacrem), [Justin Glow](https://twitter.com/justinglow).
 
 **Editorial**: Joshua Topolsky, Thomas Houston, Laura June, Bryan Bishop, Russell Brandom, Dieter Bohn, Katie Drummond, Joseph L. Flatley, Jesse Hicks, Adrianne Jeffries, Casey Newton, Molly Osberg, Ben Popper, Adi Robertson, TC Sottek, Amar Toor, Andrew Webster, Chris Ziegler.
 
