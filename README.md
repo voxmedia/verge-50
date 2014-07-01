@@ -16,13 +16,23 @@
 
 [setup]: https://github.com/voxmedia/middleman-google_drive/blob/master/README.md#setup
 
-## Authors
 
-* James Chae (https://twitter.com/chae_day)
-* Kelsey Scherer (https://twitter.com/kelsa_)
-* Guillermo Esteves (https://twitter.com/gesteves) 
-* Brian Anderson (https://twitter.com/banderson623)
-* [Full credits](http://www.theverge.com/a/the-verge-50/credits)
+## Credits
+
+**Product Team**: [James Chae](https://twitter.com/chae_day), [Kelsey Scherer](https://twitter.com/kelsa_), [Guillermo Esteves](https://twitter.com/gesteves), [Brian Anderson](https://twitter.com/banderson623).
+
+**Editorial**: Joshua Topolsky, Thomas Houston, Laura June, Bryan Bishop, Russell Brandom, Dieter Bohn, Katie Drummond, Joseph L. Flatley, Jesse Hicks, Adrianne Jeffries, Casey Newton, Molly Osberg, Ben Popper, Adi Robertson, TC Sottek, Amar Toor, Andrew Webster, Chris Ziegler.
+
+**Illustrations**: [Sam Green](http://sams-place.net/).
+
+**Photography**: Getty Images, Corbis, Wikipedia, [Neil Moralee][nm], [JD Lasica][jdl], [Gage Skidmore][gs], [Private Manning Support Network][pmsn], Geordie Wood, Bryan W. Ferry.
+
+[nm]: http://www.flickr.com/photos/neilmoralee/6636824887/
+[jdl]: http://www.flickr.com/photos/jdlasica/3362224358/sizes/o/in/photostream/
+[gs]: http://www.flickr.com/photos/22007612@N05/7595303406/in/photolist-czaV61-czaTUy-czaUPQ-czaTJS-czaTff-czaUpU-czaUh1-czaU3J-czaTzh-czaUHS-czaUuA-czaUzs-czaVgm-ek9coN-ek3qoB-ek9aXL-ek3oKV-ek9czL-ek3tDc-ek9azm-ek3qWp-ek3pUM-ek9a5q-ek3qHp-ek3toK-ek9anC-94vuLZ-fobT1J-fnWEs6-fnWDiR-fjYagr-8nGciH-8nGdtD-8nKgS1-aa36Z3-8mf7zD-gQzinW-fgvg2s-fgg3XZ-fgg284-fgg2nk-fgg32D-fgvh2m-fgvgG3-cz6SpY-cz6Neo-cz6Ue1-cz6Ur3-cz6KpA-cz6S1q-cz6Q4Y
+[pmsn]: http://www.flickr.com/photos/savebradley/8657341498/
+
+Page transition effects adapted from [Codrops](https://github.com/codrops/PageTransitions).
 
 ## Contribute
 
