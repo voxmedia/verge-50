@@ -22,7 +22,7 @@
         </div>
 
         <div id="position" class="m-full-list__pane position" %>
-          <% data.people.sort_by{ |p| p.position.to_i }.each_slice(25).with_index do |slice, i| %>
+          <% data.verge50['people'].sort_by{ |p| p.position.to_i }.each_slice(25).with_index do |slice, i| %>
               <div class="l-column <%= "right" if i > 0 %>">
                 <ol>
                   <% slice.each do |p| %>

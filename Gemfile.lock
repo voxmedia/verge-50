@@ -1,28 +1,10 @@
-GIT
-  remote: git@github.com:voxmedia/middleman-chorus.git
-  revision: 670a0b5cd8a7e980a3a9a42fc80d17fcb28c5bc4
-  specs:
-    middleman-chorus (0.0.1)
-      middleman-core (>= 3.0.0)
-
-GIT
-  remote: git@github.com:voxmedia/vox-google-drive.git
-  revision: 9d927371cae24c765d5eab21be60b1671c64fcfc
-  specs:
-    vox-google-drive (0.0.1)
-      css_parser (~> 1.3.5)
-      google-api-client (~> 0.7.0.rc2)
-      json (~> 1.8.1)
-      nokogiri (~> 1.5.10)
-      thor (~> 0.18.1)
-
 GEM
   remote: http://rubygems.org/
   specs:
     activesupport (3.2.16)
       i18n (~> 0.6, >= 0.6.4)
       multi_json (~> 1.0)
-    addressable (2.3.5)
+    addressable (2.3.6)
     autoparse (0.3.3)
       addressable (>= 2.3.1)
       extlib (>= 0.9.15)
@@ -36,8 +18,6 @@ GEM
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
       sass (~> 3.1)
-    css_parser (1.3.5)
-      addressable
     em-websocket (0.5.0)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.5.3)
@@ -45,28 +25,31 @@ GEM
     execjs (1.4.0)
       multi_json (~> 1.0)
     extlib (0.9.16)
-    faraday (0.9.0.rc6)
-      multipart-post (~> 1.2.0)
+    faraday (0.9.0)
+      multipart-post (>= 1.2, < 3)
     ffi (1.9.3)
     fssm (0.2.10)
-    google-api-client (0.7.0.rc2)
+    google-api-client (0.7.1)
       addressable (>= 2.3.2)
       autoparse (>= 0.3.3)
       extlib (>= 0.9.15)
-      faraday (>= 0.9.0.rc5)
+      faraday (>= 0.9.0)
       jwt (>= 0.1.5)
       launchy (>= 2.1.1)
       multi_json (>= 1.0.0)
+      retriable (>= 1.4)
       signet (>= 0.5.0)
       uuidtools (>= 2.1.0)
+    google_drive (0.3.9)
+      nokogiri (>= 1.4.4, != 1.5.2, != 1.5.1)
+      oauth (>= 0.3.6)
+      oauth2 (>= 0.5.0)
     haml (4.0.4)
       tilt
     hike (1.2.3)
     http_parser.rb (0.5.3)
     i18n (0.6.9)
-    json (1.8.1)
-    jwt (0.1.8)
-      multi_json (>= 1.5)
+    jwt (1.0.0)
     kramdown (1.2.0)
     launchy (2.4.2)
       addressable (~> 2.3)
@@ -93,6 +76,10 @@ GEM
       rack-test (~> 0.6.1)
       thor (>= 0.15.2, < 2.0)
       tilt (~> 1.3.6)
+    middleman-google_drive (0.0.6)
+      google-api-client (>= 0.7.1)
+      google_drive (>= 0.3.9)
+      middleman-core (>= 3.0.0)
     middleman-livereload (3.1.0)
       em-websocket (>= 0.2.0)
       middleman-core (>= 3.0.2)
@@ -103,9 +90,19 @@ GEM
       sprockets (~> 2.1)
       sprockets-helpers (~> 1.0.0)
       sprockets-sass (~> 1.0.0)
+    mini_portile (0.6.0)
     multi_json (1.8.2)
-    multipart-post (1.2.0)
-    nokogiri (1.5.10)
+    multi_xml (0.5.5)
+    multipart-post (2.0.0)
+    nokogiri (1.6.2.1)
+      mini_portile (= 0.6.0)
+    oauth (0.4.7)
+    oauth2 (0.9.4)
+      faraday (>= 0.8, < 0.10)
+      jwt (~> 1.0)
+      multi_json (~> 1.3)
+      multi_xml (~> 0.5)
+      rack (~> 1.2)
     rack (1.5.2)
     rack-livereload (0.3.15)
       rack
@@ -117,8 +114,9 @@ GEM
     rb-kqueue (0.2.0)
       ffi (>= 0.5.0)
     redcarpet (2.3.0)
+    retriable (1.4.1)
     sass (3.2.12)
-    signet (0.5.0)
+    signet (0.5.1)
       addressable (>= 2.2.3)
       faraday (>= 0.9.0.rc5)
       jwt (>= 0.1.5)
@@ -145,8 +143,7 @@ PLATFORMS
 
 DEPENDENCIES
   middleman (~> 3.2.0)
-  middleman-chorus!
+  middleman-google_drive
   middleman-livereload (~> 3.1.0)
   redcarpet (~> 2.3.0)
-  vox-google-drive!
   wdm (~> 0.1.0)

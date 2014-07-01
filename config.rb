@@ -21,16 +21,15 @@ set :break_large, 975
 
 activate :directory_indexes
 
+activate :google_drive, load_sheets: {
+  verge50: "0AmBvdyiOpUoSdFFKaVFUcl85Z1lWdzFLZWJMb2V1blE"
+}
 
-helpers Middleman::Chorus::GoogleDrive::Helpers
-load_spreadsheet("people","0AveeZxA0SOM1dGdSWWFZdHJGc091Q3FrUERVdG1rRWc")
-load_spreadsheet("pages", "0AmBvdyiOpUoSdGtKLVc2ZlRPUXYwOERpT0FYWWs2alE")
-
-data['people'].each do |person|
+data.verge50['people'].each do |person|
   proxy "/#{person['slug']}/index.html", "index.html", :locals => { :slug => person['slug'], :title => person['name'], :page_type => 'person' }
 end
 
-data['pages'].each do |page|
+data.verge50['pages'].each do |page|
   proxy "/#{page['slug']}/index.html", "index.html", :locals => { :slug => page['slug'], :title => page['title'], :page_type => page['name'] }
 end
 
@@ -42,7 +41,6 @@ configure :build do
   set :url_prefix, "/a/the-verge-50"
   set :absolute_prefix, "http://www.theverge.com"
   activate :asset_hash,:ignore=>[/sprites\/.+\.png$/]
-  activate :chorus
   activate :minify_javascript
   activate :minify_css
 end

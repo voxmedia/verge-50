@@ -2,18 +2,18 @@
   <ol class="m-nav__list">
     <li class="m-nav__list-item"><a href="http://www.theverge.com" class="main-verge-link">Back to The Verge</a></li>
     <li class="m-nav__list-item cover-link"><a href="<%= absolute_page_url %>">Cover</a></li>
-    <li class="m-nav__list-item"><a href="<%= data.pages.find{|p| p.name == 'intro'}.slug %>" data-page="<%= data.pages.find{|p| p.name == 'intro'}.slug %>"><%= data.pages.find{|p| p.name == 'intro'}.title %></a></li>
+    <li class="m-nav__list-item"><a href="<%= data.verge50['pages'].find{|p| p.name == 'intro'}.slug %>" data-page="<%= data.verge50['pages'].find{|p| p.name == 'intro'}.slug %>"><%= data.verge50['pages'].find{|p| p.name == 'intro'}.title %></a></li>
   </ol>
   <% data.categories.sort_by{ |c| c.category.position }.each do |c| %>
     <h2 class="m-nav__category"><%= c.category.name %></h2>
     <ol class="m-nav__list">
-      <% data.people.find_all{ |p| p.category == c.category.name }.sort_by{ |p| p.sort_name }.each do |p| %>
+      <% data.verge50['people'].find_all{ |p| p.category == c.category.name }.sort_by{ |p| p.sort_name }.each do |p| %>
         <li class="m-nav__list-item"><a href="<%= page_url(p.slug) %>" data-page="<%= p.slug %>"><%= p.name %></a></li>
       <% end %>
     </ol>
   <% end %>
   <ol class="m-nav__list bottom">
-    <li class="m-nav__list-item"><a href="<%= data.pages.find{|p| p.name == 'full-list'}.slug %>" data-page="<%= data.pages.find{|p| p.name == 'full-list'}.slug %>"><%= data.pages.find{|p| p.name == 'full-list'}.title %></a></li>
-    <li class="m-nav__list-item"><a href="<%= data.pages.find{|p| p.name == 'credits'}.slug %>" data-page="<%= data.pages.find{|p| p.name == 'credits'}.slug %>"><%= data.pages.find{|p| p.name == 'credits'}.title %></a></li>
+    <li class="m-nav__list-item"><a href="<%= data.verge50['pages'].find{|p| p.name == 'full-list'}.slug %>" data-page="<%= data.verge50['pages'].find{|p| p.name == 'full-list'}.slug %>"><%= data.verge50['pages'].find{|p| p.name == 'full-list'}.title %></a></li>
+    <li class="m-nav__list-item"><a href="<%= data.verge50['pages'].find{|p| p.name == 'credits'}.slug %>" data-page="<%= data.verge50['pages'].find{|p| p.name == 'credits'}.slug %>"><%= data.verge50['pages'].find{|p| p.name == 'credits'}.title %></a></li>
   </ol>
 </nav>

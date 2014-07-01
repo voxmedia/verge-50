@@ -31,27 +31,27 @@ module CustomHelpers
   def rel_prev_next_links(slug = nil, page_type = 'index')
     case page_type
     when 'index'
-      "<link rel='next' href='#{absolute_page_url(data.pages.find{ |p| p.name == 'intro' }.slug)}' />"
+      "<link rel='next' href='#{absolute_page_url(data.verge50['pages'].find{ |p| p.name == 'intro' }.slug)}' />"
     when 'intro'
       "<link rel='prev' href='#{absolute_page_url}' />\n" \
-      "<link rel='next' href='#{absolute_page_url(data.people.first.slug)}' />"
+      "<link rel='next' href='#{absolute_page_url(data.verge50['people'].first.slug)}' />"
     when 'person'
-      index = data.people.index{ |p| p.slug == slug }
+      index = data.verge50['people'].index{ |p| p.slug == slug }
       if index == 0
-        "<link rel='prev' href='#{absolute_page_url(data.pages.find{ |p| p.name == 'intro' }.slug)}' />\n" \
-        "<link rel='next' href='#{absolute_page_url(data.people[index + 1].slug)}' />"
-      elsif index == data.people.size - 1
-        "<link rel='prev' href='#{absolute_page_url(data.people[index - 1].slug)}' />\n" \
-        "<link rel='next' href='#{absolute_page_url(data.pages.find{ |p| p.name == 'full-list' }.slug)}' />"
+        "<link rel='prev' href='#{absolute_page_url(data.verge50['pages'].find{ |p| p.name == 'intro' }.slug)}' />\n" \
+        "<link rel='next' href='#{absolute_page_url(data.verge50['people'][index + 1].slug)}' />"
+      elsif index == data.verge50['people'].size - 1
+        "<link rel='prev' href='#{absolute_page_url(data.verge50['people'][index - 1].slug)}' />\n" \
+        "<link rel='next' href='#{absolute_page_url(data.verge50['pages'].find{ |p| p.name == 'full-list' }.slug)}' />"
       else
-        "<link rel='prev' href='#{absolute_page_url(data.people[index - 1].slug)}' />\n" \
-        "<link rel='next' href='#{absolute_page_url(data.people[index + 1].slug)}' />"
+        "<link rel='prev' href='#{absolute_page_url(data.verge50['people'][index - 1].slug)}' />\n" \
+        "<link rel='next' href='#{absolute_page_url(data.verge50['people'][index + 1].slug)}' />"
       end
     when 'full-list'
-      "<link rel='prev' href='#{absolute_page_url(data.people.last.slug)}' />\n" \
-      "<link rel='next' href='#{absolute_page_url(data.pages.find{ |p| p.name == 'credits' }.slug)}' />"
+      "<link rel='prev' href='#{absolute_page_url(data.verge50['people'].last.slug)}' />\n" \
+      "<link rel='next' href='#{absolute_page_url(data.verge50['pages'].find{ |p| p.name == 'credits' }.slug)}' />"
     when 'credits'
-      "<link rel='prev' href='#{absolute_page_url(data.pages.find{ |p| p.name == 'full-list' }.slug)}' />"
+      "<link rel='prev' href='#{absolute_page_url(data.verge50['pages'].find{ |p| p.name == 'full-list' }.slug)}' />"
     end
   end
 
@@ -152,10 +152,10 @@ module CustomHelpers
   end
 
   def meta_description(slug)
-    person = data.people.find{ |p| p.slug == slug }
+    person = data.verge50['people'].find{ |p| p.slug == slug }
 
     if person.nil?
-      truncate_words(data.pages.find{ |p| p.slug == 'intro' }.content.gsub(/<\/?[^>]*>/, ""), :length => 100)
+      truncate_words(data.verge50['pages'].find{ |p| p.slug == 'intro' }.content.gsub(/<\/?[^>]*>/, ""), :length => 100)
     else
       "#{person.name}, #{person.age}, #{person.title} &ndash; #{truncate_words(person.blurb.gsub(/<\/?[^>]*>/, ""), :length => 100)}"
     end
