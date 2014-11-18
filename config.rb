@@ -22,7 +22,7 @@ set :break_large, 975
 activate :directory_indexes
 
 activate :google_drive, load_sheets: {
-  verge50: "0AmBvdyiOpUoSdFFKaVFUcl85Z1lWdzFLZWJMb2V1blE"
+  verge50: "0AiUde9EuNIx9dElFT1RndGphWGtGeFA3NFc5bU1QVmc"
 }
 
 data.verge50['people'].each do |person|
